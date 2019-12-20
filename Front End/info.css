@@ -1,0 +1,35 @@
+.info, .info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info2 {
+    margin-top: 5vw;
+}
+.info-detail {
+    margin: 3vw 5vw 5vw 5vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.info-text {
+    font-size: 1.65vw;
+    padding: 3vw 5vw;
+    line-height:2.5vw;
+    color: rgb(28, 145, 5);
+}
+.info-detail img {
+    width: 25%;
+    height: 25%;
+    transition: all 0.3s;
+}
+.info-detail img:hover {
+    transform: translate(-1vw,-1vw);
+    box-shadow: 1vw 1vw darkgray;
+    transition: all 0.3s;
+}     
+.info-detail img:nth-child(odd):hover {
+    box-shadow: -1vw 1vw darkgray;
+    transform: translate(1vw,-1vw);
+}

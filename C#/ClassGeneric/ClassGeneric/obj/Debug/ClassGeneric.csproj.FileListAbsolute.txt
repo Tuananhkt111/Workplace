@@ -1,0 +1,7 @@
+D:\Google Drive\C#\ClassGeneric\ClassGeneric\obj\Debug\ClassGeneric.csprojAssemblyReference.cache
+D:\Google Drive\C#\ClassGeneric\ClassGeneric\obj\Debug\ClassGeneric.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\ClassGeneric\ClassGeneric\bin\Debug\ClassGeneric.exe.config
+D:\Google Drive\C#\ClassGeneric\ClassGeneric\bin\Debug\ClassGeneric.exe
+D:\Google Drive\C#\ClassGeneric\ClassGeneric\bin\Debug\ClassGeneric.pdb
+D:\Google Drive\C#\ClassGeneric\ClassGeneric\obj\Debug\ClassGeneric.exe
+D:\Google Drive\C#\ClassGeneric\ClassGeneric\obj\Debug\ClassGeneric.pdb

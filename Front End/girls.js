@@ -1,0 +1,77 @@
+var imgGrid = [
+    {
+        src:"yande.re 384884 avamone dress hatsune_miku vocaloid.jpg",
+        love:259,
+        download:123
+    },
+    {
+        src:"65871381_p0.png",
+        love:301,
+        download:230
+    },
+    {
+        src:"65567135_p0.jpg",
+        love:143,
+        download:670
+    },
+    {
+        src:"Konachan.com - 219192 5_nenme_no_houkago black_hair clouds kantoku landscape long_hair nagisa_(kantoku) original scan scenic seifuku skirt sunset.png",
+        love:345,
+        download:564
+    },
+    {
+        src:"Konachan.com - 157467 bow dress hakurei_reimu kieta petals touhou water wet.jpg",
+        love:564,
+        download:234
+    },
+    {
+        src:"illust_id=63694804.jpg",
+        love:567,
+        download:345
+    },
+    {
+        src:"yande.re 409919 alphonse hatsune_miku kimono signed vocaloid wallpaper.jpg",
+        love:675,
+        download:435
+    },
+    {
+        src:"yande.re 308381 gekidoku_shoujo izayoi_sakuya ke-ta maid touhou.png",
+        love:123,
+        download:640
+    },
+    {
+        src:"64686719_p0.png",
+        love:853,
+        download:341
+    },
+    {
+        src:"58898122_p0.jpg",
+        love:392,
+        download:198
+    },
+    {
+        src:"58606862_p0.png",
+        love:224,
+        download:554
+    },
+    {
+        src:"957029.jpg",
+        love:855,
+        download:974
+    },
+    {
+        src:"957020.jpg",
+        love:456,
+        download:190
+    },
+    {
+        src:"952459.png",
+        love:456,
+        download:322
+    },
+    {
+        src:"947021.png",
+        love:547,
+        download:596
+    },
+];

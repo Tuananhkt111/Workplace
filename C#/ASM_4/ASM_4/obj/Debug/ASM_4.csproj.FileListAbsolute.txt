@@ -1,0 +1,16 @@
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.csprojAssemblyReference.cache
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.frmLogin.resources
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.Properties.Resources.resources
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.csproj.GenerateResource.cache
+D:\Google Drive\C#\ASM_4\ASM_4\bin\Debug\ASM_4.exe.config
+D:\Google Drive\C#\ASM_4\ASM_4\bin\Debug\ASM_4.exe
+D:\Google Drive\C#\ASM_4\ASM_4\bin\Debug\ASM_4.pdb
+D:\Google Drive\C#\ASM_4\ASM_4\bin\Debug\EntityFramework.dll
+D:\Google Drive\C#\ASM_4\ASM_4\bin\Debug\EntityFramework.SqlServer.dll
+D:\Google Drive\C#\ASM_4\ASM_4\bin\Debug\EntityFramework.xml
+D:\Google Drive\C#\ASM_4\ASM_4\bin\Debug\EntityFramework.SqlServer.xml
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.csproj.CopyComplete
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.exe
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.pdb
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.frmChangeAccount.resources
+D:\Google Drive\C#\ASM_4\ASM_4\obj\Debug\ASM_4.frmMaintainBooks.resources

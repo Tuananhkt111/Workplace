@@ -1,0 +1,336 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    var user = @Context.Session.GetString("USER");
+    var role = @Context.Session.GetString("ROLE");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="keywords" content="Pet Shop, eCommerce, creative, html">
+    <title>@ViewData["Title"] - Pet Shop | Paradise for Pets</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Favicon -->
+    <link href="~/img/favicon.ico" rel="shortcut icon" />
+    <!-- Google Font -->
+    <link href="~/css/font.css" rel="stylesheet" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/flaticon.css" />
+    <link rel="stylesheet" href="~/css/slicknav.min.css" />
+    <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/css/animate.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .error {
+            color: red;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body onload="@if (TempData["msg"] != null)
+{<text>showMessage();</text>}">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="fas fa-check-circle" style="color: greenyellow; font-size: 30px;"></i>
+                    <h4 class="modal-title ml-2" id="msg-modal">@TempData["msg"]</h4>
+                    <button type="button" id="myBtn" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>@TempData["msg-details"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 text-center text-lg-left">
+                        <!-- logo -->
+                        <a asp-controller="Home" asp-action="Index" class="site-logo">
+                            <img src="~/img/logonew.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <form class="header-search-form" method="get" asp-controller="Accessory" asp-action="FindByLikeName">
+                            <input type="text" name="accSearch" placeholder="Search accessories...">
+                            <button type="submit"><i class="flaticon-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="user-panel">
+                            <div class="up-item">
+                                @if (user == null)
+                                {
+                                    <i class="flaticon-profile"></i>
+                                    <a data-toggle="modal" data-target="#modalLRForm" style="cursor:pointer;">Sign In/Sign Up</a>
+                                    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog cascading-modal" role="document">
+                                            <!--Content-->
+                                            <div class="modal-content">
+                                                <!--Modal cascading tabs-->
+                                                <div class="modal-c-tabs">
+                                                    <!-- Nav tabs -->
+                                                    <ul class="nav nav-tabs tabs-2" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab" style="font-size: 20px;"><i class="fa fa-sign-in"></i>Login</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab" style="font-size: 20px;"><i class="fa fa-user-plus"></i>Register</a>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- Tab panels -->
+                                                    <div class="tab-content">
+                                                        <!--Panel 7-->
+                                                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+                                                            <!--Body-->
+                                                            <form class="modal-body" id="form-login">
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <p class="error" id="login-result"></p>
+                                                                    <i class="fa fa-user"></i>
+                                                                    <label for="txtUsernameLg">Username</label>
+                                                                    <input type="text" name="txtUsernameLg" id="txtUsernameLg" class="form-control form-control-sm" pattern="[A-Za-z0-9]{1,30}">
+                                                                </div>
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <i class="fa fa-lock"></i>
+                                                                    <label for="txtPasswordLg">Password</label>
+                                                                    <input type="password" name="txtPasswordLg" id="txtPasswordLg" class="form-control form-control-sm" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                                                                </div>
+                                                                <div class="text-center mt-2">
+                                                                    <button class="btn btn-success"> Log in </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <!--/.Panel 7-->
+                                                        <!--Panel 8-->
+                                                        <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                                            <!--Body-->
+                                                            <form class="modal-body" id="form-register" method="POST" asp-controller="Principal" asp-action="Register">
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <i class="fa fa-user"></i>
+                                                                    <label for="Username">Username</label>
+                                                                    <input type="text" name="Username" id="Username" class="form-control form-control-sm"
+                                                                           pattern="(\d|\w){1,30}" onkeyup="checkUsernameExisted()" />
+                                                                    <p class="error" id="Username-exist"></p>
+                                                                </div>
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <i class="fa fa-lock"></i>
+                                                                    <label for="Password">Password</label>
+                                                                    <input type="password" name="Password" id="Password" class="form-control form-control-sm"
+                                                                           pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                                                                </div>
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <i class="fa fa-lock"></i>
+                                                                    <label for="txtRepPasswordRg">Repeat password</label>
+                                                                    <input type="password" id="txtRepPasswordRg" name="txtRepPasswordRg" class="form-control form-control-sm"
+                                                                           pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                                                                </div>
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <i class="fa fa-user-circle"></i>
+                                                                    <label for="Fullname">Fullname</label>
+                                                                    <input type="text" id="Fullname" name="Fullname" class="form-control form-control-sm"
+                                                                           pattern=".{1,40}">
+                                                                </div>
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <i class="fa fa-phone"></i>
+                                                                    <label for="Phone">Phone</label>
+                                                                    <input type="text" id="Phone" name="Phone" class="form-control form-control-sm"
+                                                                           pattern="[0-9]{10,16}">
+                                                                </div>
+                                                                <div class="md-form form-sm mb-3">
+                                                                    <i class="fa fa-address-book"></i>
+                                                                    <label for="Address">Address</label>
+                                                                    <input type="text" id="Address" name="Address" class="form-control form-control-sm"
+                                                                           pattern=".{1,70}">
+                                                                </div>
+                                                                <div class="text-center form-sm mt-2">
+                                                                    <button type="submit" class="btn btn-success"> Sign up </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <!--/.Panel 8-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/.Content-->
+                                        </div>
+                                    </div>
+                                    <!--Modal: Login / Register Form-->
+                                }
+                                else
+                                {
+                                    <i class="flaticon-profile"></i>
+                                    <a href="@if(role == "user")
+                                {
+                                <text>../Principal/UserDetails</text>
+                                }
+                                else
+                                {
+                                 <text>../Admin</text>
+                                }" style="cursor:pointer;"> @user</a><text>,</text>
+                                <a asp-controller="Principal" asp-action="LogOut" style="cursor:pointer;"> Log out </a>
+                            }
+                            </div>
+                            <div class="up-item">
+                                <div class="shopping-card">
+                                    <i class="flaticon-bag"></i>
+                                    <span id="cartCount">0</span>
+                                </div>
+                                <a href="#" id="cartLink" onclick="checkCartLink()">Shopping Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-navbar">
+            <div class="container">
+                <!-- menu -->
+                <ul class="main-menu">
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li>
+                        <a asp-controller="Accessory" asp-action="Index">Accessories</a>
+                        <ul class="sub-menu" id="accessories-dropdown"></ul>
+                    </li>
+                    <li><a asp-controller="Services" asp-action="Index">Services<span class="new">New</span></a></li>
+                    <li><a asp-controller="About" asp-action="Index">About</a></li>
+                    <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
+                    <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Header section end -->
+    @RenderBody()
+    <!-- Footer section -->
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <h2>About</h2>
+                        <p>
+                            Welcome to our site which shows you some of the different items we stock in
+                            PetShop which can be delivered to your home or can be purchased and collected from the store directly.
+                        </p>
+                        <img src="../img/cards.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <h2>Links</h2>
+                        <ul>
+                            <li><a asp-controller="Accessory" asp-action="Index">Accessories</a></li>
+                            <li><a asp-controller="Services" asp-action="Index">Services</a></li>
+                            <li><a href="#" onclick="checkCartLink()">Cart</a></li>
+                        </ul>
+                        <ul>
+                            <li><a asp-controller="About" asp-action="Index">About</a></li>
+                            <li><a asp-controller="Blogs" asp-action="Index">Blogs</a></li>
+                            <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <h2>Blogs</h2>
+                        <div class="fw-latest-post-widget">
+                            <div class="lp-item">
+                                <div class="lp-thumb set-bg" data-setbg="../img/blog-thumbs/1.jpeg"></div>
+                                <div class="lp-content">
+                                    <h6 style="color: #cccccc">Fun Facts with Alfie & Brutus: Claws</h6>
+                                    <span>Oct 21, 2018</span>
+                                    <a asp-controller="Blogs" asp-action="Index" class="readmore">Read More</a>
+                                </div>
+                            </div>
+                            <div class="lp-item">
+                                <div class="lp-thumb set-bg" data-setbg="../img/blog-thumbs/2.jpg"></div>
+                                <div class="lp-content">
+                                    <h6 style="color: #cccccc">Have a Story to Share?</h6>
+                                    <span>Oct 21, 2018</span>
+                                    <a asp-controller="Blogs" asp-action="Index" class="readmore">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget contact-widget">
+                        <h2>Contact</h2>
+                        <div class="con-info">
+                            <span>N.</span>
+                            <p>PetShop .co </p>
+                        </div>
+                        <div class="con-info">
+                            <span>A.</span>
+                            <p>FPT Innovation, Quang Trung Park, Go Vap District, TP.HCM</p>
+                        </div>
+                        <div class="con-info">
+                            <span>P.</span>
+                            <p>+84 345 7953 32453</p>
+                        </div>
+                        <div class="con-info">
+                            <span>E.</span>
+                            <p>anhhtse130553@fpt.edu.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social-links-warp">
+            <div class="container">
+                <div class="social-links">
+                    <a href="https://www.instagram.com" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+                    <a href="https://www.google.com" class="google-plus"><i class="fa fa-google-plus"></i><span>g+plus</span></a>
+                    <a href="https://www.pinterest.com" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a>
+                    <a href="https://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+                    <a href="https://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a>
+                    <a href="https://www.youtube.com" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
+                    <a href="https://www.tumblr.com" class="tumblr"><i class="fa fa-tumblr-square"></i><span>tumblr</span></a>
+                </div>
+
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <p class="text-white text-center mt-5">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer section end -->
+    <!--====== Javascripts & Jquery ======-->
+    <script>
+        var roleValue = '@role';
+        var usernameValue = '@user';
+    </script>
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/jquery.nicescroll.min.js"></script>
+    <script src="~/js/jquery.zoom.min.js"></script>
+    <script src="~/js/jquery-ui.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/validate.js"></script>
+    <script src="~/js/code.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/additional-methods.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

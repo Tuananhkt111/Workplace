@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneShop.API-01", "PhoneShop.API-01\PhoneShop.API-01.csproj", "{B9458333-A474-46CE-AC06-55AC2E492586}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9458333-A474-46CE-AC06-55AC2E492586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9458333-A474-46CE-AC06-55AC2E492586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9458333-A474-46CE-AC06-55AC2E492586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9458333-A474-46CE-AC06-55AC2E492586}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09D80855-67B2-451F-97CE-520DB13AA2EE}
+	EndGlobalSection
+EndGlobal

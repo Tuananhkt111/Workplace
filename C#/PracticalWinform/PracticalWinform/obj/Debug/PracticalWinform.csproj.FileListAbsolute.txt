@@ -1,0 +1,10 @@
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\bin\Debug\PracticalWinform.exe.config
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\bin\Debug\PracticalWinform.exe
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\bin\Debug\PracticalWinform.pdb
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\obj\Debug\PracticalWinform.csprojAssemblyReference.cache
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\obj\Debug\PracticalWinform.frmLogin.resources
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\obj\Debug\PracticalWinform.Properties.Resources.resources
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\obj\Debug\PracticalWinform.csproj.GenerateResource.cache
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\obj\Debug\PracticalWinform.exe
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\obj\Debug\PracticalWinform.pdb
+D:\Google Drive\C#\PracticalWinform\PracticalWinform\obj\Debug\PracticalWinform.frmMaintainBooks.resources

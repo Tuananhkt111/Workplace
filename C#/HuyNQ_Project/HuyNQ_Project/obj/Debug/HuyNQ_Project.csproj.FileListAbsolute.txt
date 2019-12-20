@@ -1,0 +1,149 @@
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\HuyNQ_Project.dll.config
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\HuyNQ_Project.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\HuyNQ_Project.pdb
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csc.exe
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csc.exe.config
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csc.rsp
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csi.exe
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csi.exe.config
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csi.rsp
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.AppContext.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Console.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.Compression.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Claims.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.ValueTuple.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\vbc.exe
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\vbc.exe.config
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\vbc.rsp
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\VBCSCompiler.exe
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Antlr3.Runtime.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Newtonsoft.Json.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\System.Web.Optimization.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\WebGrease.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\System.Web.Optimization.xml
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Newtonsoft.Json.xml
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Antlr3.Runtime.pdb
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.csprojAssemblyReference.cache
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.csproj.CopyComplete
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.pdb
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.SqlServer.dll
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.xml
+C:\Users\Nguyen Quang Huy\Downloads\Pj\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.SqlServer.xml
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\HuyNQ_Project.dll.config
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\HuyNQ_Project.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\HuyNQ_Project.pdb
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csc.exe
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csc.exe.config
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csc.rsp
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csi.exe
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csi.exe.config
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\csi.rsp
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.AppContext.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Collections.Immutable.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Console.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.Compression.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.FileSystem.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.IO.Pipes.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Reflection.Metadata.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.AccessControl.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Claims.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.ValueTuple.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.XPath.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\vbc.exe
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\vbc.exe.config
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\vbc.rsp
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\VBCSCompiler.exe
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\roslyn\VBCSCompiler.exe.config
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Antlr3.Runtime.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\AspNet.ScriptManager.jQuery.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.SqlServer.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.Web.Infrastructure.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Newtonsoft.Json.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\System.Web.Optimization.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\WebGrease.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.xml
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\EntityFramework.SqlServer.xml
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\System.Web.Optimization.xml
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Newtonsoft.Json.xml
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Antlr3.Runtime.pdb
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.csprojAssemblyReference.cache
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.csproj.CopyComplete
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.dll
+D:\Google Drive\C#\HuyNQ_Project\HuyNQ_Project\obj\Debug\HuyNQ_Project.pdb

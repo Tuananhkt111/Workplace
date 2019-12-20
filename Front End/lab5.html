@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column;
+            color: blue;
+            align-items: center;
+            justify-content: baseline;
+        }
+        #showImg {
+            width: 60vw;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            margin: 2vw;
+        }
+        #BigImg {
+            height: 500px;
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+<body>
+    <div id="showImg">
+        <button onclick="prev()">Prev</button>
+        <img id="BigImg">
+        <button onclick="next()">Next</button>
+    </div>
+    <p id="Number"></p>
+    <p id="Description"></p>
+    <script src="lab4.js"></script>
+</body>
+</html>

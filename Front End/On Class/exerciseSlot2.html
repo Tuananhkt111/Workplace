@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #white td, th, table{
+            border-spacing: 1px;
+            border-color: black;
+            border-style: solid;
+            border-collapse: collapse;
+            width: 30%;
+            text-align: left;   
+        }
+        .black{
+            border-spacing: 2px;
+            border-color: rgb(253, 253, 253);
+            border-style: solid;
+            background-color: black;
+            width: 30%;
+            text-align: left;
+            color: rgb(250, 250, 250);
+        }
+        .table3 {
+            background-color: rgb(154, 210, 214);
+            border: 2px solid white;
+            border-collapse:collapse; 
+            border-spacing: 5px;
+        }
+        table.table2 {
+            background-color: rgb(154, 210, 214);
+            border: 2px solid blue; 
+            border-spacing: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <table id="white">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Points</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+    <br>
+    <table class="black">
+        <tr>
+            <th class="black">First Name</th>
+            <th class="black">Last Name</th>
+            <th class="black">Points</th>
+        </tr>
+        <tr>
+            <td class="black">Jill</td>
+            <td class="black">Smith</td>
+            <td class="black">50</td>
+        </tr>
+        <tr>
+            <td class="black">Eve</td>
+            <td class="black">Jackson</td>
+            <td class="black">94</td>
+        </tr>
+    </table>
+    <table class="table2">
+            <td class="table2">
+                    <table class="table3">
+                            <tr>
+                                <td class="table3">
+                                    <ul>
+                                        <li>List Item 1</li>
+                                        <li>List Item 2</li>
+                                        <li>List Item 3</li>
+                                    </ul>
+                                </td>
+                                <td class="table3">
+                                    <ul>
+                                        <li>List Item 4</li>
+                                        <li>List Item 5</li>
+                                        <li>List Item 6</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table3">Avoid losing floppy disks with important school...</td>
+                                <td class="table3"><img src="608641.png" style="width:100px; height: 100px"/></td>
+                            </tr>
+                        </table>
+            </td>
+    </table>
+</body>
+</html>

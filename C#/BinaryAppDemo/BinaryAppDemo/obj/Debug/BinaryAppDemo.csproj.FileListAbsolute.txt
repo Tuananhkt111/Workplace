@@ -1,0 +1,6 @@
+D:\Google Drive\C#\BinaryAppDemo\BinaryAppDemo\bin\Debug\BinaryAppDemo.exe.config
+D:\Google Drive\C#\BinaryAppDemo\BinaryAppDemo\bin\Debug\BinaryAppDemo.exe
+D:\Google Drive\C#\BinaryAppDemo\BinaryAppDemo\bin\Debug\BinaryAppDemo.pdb
+D:\Google Drive\C#\BinaryAppDemo\BinaryAppDemo\obj\Debug\BinaryAppDemo.csprojAssemblyReference.cache
+D:\Google Drive\C#\BinaryAppDemo\BinaryAppDemo\obj\Debug\BinaryAppDemo.exe
+D:\Google Drive\C#\BinaryAppDemo\BinaryAppDemo\obj\Debug\BinaryAppDemo.pdb

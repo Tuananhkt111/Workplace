@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        .header {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            background-color: #e9e8e7;
+        }
+        .header div {
+            padding: 1vw;
+            margin: 0 1vw;
+        }
+        .header img {
+            height: 80px;
+        }
+        .header div:last-child {
+            border-radius: 0 0 10px 10px;
+            background-color: gray;
+            height: 15px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        .topnav {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        li {
+            padding: 2vh 1.5vw;
+        }
+        li:first-child {
+            margin-right: auto;
+            margin-left: 20px;
+        }
+        li:last-child {
+            margin-right: 50px;
+        }
+        .main {
+            display: flex;
+            flex-flow: row;
+        }
+        .submain {
+            border-radius: 10px;
+            background-color: #e9e8e7;
+            margin: 1vw;
+            display: flex;
+            flex-flow: row;
+        }
+        h2 {
+            color: green;
+        }
+        h2, p {
+            padding: 0 1vw; 
+        }
+        .submain div:last-child {
+            margin-top: 15vh;
+        }
+        .footer {
+            background-color: #faf9f9;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div><img class="img1" src="logo.png"></div>
+        <div><img class="img2" src="biofa-banner.gif"></div>
+        <div>Deutsch | English | Dansk</div>
+    </div>
+    <div class="topnav">
+        <ul>
+            <li>Log in</li>
+            <li>My Station</li>
+            <li>Products</li>
+            <li>Frostwecker</li>
+            <li>Weather Stations</li>
+            <li>Forecast Model</li>
+            <li>FAQ</li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="submain">
+            <div><h2>My Station</h2>
+                <p>You already have an access to the service are of ??the fuitweb? Click here to get toyour weather station.</p></div>
+            <div><img src="start-mystation.png"></div>
+        </div>
+        <div class="submain">
+            <div><h2>Products</h2>
+                <p>You want to buy a weather station, order supplies or to sign up for the fruitweb service? The click here.</p></div>
+            <div><img src="start-products.png"></div>
+        </div>
+        <div class="submain">
+            <div><h2>FAQ</h2>
+                <p>You have questions about your weather station or about our service? Here you will find the right answers.</p></div>
+            <div><img src="start-info.png"></div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8\bin\Debug\ASM_8.exe.config
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8\bin\Debug\ASM_8.exe
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8\bin\Debug\ASM_8.pdb
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8\obj\Debug\ASM_8.csprojAssemblyReference.cache
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8\obj\Debug\ASM_8.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8\obj\Debug\ASM_8.exe
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8\obj\Debug\ASM_8.pdb

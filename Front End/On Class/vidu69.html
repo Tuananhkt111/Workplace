@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 180px;
+            border: 1px solid black;
+        }
+        div p {
+            border-top: 1px solid red;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body onload="hengio()">
+    <div>
+        <p id="ngay"></p>
+        <p id="thang"></p>
+        <p id="nam"></p>
+        <p id="gio"></p>
+    </div>
+    <input type="button" value="start" onclick="phatsinh()">
+    <input type="text" id="t1">
+    <input type="text" id="t2">
+    <br>
+    <select onchange="lamtoan(this)">
+        <option>chon phep toan</option>
+        <option>+</option>
+        <option>-</option>
+    </select>
+    <script>
+        function phatsinh() {
+            var the1 = document.getElementById("t1");
+            var the2 = document.getElementById("t2");
+            the1.value = Math.round(Math.random() * 1000);
+            the2.value = Math.round(Math.random() * 1000);
+        }
+        function lamtoan(theselect) {
+            var i = theselect.selectedIndex;
+            if (i == 1) {
+                var the1 = document.getElementById("t1");
+                var the2 = document.getElementById("t2");
+                window.alert(parseInt(the1.value) + parseInt(the2.value));
+            }
+            else if (i == 2) {
+                var the1 = document.getElementById("t1");
+                var the2 = document.getElementById("t2");
+                window.alert(parseInt(the1.value) - parseInt(the2.value));
+            }
+        }
+        function layDongHo() {
+            var d = new Date();
+            document.getElementById("ngay").innerHTML = d.getDate();
+            document.getElementById("thang").innerHTML = d.getMonth() + 1;
+            document.getElementById("nam").innerHTML = d.getFullYear();
+            document.getElementById("gio").innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        }
+        function hengio() {
+            window.setInterval(layDongHo, 1000);
+        }
+    </script>
+</body>
+
+</html>

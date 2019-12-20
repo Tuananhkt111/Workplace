@@ -1,0 +1,144 @@
+﻿@model PetShop.DTO.Accessory
+@{
+    ViewData["Title"] = "FindAccById";
+}
+
+<!-- Page info -->
+<div class="page-top-info">
+    <div class="container">
+        <h4>Product Page</h4>
+        <div class="site-pagination">
+            <a asp-controller="Home" asp-action="Index">Home</a> /
+            <a asp-controller="Accessory" asp-action="Index">Accessories</a> /
+            <a href="#">Product</a>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
+<!-- product section -->
+<section class="product-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="product-big-img" src="../img/product/@Model.Image" alt="">
+            </div>
+            <div class="col-lg-6 product-details">
+                <h2 class="p-title">@Model.AccName</h2>
+                <h3 class="p-price">
+                    @if (Model.SalePercent == 0)
+                    {
+                        <text>$</text>@(string.Format($"{Model.Price:0.00}"));
+                    }
+                    else
+                    {
+                        <del style="color:gray" class="ml-2">$@(string.Format($"{Model.Price:0.00}"))</del>
+                        <text>$</text>@(string.Format($"{Model.Price * (1 - Model.SalePercent):0.00}"))
+                    }
+                </h3>
+                <h4 class="p-stock">
+                    Available:
+                    @if (Model.IsDelete == true)
+                    {
+                        <span style="color:red;">Stop selling</span>
+                    }
+                    else if (Model.AvailableQuantity == 0)
+                    {
+                        <span style="color:red">Out of Stock</span>
+                    }
+                    else
+                    {
+                        <span style="color:red">In Stock</span>
+                    }
+                </h4>
+                <div class="p-rating">
+                    Favorite: <span style="color:#ff0066">@ViewData["countFav"]</span>
+                </div>
+                <div class="p-rating">
+                    Category: <span style="color:#0066ff; font-weight: bold">@ViewData["accCatName"]</span>
+                </div>
+                <div class="p-rating">
+                    Brand: <span style="color:#0066ff; font-weight: bold">@Model.Brand</span>
+                </div>
+                <div class="quantity">
+                    <p>Quantity</p>
+                    @if (Model.IsDelete == true || Model.AvailableQuantity == 0)
+                    {
+                        <input type="number" id="inputQuantity" name="quantity" value="0" class="form-control quantity-acc" disabled>
+                    }
+                    else
+                    {
+                        <input type="number" id="inputQuantity" name="quantity" min="1" max="@Model.AvailableQuantity" class="form-control quantity-acc" value="1">
+                    }
+                </div>
+                @if (Model.IsDelete == false && Model.AvailableQuantity != 0)
+                {
+                    <div class="p-rating">
+                        Available Quantity: <span style="color:#0066ff">@Model.AvailableQuantity</span>
+                    </div>
+                }
+                <button onclick="addCart('@ViewData["accIdSearch"]', '@(Model.AvailableQuantity)')" class="site-btn">SHOP NOW</button>
+                <div id="accordion" class="accordion-area">
+                    <div class="panel">
+                        <div class="panel-header" id="headingOne">
+                            <button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">information</button>
+                        </div>
+                        <div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="panel-body">
+                                <p>@Model.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header" id="headingTwo">
+                            <button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">care details </button>
+                        </div>
+                        <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="panel-body">
+                                <p>Always answer any questions from customer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header" id="headingThree">
+                            <button class="panel-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">shipping & Returns</button>
+                        </div>
+                        <div id="collapse3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="panel-body">
+                                <h4>7 Days Returns</h4>
+                                <p>Freeship in HCM City<br>Home Delivery <span>3 - 4 days</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-sharing">
+                    <a href="https://www.google.com/"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product section end -->
+<!-- RELATED PRODUCTS section -->
+<section class="related-product-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>RELATED PRODUCTS</h2>
+        </div>
+        <div id="related-acc" class="row">
+
+        </div>
+    </div>
+</section>
+<!-- RELATED PRODUCTS section end -->
+@section Scripts {
+    <script src="~/js/product.js"></script>
+    <script>
+        $(function () {
+            getRelatedAccessory('@Model.AccCatId', '@Model.AccId');
+        });
+    </script>
+}

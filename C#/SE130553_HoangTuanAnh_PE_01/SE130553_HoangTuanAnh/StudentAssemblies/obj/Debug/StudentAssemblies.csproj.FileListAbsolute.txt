@@ -1,0 +1,5 @@
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\StudentAssemblies\bin\Debug\StudentAssemblies.dll
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\StudentAssemblies\bin\Debug\StudentAssemblies.pdb
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\StudentAssemblies\obj\Debug\StudentAssemblies.csprojAssemblyReference.cache
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\StudentAssemblies\obj\Debug\StudentAssemblies.dll
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\StudentAssemblies\obj\Debug\StudentAssemblies.pdb

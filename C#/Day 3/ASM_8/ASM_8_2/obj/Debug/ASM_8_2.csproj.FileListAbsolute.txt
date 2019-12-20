@@ -1,0 +1,6 @@
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8_2\bin\Debug\ASM_8_2.exe.config
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8_2\bin\Debug\ASM_8_2.exe
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8_2\bin\Debug\ASM_8_2.pdb
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8_2\obj\Debug\ASM_8_2.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8_2\obj\Debug\ASM_8_2.exe
+D:\Google Drive\C#\Day 3\ASM_8\ASM_8_2\obj\Debug\ASM_8_2.pdb

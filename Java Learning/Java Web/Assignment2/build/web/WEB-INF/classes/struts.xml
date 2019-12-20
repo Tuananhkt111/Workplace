@@ -1,0 +1,42 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="searchAction" class="anhht.action.SearchAction">
+            <result name="success">index.jsp</result>
+        </action>
+        <action name="editAction" class="anhht.action.EditAction">
+            <result name="success">edit.jsp</result>
+        </action>
+        <action name="insertAction" class="anhht.action.InsertAction">
+            <result name="success">index.jsp</result>
+            <result name="fail">error.jsp</result>
+            <result name="invalid">insert.jsp</result>
+        </action>
+        <action name="updateAction" class="anhht.action.UpdateAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">searchAction</param>
+                <param name="searchValue">${searchValue}</param>
+            </result>
+            <result name="fail">error.jsp</result>
+            <result name="a">edit.jsp</result>
+            <result name="invalid" type="redirectAction"> 
+                <param name="actionName">editAction</param>
+                <param name="id">${id}</param>
+                <param name="searchValue">${searchValue}</param>
+            </result>
+            
+        </action>
+        <action name="deleteAction" class="anhht.action.DeleteAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">searchAction</param>
+                <param name="searchValue">${searchValue}</param>
+            </result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+    
+</struts>

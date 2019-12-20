@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1517728266 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 15\stack\calc.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

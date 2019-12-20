@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1517674254 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 15\justify2\justify2.c
+	<string.h>
+	"line.h"
+	"word.h"
+
+1517674163 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 15\justify2\line.h
+
+1517674215 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 15\justify2\word.h
+
+1517716056 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 15\justify2\line.c
+	<stdio.h>
+	<string.h>
+	"line.h"
+
+1517674332 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 15\justify2\word.c
+	<stdio.h>
+	"word.h"
+

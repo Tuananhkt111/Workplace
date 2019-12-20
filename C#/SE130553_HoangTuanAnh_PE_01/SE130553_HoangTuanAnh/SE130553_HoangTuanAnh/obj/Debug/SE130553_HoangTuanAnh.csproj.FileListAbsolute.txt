@@ -1,0 +1,12 @@
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\bin\Debug\SE130553_HoangTuanAnh.exe.config
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\bin\Debug\SE130553_HoangTuanAnh.exe
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\bin\Debug\SE130553_HoangTuanAnh.pdb
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\bin\Debug\StudentAssemblies.dll
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\bin\Debug\StudentAssemblies.pdb
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\obj\Debug\SE130553_HoangTuanAnh.csprojAssemblyReference.cache
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\obj\Debug\SE130553_HoangTuanAnh.Properties.Resources.resources
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\obj\Debug\SE130553_HoangTuanAnh.csproj.GenerateResource.cache
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\obj\Debug\SE130553_HoangTuanAnh.csproj.CopyComplete
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\obj\Debug\SE130553_HoangTuanAnh.exe
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\obj\Debug\SE130553_HoangTuanAnh.pdb
+D:\Google Drive\SE130553_HoangTuanAnh_PE\SE130553_HoangTuanAnh\SE130553_HoangTuanAnh\obj\Debug\SE130553_HoangTuanAnh.Form1.resources

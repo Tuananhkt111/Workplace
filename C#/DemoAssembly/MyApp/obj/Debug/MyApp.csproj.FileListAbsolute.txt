@@ -1,0 +1,10 @@
+D:\Google Drive\C#\DemoAssembly\MyApp\bin\Debug\MyApp.exe.config
+D:\Google Drive\C#\DemoAssembly\MyApp\bin\Debug\MyApp.exe
+D:\Google Drive\C#\DemoAssembly\MyApp\bin\Debug\MyApp.pdb
+D:\Google Drive\C#\DemoAssembly\MyApp\bin\Debug\MyLibrary.dll
+D:\Google Drive\C#\DemoAssembly\MyApp\bin\Debug\MyLibrary.pdb
+D:\Google Drive\C#\DemoAssembly\MyApp\obj\Debug\MyApp.csprojAssemblyReference.cache
+D:\Google Drive\C#\DemoAssembly\MyApp\obj\Debug\MyApp.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\DemoAssembly\MyApp\obj\Debug\MyApp.csproj.CopyComplete
+D:\Google Drive\C#\DemoAssembly\MyApp\obj\Debug\MyApp.exe
+D:\Google Drive\C#\DemoAssembly\MyApp\obj\Debug\MyApp.pdb

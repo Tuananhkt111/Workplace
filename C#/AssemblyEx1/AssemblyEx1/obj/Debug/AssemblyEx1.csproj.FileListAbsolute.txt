@@ -1,0 +1,10 @@
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\bin\Debug\AssemblyEx1.exe.config
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\bin\Debug\AssemblyEx1.exe
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\bin\Debug\AssemblyEx1.pdb
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\bin\Debug\MyAssembly.dll
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\bin\Debug\MyAssembly.pdb
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\obj\Debug\AssemblyEx1.csprojAssemblyReference.cache
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\obj\Debug\AssemblyEx1.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\obj\Debug\AssemblyEx1.csproj.CopyComplete
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\obj\Debug\AssemblyEx1.exe
+D:\Google Drive\C#\AssemblyEx1\AssemblyEx1\obj\Debug\AssemblyEx1.pdb

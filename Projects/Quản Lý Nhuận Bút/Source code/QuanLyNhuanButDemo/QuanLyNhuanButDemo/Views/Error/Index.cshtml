@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Error";
+}
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">404 Error</li>
+</ol>
+
+<!-- Page Content -->
+<h1 class="display-1">404</h1>
+<p class="lead">
+    <strong>@TempData["error"]</strong><br />
+    Bạn có thể
+    <a href="javascript:history.back()">trở lại</a>
+    trang cũ, hoặc
+    <a asp-controller="Home" asp-action="Index">về trang chủ</a>.
+</p>
+

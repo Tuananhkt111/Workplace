@@ -1,0 +1,9 @@
+D:\Google Drive\C#\ASM_2\BookManager\bin\Debug\BookManager.exe.config
+D:\Google Drive\C#\ASM_2\BookManager\bin\Debug\BookManager.exe
+D:\Google Drive\C#\ASM_2\BookManager\bin\Debug\BookManager.pdb
+D:\Google Drive\C#\ASM_2\BookManager\bin\Debug\MyBookLibrary.dll
+D:\Google Drive\C#\ASM_2\BookManager\bin\Debug\MyBookLibrary.pdb
+D:\Google Drive\C#\ASM_2\BookManager\obj\Debug\BookManager.csprojAssemblyReference.cache
+D:\Google Drive\C#\ASM_2\BookManager\obj\Debug\BookManager.csproj.CopyComplete
+D:\Google Drive\C#\ASM_2\BookManager\obj\Debug\BookManager.exe
+D:\Google Drive\C#\ASM_2\BookManager\obj\Debug\BookManager.pdb

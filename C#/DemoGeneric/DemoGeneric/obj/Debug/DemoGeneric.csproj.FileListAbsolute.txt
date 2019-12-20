@@ -1,0 +1,7 @@
+D:\Google Drive\C#\DemoGeneric\DemoGeneric\bin\Debug\DemoGeneric.exe.config
+D:\Google Drive\C#\DemoGeneric\DemoGeneric\bin\Debug\DemoGeneric.exe
+D:\Google Drive\C#\DemoGeneric\DemoGeneric\bin\Debug\DemoGeneric.pdb
+D:\Google Drive\C#\DemoGeneric\DemoGeneric\obj\Debug\DemoGeneric.csprojAssemblyReference.cache
+D:\Google Drive\C#\DemoGeneric\DemoGeneric\obj\Debug\DemoGeneric.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\DemoGeneric\DemoGeneric\obj\Debug\DemoGeneric.exe
+D:\Google Drive\C#\DemoGeneric\DemoGeneric\obj\Debug\DemoGeneric.pdb

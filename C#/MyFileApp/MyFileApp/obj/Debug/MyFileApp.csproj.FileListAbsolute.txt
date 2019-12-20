@@ -1,0 +1,6 @@
+D:\Google Drive\C#\MyFileApp\MyFileApp\bin\Debug\MyFileApp.exe.config
+D:\Google Drive\C#\MyFileApp\MyFileApp\bin\Debug\MyFileApp.exe
+D:\Google Drive\C#\MyFileApp\MyFileApp\bin\Debug\MyFileApp.pdb
+D:\Google Drive\C#\MyFileApp\MyFileApp\obj\Debug\MyFileApp.csprojAssemblyReference.cache
+D:\Google Drive\C#\MyFileApp\MyFileApp\obj\Debug\MyFileApp.exe
+D:\Google Drive\C#\MyFileApp\MyFileApp\obj\Debug\MyFileApp.pdb

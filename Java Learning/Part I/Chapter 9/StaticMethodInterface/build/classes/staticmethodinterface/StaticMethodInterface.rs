@@ -1,0 +1,2 @@
+staticmethodinterface.MyIF
+staticmethodinterface.StaticMethodInterface

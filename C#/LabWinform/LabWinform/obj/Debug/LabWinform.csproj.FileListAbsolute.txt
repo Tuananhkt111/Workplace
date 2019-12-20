@@ -1,0 +1,10 @@
+D:\Google Drive\C#\LabWinform\LabWinform\obj\Debug\LabWinform.csprojAssemblyReference.cache
+D:\Google Drive\C#\LabWinform\LabWinform\obj\Debug\LabWinform.frmMain.resources
+D:\Google Drive\C#\LabWinform\LabWinform\obj\Debug\LabWinform.Properties.Resources.resources
+D:\Google Drive\C#\LabWinform\LabWinform\obj\Debug\LabWinform.csproj.GenerateResource.cache
+D:\Google Drive\C#\LabWinform\LabWinform\bin\Debug\LabWinform.exe.config
+D:\Google Drive\C#\LabWinform\LabWinform\bin\Debug\LabWinform.exe
+D:\Google Drive\C#\LabWinform\LabWinform\bin\Debug\LabWinform.pdb
+D:\Google Drive\C#\LabWinform\LabWinform\obj\Debug\LabWinform.exe
+D:\Google Drive\C#\LabWinform\LabWinform\obj\Debug\LabWinform.pdb
+D:\Google Drive\C#\LabWinform\LabWinform\obj\Debug\LabWinform.Form1.resources

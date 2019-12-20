@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1520248521 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 16\parts database\qsort.c
+	<stdio.h>
+	"qsort.h"
+
+1520248429 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 16\parts database\qsort.h
+	"inventory.h"
+
+1520250925 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 16\parts database\inventory.h
+
+1517896902 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 16\parts database\readline.c
+	<stdio.h>
+	<ctype.h>
+	"readline.h"
+
+1520251394 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 16\parts database\readline.h
+
+1520503152 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 17\parts database (linked lists version)\qsort.c
+	<stdio.h>
+	"qsort.h"
+
+1520502860 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 17\parts database (linked lists version)\qsort.h
+	"inventory2.h"
+
+1520507890 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 17\parts database (linked lists version)\inventory2.h
+
+1520503208 source:d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 17\parts database (linked lists version)\readline.c
+	<stdio.h>
+	<ctype.h>
+	"readline.h"
+
+1520503243 d:\google drive\c learning\[k. n. king] c programming a modern approach (2nd edition)\section 17\parts database (linked lists version)\readline.h
+

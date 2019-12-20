@@ -1,0 +1,6 @@
+D:\Google Drive\C#\MyDirectoryApp\MyDirectoryApp\bin\Debug\MyDirectoryApp.exe.config
+D:\Google Drive\C#\MyDirectoryApp\MyDirectoryApp\bin\Debug\MyDirectoryApp.exe
+D:\Google Drive\C#\MyDirectoryApp\MyDirectoryApp\bin\Debug\MyDirectoryApp.pdb
+D:\Google Drive\C#\MyDirectoryApp\MyDirectoryApp\obj\Debug\MyDirectoryApp.csprojAssemblyReference.cache
+D:\Google Drive\C#\MyDirectoryApp\MyDirectoryApp\obj\Debug\MyDirectoryApp.exe
+D:\Google Drive\C#\MyDirectoryApp\MyDirectoryApp\obj\Debug\MyDirectoryApp.pdb

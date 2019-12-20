@@ -1,0 +1,201 @@
+/*
+  Ho ten: Tran Hoang Dung
+  MSSV: SE130551
+  Program 2
+*/
+#include<stdio.h>
+#include<stdlib.h>
+#define MAXN 100
+//Functions
+int menu();
+int isFull(double *a, int n);
+int isEmpty(double *a, int n);
+double getValue();
+void add(double value, double *a, int *pn);
+int search(double x, double *a, int n);
+//Main function
+int main()
+{
+    double a[MAXN];
+    int n = 0;
+    int userChoice;
+    do
+    {
+        userChoice = menu();
+        switch(userChoice)
+        {
+            case 1: //Add a value
+                if(isFull(a, n)) printf("\nSorry! The array is full.\n");
+                else
+                {
+                //Add value
+                    printf("Input an added value:");
+                    add(getValue(), a , &n);
+                    printf("Added\n");
+                };
+                break;
+            case 2: //Search a value
+                if(isEmpty(a, n)) printf("\nSorry: The array is empty.\n");
+                else
+                {
+                    //Accept input
+                    printf("Input the searched value:");
+                    double val = getValue();
+                    int num = search(val, a, n);
+                    printf("%lf appears %d time(s).\n", val, num);
+                }
+                break;
+            case 3: //Print the array
+                if(isEmpty(a, n)) printf("\nSorry: The array is empty.\n");
+                else
+                {
+                    printf("The elements of array:\n");
+                    for(int i= 0; i < n; i++) printf("%lf ", a[i]);
+                }
+                break;
+            case 4: //Print the elements of array which is in the range
+                if(isEmpty(a, n)) printf("\nSorry: The array is empty.\n");
+                else
+                {
+                    double minVal, maxVal;
+                    int count = 0;
+                    //Accept min and max values of range
+                    do
+                    {
+                        printf("Enter minimum:");
+                        minVal = getValue();
+                        printf("Enter maximum:");
+                        maxVal = getValue();
+                        if(minVal > maxVal) printf("***Wrong limit!***\n");
+                    } while(minVal > maxVal);
+                    //Print values in range
+                    printf("Values in the range:");
+                    for(int i = 0; i < n; i++)
+                    {
+                        if(a[i] >= minVal && a[i] <= maxVal)
+                        {
+                            printf("%lf ", a[i]);
+                            count++;
+                        }
+                    }
+                    //Print message if no values of the array in this range
+                    if(count == 0) printf("No appropriate values.\n");
+                }
+                break;
+            case 5: //Print the array in ascending order, positions of elements are preserved
+                 if(isEmpty(a, *pn)) printf("\nSorry: The array is empty.\n");
+                else
+                {
+                    //Copy values of elements to the heap
+                    double *adds = (double *) calloc(*pn, sizeof(double));
+                    for(int i = 0; i < *pn; i++) adds[i] = a[i];
+                    //Ascending Sort
+                    double t;
+                    for(int i = 0; i < *pn - 1; i++)
+                        for(int j = *pn - 1; j > i; j--)
+                            if(adds[j] < adds[j - 1])
+                            {
+                                t = adds[j];
+                                adds[j] = adds[j - 1];
+                                adds[j- 1] = t;
+                            }
+                    //Print elements
+                    printf("The array in ascending order:\n");
+                    for(int i= 0; i < *pn; i++) printf("%lf ", adds[i]);
+                    //de-allocating memory
+                    free(adds);
+                }
+                break;
+            default: printf("Goodbye!\n");
+        }
+    } while(userChoice >= 1 && userChoice <= 5);
+    fflush(stdin);
+    getchar();
+    return 0;
+}
+//Menu function
+int menu()
+{
+    int keeptrying = 1;
+    int rc;
+    char after;
+    int choice;
+    printf("\n1-Add a value");
+    printf("\n2-Search a value");
+    printf("\n3-Print out the array");
+    printf("\n4-Print out values in a range");
+    printf("\n5-Print out the array in ascending order");
+    printf("\nOthers-Quit");
+    printf("\nChoose:");
+    do
+    {
+        rc = scanf("%d%c", &choice, &after);
+        //Test wrong types
+        if(rc != 2)
+        {
+            printf("Wrong types!\n");
+            printf("Choose:");
+            fflush(stdin);
+        }
+        //Test for trailing characters
+        else if(after != '\n')
+        {
+            printf("Trailing characters!\n");
+            printf("Choose:");
+            fflush(stdin);
+        }
+        else keeptrying = 0;
+    } while(keeptrying);
+    return choice;
+}
+//Testing whether an array is full or not
+int isFull(double *a, int n)
+{
+    return n == MAXN;
+}
+//Testing whether an array is empty or not
+int isEmpty(double *a, int n)
+{
+    return n == 0;
+}
+//Adding an element to the end of array will increase number of elements
+void add(double value, double *a, int *pn)
+{
+    a[*pn] = value; //add it to the end of the array
+    (*pn)++;
+}
+//Find the amount of x's existences
+int search(double x, double *a, int *pn)
+{
+    int num = 0;
+    for(int i = 0; i < *pn; i++) if(a[i] == x) num++;
+    return num;
+}
+//Get value of float
+double getValue()
+{
+    double val;
+    int keeptrying = 1;
+    int rc;
+    char after;
+    do
+    {
+        rc = scanf("%lf%c", &val, &after);
+        //Test wrong types
+        if(rc != 2)
+        {
+            printf("***No input accepted!***\n");
+            printf("Reenter:");
+            fflush(stdin);
+        }
+        //Test for trailing characters
+        else if(after != '\n')
+        {
+            printf("***Trailing characters!***\n");
+            printf("Reenter:");
+            fflush(stdin);
+        }
+        else keeptrying = 0;
+    } while(keeptrying);
+    return val;
+}

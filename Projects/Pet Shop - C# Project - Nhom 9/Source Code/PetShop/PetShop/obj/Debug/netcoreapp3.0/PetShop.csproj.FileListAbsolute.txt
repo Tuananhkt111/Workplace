@@ -1,0 +1,420 @@
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\appsettings.Development.json
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\appsettings.json
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.exe
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.deps.json
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.runtimeconfig.json
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.runtimeconfig.dev.json
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.pdb
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.Views.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.Views.pdb
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.Data.SqlClient.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.Identity.Client.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\dotnet-aspnet-codegenerator-design.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\NuGet.Frameworks.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.AttributedModel.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Convention.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Hosting.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Runtime.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.TypedParts.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Configuration.ConfigurationManager.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Runtime.Caching.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Security.Cryptography.ProtectedData.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-arm64\native\sni.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\sni.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\sni.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.csprojAssemblyReference.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\staticwebassets\PetShop.StaticWebAssets.Manifest.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\staticwebassets\PetShop.StaticWebAssets.xml
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.MvcApplicationPartsAssemblyInfo.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorAssemblyInfo.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorAssemblyInfo.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.AssemblyInfoInputs.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.AssemblyInfo.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.TagHelpers.input.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.TagHelpers.output.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorCoreGenerate.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\About\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Accessory\FindAccById.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Accessory\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Accessory.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Category.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Transaction.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Blogs\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\CheckOut\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Contact\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Principal\UserDetails.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Services\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\AdminLayout.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\ErrorPage.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorTargetAssemblyInfo.cache
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorTargetAssemblyInfo.cs
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.Views.pdb
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.csproj.CopyComplete
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.dll
+D:\Google Drive\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.pdb
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\appsettings.Development.json
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.exe
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\appsettings.json
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.deps.json
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.runtimeconfig.json
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.runtimeconfig.dev.json
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.pdb
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.Views.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.Views.pdb
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.Data.SqlClient.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.Identity.Client.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\dotnet-aspnet-codegenerator-design.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\NuGet.Frameworks.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.AttributedModel.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Convention.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Hosting.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Runtime.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.TypedParts.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Configuration.ConfigurationManager.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Runtime.Caching.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Security.Cryptography.ProtectedData.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-arm64\native\sni.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\sni.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\sni.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.csprojAssemblyReference.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\staticwebassets\PetShop.StaticWebAssets.Manifest.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\staticwebassets\PetShop.StaticWebAssets.xml
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.MvcApplicationPartsAssemblyInfo.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorAssemblyInfo.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorAssemblyInfo.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.AssemblyInfoInputs.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.AssemblyInfo.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.TagHelpers.input.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.TagHelpers.output.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorCoreGenerate.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\About\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Accessory\FindAccById.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Accessory\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Accessory.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Category.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Transaction.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Blogs\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\CheckOut\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Contact\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Principal\UserDetails.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Services\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\AdminLayout.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\ErrorPage.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorTargetAssemblyInfo.cache
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorTargetAssemblyInfo.cs
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.Views.pdb
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.csproj.CopyComplete
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.dll
+D:\Google Drive\C#\Backup\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.pdb
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\appsettings.Development.json
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\appsettings.json
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.exe
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.deps.json
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.runtimeconfig.json
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.runtimeconfig.dev.json
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.pdb
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.Views.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\PetShop.Views.pdb
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.Data.SqlClient.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.Identity.Client.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\dotnet-aspnet-codegenerator-design.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\NuGet.Frameworks.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.AttributedModel.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Convention.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Hosting.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.Runtime.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Composition.TypedParts.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Configuration.ConfigurationManager.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Runtime.Caching.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\System.Security.Cryptography.ProtectedData.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-arm64\native\sni.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\sni.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\sni.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.csprojAssemblyReference.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\staticwebassets\PetShop.StaticWebAssets.Manifest.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\staticwebassets\PetShop.StaticWebAssets.xml
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.MvcApplicationPartsAssemblyInfo.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorAssemblyInfo.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorAssemblyInfo.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.AssemblyInfoInputs.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.AssemblyInfo.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.TagHelpers.input.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.TagHelpers.output.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorCoreGenerate.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\About\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Accessory\FindAccById.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Accessory\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Accessory.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Category.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Admin\Transaction.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Blogs\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\CheckOut\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Contact\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Principal\UserDetails.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Services\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\AdminLayout.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\ErrorPage.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorTargetAssemblyInfo.cache
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.RazorTargetAssemblyInfo.cs
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.Views.pdb
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.csproj.CopyComplete
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.dll
+D:\Google Drive\C#\Pet Shop - C# Project - Nhom 9\Source Code\PetShop\PetShop\obj\Debug\netcoreapp3.0\PetShop.pdb

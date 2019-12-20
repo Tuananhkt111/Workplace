@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="moQC()">
+    <span onclick="getURL()">layURL</span>
+    <span onclick="thaythe()">click vao de thay the trang</span>
+    <span onclick="getInfo()">get Browser</span>
+    <script>
+        function moQC() {
+            window.setTimeout(openfile, 5000);
+        }
+        function openfile() {
+            var w = window.open("https://www.google.com.vn", "mywin", "width=300, height =300");
+            w.moveTo(300,150);
+        }
+        function getURL() {
+            window.alert(window.location.href);
+        }
+        function thaythe() {
+            //cach 1
+            window.location.href="http://fap.fpt.edu.vn/";
+            //cach 2
+            //window.location.assign("http://fap.fpt.edu.vn/");
+            //cach 3
+            //window.location.replace("http://fap.fpt.edu.vn/");
+        }
+        function getInfo() {
+            //window.alert(window.navigator.appVersion);
+            window.alert(window.navigator.userAgent);
+        }
+        function 
+    </script>
+</body>
+
+</html>

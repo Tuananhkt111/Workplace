@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end; 
+        background-image: url('944013.jpg');
+        width: 100%;
+        height: 100px;
+    }
+    .bar > div {   
+        margin-bottom: 15px;
+        color: aliceblue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form > div {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div class="bar">
+        <div>home</div>
+        <div>events</div>
+        <div>news</div>
+        <div>sponsors</div>
+        <div>results</div>
+        <div>about us</div>
+        <div>shop</div>
+        <div style="background-color: rgba(189, 106, 192, 0.5); border-radius: 5px;">register</div>
+    </div>
+    <form class="form">
+        <div>
+            <div>First name</div>
+            <div><input type="text" required></div>
+        </div>
+        <div>
+            <div>Last name</div>
+            <div><input type="text" required></div>
+        </div>
+        <div>
+            <div>First name</div>
+            <div><input type="text" required></div>
+        </div>
+    </form>
+</body>
+</html>

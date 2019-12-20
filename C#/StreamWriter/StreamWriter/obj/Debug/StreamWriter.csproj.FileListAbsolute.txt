@@ -1,0 +1,6 @@
+D:\Google Drive\C#\StreamWriter\StreamWriter\bin\Debug\StreamWriter.exe.config
+D:\Google Drive\C#\StreamWriter\StreamWriter\bin\Debug\StreamWriter.exe
+D:\Google Drive\C#\StreamWriter\StreamWriter\bin\Debug\StreamWriter.pdb
+D:\Google Drive\C#\StreamWriter\StreamWriter\obj\Debug\StreamWriter.csprojAssemblyReference.cache
+D:\Google Drive\C#\StreamWriter\StreamWriter\obj\Debug\StreamWriter.exe
+D:\Google Drive\C#\StreamWriter\StreamWriter\obj\Debug\StreamWriter.pdb

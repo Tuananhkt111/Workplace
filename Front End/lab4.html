@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: row;
+        }
+        #showImg {
+            width: 60vw;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            margin: 2vw;
+        }
+        #BigImg {
+            height: 500px;
+            width: 500px;
+            margin: auto;
+        }
+        .slide img {
+            width: 60px;
+            height: 60px;
+            margin: 0.5vw;
+        }
+        #info {
+            width: 30vw;
+            display: flex;
+            flex-flow: column;
+            margin: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="showImg">
+        <button onclick="prev()">Prev</button>
+        <img id="BigImg">
+        <button onclick="next()">Next</button>
+    </div>
+    <div id="info">
+        <div class="title">Other Photos in <span>Tarket Laminat</span></div>
+        <div class="slide">
+            <img src="952520.jpg">
+            <img src="952521.jpg">
+            <img src= "947780.jpg">
+            <img src= "607021.jpg">
+            <img src= "947849.jpg">
+        </div>
+        <div class="title"></div>
+        <div class="slide">
+            <img src="952520.jpg">
+            <img src="952521.jpg">
+            <img src= "947780.jpg">
+            <img src= "607021.jpg">
+            <img src= "947849.jpg">
+        </div>
+        <div class="title"></div>
+        <div class="slide">
+            <img src="952520.jpg">
+            <img src="952521.jpg">
+            <img src= "947780.jpg">
+            <img src= "607021.jpg">
+            <img src= "947849.jpg">
+        </div>
+    </div>
+    <script src="lab4.js"></script>
+</body>
+</html>

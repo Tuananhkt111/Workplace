@@ -1,0 +1,117 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Shop | Paradise for Pets</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pet Shop | Paradise for Pets">
+    <meta name="keywords" content="Pet Shop, eCommerce, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="shortcut icon" />
+    <!-- Google Font -->
+    <link href="~/css/font.css" rel="stylesheet" />
+    <!-- Stylesheets -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/flaticon.css" />
+    <link rel="stylesheet" href="~/css/slicknav.min.css" />
+    <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/css/animate.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .error {
+            color: red;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="fa fa-check-circle-o" style="color: greenyellow; font-size: 30px;"></i>
+                    <h4 class="modal-title ml-2" id="msg-modal">@TempData["msg"]</h4>
+                    <button type="button" id="myBtn" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>@TempData["msg-details"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 text-center text-lg-left">
+                        <!-- logo -->
+                        <a asp-controller="Home" asp-action="Index" class="site-logo">
+                            <img src="../img/logonew.png" alt="">
+                        </a>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="user-panel m-auto">
+                            <div class="up-item">
+                                <i class="flaticon-profile"></i>
+                                <a href="@if(Context.Session.GetString("ROLE").Equals("admin")) {
+                                    <text>../Admin</text>
+                                }"
+                                   style="cursor:pointer;">
+                                    @Context.Session.GetString("USER")
+                                </a>,
+                                <a asp-controller="Principal" asp-action="LogOut" style="cursor:pointer;"> Log out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-navbar">
+            <div class="container">
+                <!-- menu -->
+                <ul class="main-menu">
+                    <li><a asp-controller="Admin" asp-action="Accessory">Accessory</a></li>
+                    <li><a asp-controller="Admin" asp-action="Category">Category</a></li>
+                    <li><a asp-controller="Admin" asp-action="Transaction">Transaction</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Header section end -->
+    @RenderBody()
+    <section class="footer-section">
+        <div class="social-links-warp">
+            <div class="container">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <p class="text-white text-center mt-5">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
+        </div>
+    </section>
+    <!--====== Javascripts & Jquery ======-->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.slicknav.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/jquery.zoom.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/additional-methods.js"></script>
+    <script src="~/js/admin.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

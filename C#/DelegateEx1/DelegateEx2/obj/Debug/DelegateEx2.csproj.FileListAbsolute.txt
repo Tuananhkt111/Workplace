@@ -1,0 +1,7 @@
+D:\Google Drive\C#\DelegateEx1\DelegateEx2\obj\Debug\DelegateEx2.csprojAssemblyReference.cache
+D:\Google Drive\C#\DelegateEx1\DelegateEx2\obj\Debug\DelegateEx2.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\DelegateEx1\DelegateEx2\bin\Debug\DelegateEx2.exe.config
+D:\Google Drive\C#\DelegateEx1\DelegateEx2\bin\Debug\DelegateEx2.exe
+D:\Google Drive\C#\DelegateEx1\DelegateEx2\bin\Debug\DelegateEx2.pdb
+D:\Google Drive\C#\DelegateEx1\DelegateEx2\obj\Debug\DelegateEx2.exe
+D:\Google Drive\C#\DelegateEx1\DelegateEx2\obj\Debug\DelegateEx2.pdb

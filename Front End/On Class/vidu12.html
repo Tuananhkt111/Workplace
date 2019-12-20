@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .d1 {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            list-style-type: none;
+        }
+        .d1 > li {
+            padding: 5px 10px;
+        }
+        .d2 {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            list-style-type: none;
+            box-sizing: border-box;
+            align-items: center;
+            margin: 100px;
+        }
+        .d2 > li > img {
+            width: 300px;
+        }
+        .d2 > li {
+            padding: 10px;
+        }
+        span {
+            color:rgb(0, 0, 255);
+        }
+        .icon {
+            padding: 10px;
+        }
+        #GoogleSearch, #Others{
+            padding: 5px;
+        }
+        #search {
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <ul class="d1">
+        <li>Gmail</li>
+        <li>Images</li>
+    </ul>
+    <ul class="d2">
+        <li><img src="google-2015.svg"></li>
+        <li>
+            <input type="text" id="search" placeholder="Search" style="width: 500px; height: 30px;"></li>
+        <li><input type="button" value="Google Search" id="GoogleSearch">
+            <input type="button" value="I'm Feeling Lucky" id="Others">
+        </li>
+        <li>Google offered in: <span>Tiếng Việt Francais</span></li>
+    </ul>
+</body>
+</html>

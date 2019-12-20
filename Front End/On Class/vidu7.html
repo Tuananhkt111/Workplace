@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="saveDB.apsx" method="POST" target="_blank">
+        <table>
+            <caption>Contact Us</caption>
+            <tr>
+                <td>Fullname</td>
+                <td><input type="text" placeholder="nhap ko dau" pattern="[a-z]+"/></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" size="40" maxlength="3" requireds/></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" checked name="sex"/>Female</td>
+                <td><input type="radio" name="sex"/>Male</td>
+            </tr>
+            <tr>
+                <td>Job</td>
+                <td>
+                    <select size="1" multiple name="job">
+                        <option>seller</option>
+                        <option>Biker</option>
+                        <option>shipper</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Skill</td>
+                <td><input type="checkbox"/>game</td> 
+                <td><input type="checkbox"/>dance</td>
+                <td><input type="checkbox"/>swimming</td>               
+            </tr>
+            <tr>
+                <td>Others</td>
+                <td><textarea style="width: 300px; height: 200px;" readonly></textarea></td>                
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="date"/></td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td><input type="number" value="50" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td>
+    
+                    <fieldset style="border: 1px solid black;">
+                                <legend>thay chua</legend>                          
+                                <input type="submit" value="send">
+                                <input type="reset" value="reset">
+                                <input type="button" value="login" disabled>
+                                <button>register<img src="608641.png" style="width: 10px; height: 10px;" /></button>
+                                viewmore <input type="text" value="sontung">
+                                <input list="sontung" name="sontung">
+                                    <datalist id="sontung">
+                                        <option value="Em cua ngay hom qua"></option>
+                                        <option value="Nang am xa dan"></option>
+                                        <option value="Lac troi"></option>
+                                        <option value="Chay ngay di"></option>
+                                        <option value="Em dung di"></option>
+                                    </datalist>
+                </fieldset>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DemoWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:DemoWebAPI.Controllers.ManageUserController.GetRoles">
+            <summary>Get all roles except admin</summary>
+             <remarks>
+             Return list of roles except admin
+            </remarks>
+             <response code="200">List of all roles except admins
+             </response>
+        </member>
+        <member name="M:DemoWebAPI.Controllers.ManageUserController.CheckUsername(System.String)">
+            <summary>Check username whether it exists or not</summary>
+             <remarks>
+             Return a boolean value.
+            </remarks>
+            <param name="UsernameRg">Username is required to check whether it exists or not</param>
+             <response code="200">
+             <para>Return true: username exists</para>
+             <para>Return false: username doesn't exist</para>
+             </response>
+        </member>
+        <member name="M:DemoWebAPI.Controllers.ManageUserController.CreateAccount(DemoWebAPI.DTOs.UserRgDTO)">
+            <summary>Create an account and add to role</summary>
+             <remarks>
+             Return a string of status.
+            </remarks>
+            <param name="userRg">An <see cref="T:DemoWebAPI.DTOs.UserRgDTO"/> object</param>
+             <response code="200">
+             <para>Create account failed: Show errors</para>
+             <para>Add to role failed: Show errors</para>
+             <para>Logging failed: "Ghi hoạt động thất bại"</para>
+             <para>Success: ""</para>
+             </response>
+        </member>
+    </members>
+</doc>

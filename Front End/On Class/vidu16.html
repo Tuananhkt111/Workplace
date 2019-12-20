@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        .linebreak-before {
+            height: 2px;
+            width: 40px;
+            background-color: black;
+        }
+        .linebreak {
+            width: 100%;
+            height: 1px;
+            background-color: gray;
+            margin-bottom: 2vh;
+        } 
+        header {
+            text-align: center;
+            font-weight: bold;
+        }
+        .header-title {
+            font-size: 20px;
+        }
+        p {
+            color: grey;
+        }
+        .body {
+            display: flex;
+            flex-flow: row nowrap;
+            box-sizing: border-box;
+        }
+        .main {
+            display: flex;
+            flex-flow: column;
+            margin: 18vh 1vw;
+            width: 75%;
+
+        }
+        .main h2 {
+            text-transform: uppercase;
+            
+        }
+        .submain {
+            display: flex;
+            flex-direction: row;
+        } 
+        .submain img {
+            width: 350px;
+            height: 200px;
+            margin-right: 1vw;
+        }
+        .img-description {
+            font-weight: bold;
+        }
+        span {
+            text-transform: uppercase;
+            color:black;
+            font-weight: bold;
+            margin-right: 1vw;
+        }
+        .aside {
+            margin: 10vh 2vw;
+            width: 25%;
+        }
+        .btn {
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 1vw;
+            text-align: center;
+            color: gray; 
+        }
+        .btn i {
+            margin-left:0.5vw;
+        }
+        .share-icon {
+            margin-bottom: 4vh;
+        }
+        .share-icon img {
+            width: 32px;
+            height: 32px;
+            margin-right: 1vw;
+            margin-top: 1vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header">Curriculum Vitae</h1>
+        <p class="header-title">E.Winters</p>
+    </header>
+    <div class="body">
+        <div class="main">
+            <div> 
+                <div>
+                    <div class="linebreak-before"></div>    
+                    <div class="linebreak"></div>
+                </div>
+                <h2>evelyn winters//event planner</h2>
+            </div>
+            <div class="submain">
+                <div class="img-style">
+                    <img src="608641.png" alt="Anh yeu em.png">
+                    <div class="img-description">Lewis Caroll, Alice in Wonderland</div>
+                </div>
+                <div>
+                    <p><span>phone</span>123-456-7890</p>
+                    <p><span>email</span>info@twitter.com</p>
+                    <p><span>address</span>1 Main Street, New York. NY 12345</p>
+                    <p><span>date of birth</span>June 10th, 1987</p>
+                    <p class="d5">"My dear, here we must run as fast as we can, just to stay in place. And if you wish to go any where you must run twice as fast as that"...</p>
+                </div>
+            </div>    
+        </div>
+        <div class="aside">
+            <div>
+                <div class="linebreak-before"></div>    
+                <div class="linebreak"></div>
+            </div>
+            <span>share this page</span>
+            <div class="share-icon">
+                <img src="Facebook_icon_2013.svg.png">
+                <img src="twitter.jpg">
+                <img src="plus.png">
+                <img src="Mail-icon.png">
+            </div>
+            <div>
+                <div class="linebreak-before"></div>    
+                <div class="linebreak"></div>
+            </div>
+            <span>create a website</span>
+            <p>Everybody can create a website. it's easy.</p>
+            <div class="btn">Try it for FREE now<i class="fa fa-question-circle"></i></div>
+        </div>
+    </div>
+</body>
+</html>

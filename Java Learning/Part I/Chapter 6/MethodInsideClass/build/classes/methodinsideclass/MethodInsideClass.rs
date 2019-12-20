@@ -1,0 +1,2 @@
+methodinsideclass.MethodInsideClass
+methodinsideclass.Box

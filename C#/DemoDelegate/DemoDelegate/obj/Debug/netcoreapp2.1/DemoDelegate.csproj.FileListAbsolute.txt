@@ -1,0 +1,11 @@
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\bin\Debug\netcoreapp2.1\DemoDelegate.deps.json
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\bin\Debug\netcoreapp2.1\DemoDelegate.runtimeconfig.json
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\bin\Debug\netcoreapp2.1\DemoDelegate.runtimeconfig.dev.json
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\bin\Debug\netcoreapp2.1\DemoDelegate.dll
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\bin\Debug\netcoreapp2.1\DemoDelegate.pdb
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\obj\Debug\netcoreapp2.1\DemoDelegate.csprojAssemblyReference.cache
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\obj\Debug\netcoreapp2.1\DemoDelegate.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\obj\Debug\netcoreapp2.1\DemoDelegate.AssemblyInfoInputs.cache
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\obj\Debug\netcoreapp2.1\DemoDelegate.AssemblyInfo.cs
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\obj\Debug\netcoreapp2.1\DemoDelegate.dll
+D:\Google Drive\C#\DemoDelegate\DemoDelegate\obj\Debug\netcoreapp2.1\DemoDelegate.pdb

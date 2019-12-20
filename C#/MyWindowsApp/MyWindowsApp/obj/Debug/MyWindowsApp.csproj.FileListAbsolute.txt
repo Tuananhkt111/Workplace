@@ -1,0 +1,9 @@
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\bin\Debug\MyWindowsApp.exe.config
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\bin\Debug\MyWindowsApp.exe
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\bin\Debug\MyWindowsApp.pdb
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\obj\Debug\MyWindowsApp.csprojAssemblyReference.cache
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\obj\Debug\MyWindowsApp.Form1.resources
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\obj\Debug\MyWindowsApp.Properties.Resources.resources
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\obj\Debug\MyWindowsApp.csproj.GenerateResource.cache
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\obj\Debug\MyWindowsApp.exe
+D:\Google Drive\C#\MyWindowsApp\MyWindowsApp\obj\Debug\MyWindowsApp.pdb

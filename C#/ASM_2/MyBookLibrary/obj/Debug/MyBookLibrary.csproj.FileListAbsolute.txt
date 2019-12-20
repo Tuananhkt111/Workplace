@@ -1,0 +1,5 @@
+D:\Google Drive\C#\ASM_2\MyBookLibrary\bin\Debug\MyBookLibrary.dll
+D:\Google Drive\C#\ASM_2\MyBookLibrary\bin\Debug\MyBookLibrary.pdb
+D:\Google Drive\C#\ASM_2\MyBookLibrary\obj\Debug\MyBookLibrary.csprojAssemblyReference.cache
+D:\Google Drive\C#\ASM_2\MyBookLibrary\obj\Debug\MyBookLibrary.dll
+D:\Google Drive\C#\ASM_2\MyBookLibrary\obj\Debug\MyBookLibrary.pdb

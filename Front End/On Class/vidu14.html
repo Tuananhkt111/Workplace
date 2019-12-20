@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            height: auto;
+            background-color: black;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+        .menu > li {
+            height: auto;
+            margin: auto;
+            color: white;
+            font-size: 1.5em;
+            position: relative;
+        }
+        li:hover .submenu{
+            display: flex;
+            flex-flow: column;
+        }
+        .submenu {
+            list-style-type: none;
+            color: aliceblue;
+            position: absolute;
+            display: none;
+            z-index: 1;
+        }
+        .submenu li {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>home</li>
+        <li>product
+            <ul class="submenu">
+                <li>Bag</li>
+                <li>Shoes</li>
+                <li>Bra</li>
+            </ul>
+        </li>
+        <li>Service
+            <ul class="submenu">
+                <li>Shipping</li>
+                <li>Feedback</li>
+            </ul>
+        </li>
+        <li>Members</li>
+        <li>Help</li>
+    </ul>
+</body>
+</html>

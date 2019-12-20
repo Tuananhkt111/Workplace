@@ -1,0 +1,7 @@
+D:\Google Drive\C#\ASM_1\ASM_1\bin\Debug\ASM_1.exe.config
+D:\Google Drive\C#\ASM_1\ASM_1\bin\Debug\ASM_1.exe
+D:\Google Drive\C#\ASM_1\ASM_1\bin\Debug\ASM_1.pdb
+D:\Google Drive\C#\ASM_1\ASM_1\obj\Debug\ASM_1.csprojAssemblyReference.cache
+D:\Google Drive\C#\ASM_1\ASM_1\obj\Debug\ASM_1.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\ASM_1\ASM_1\obj\Debug\ASM_1.exe
+D:\Google Drive\C#\ASM_1\ASM_1\obj\Debug\ASM_1.pdb

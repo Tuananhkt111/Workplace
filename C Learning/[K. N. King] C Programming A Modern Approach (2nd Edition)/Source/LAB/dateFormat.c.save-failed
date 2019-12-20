@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include <string.h>
+int main()
+{
+    char dateFormat[20], dayStr[3], monthStr[3], yearStr[5];
+    scanf("%[^\n]", dateFormat);
+    printf("%s\n", dateFormat);
+    int i = 0;
+    for(; dateFormat[i] != '/'; i++)
+    {
+        dayStr[i] = dateFormat[i];
+    }
+    printf("%d\n", strlen(dayStr));
+    for(int j = 0; j < 2; j++)
+        printf("%c", dayStr[j]);
+    printf("\n");
+    ++i;
+    for(int j = 0; dateFormat[i] != '/'; i++, j++)
+    {
+        monthStr[j] = dateFormat[i];
+    }
+    for(int j = 0; j < 2; j++)
+        printf("%c", monthStr[j]);
+    printf("\n");
+    ++i;
+    for(int j = 0; i < strlen(dateFormat); i++, j++)
+    {
+        monthStr[j] = dateFormat[i];
+    }
+    for(int j = 0; j < 4; j++)
+        printf("%c", yearStr[j]);
+    printf("\n");
+}

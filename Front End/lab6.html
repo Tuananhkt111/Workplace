@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: url('Landscape.jpg');
+            display: flex;
+            justify-content: flex-end;
+        }
+        .main {
+            position: absolute;
+            right: 0;
+            width: 40vw;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .select {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .select p:last-child {
+            color: rgb(255, 0, 179);
+        }
+        form {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            width: 24vw;
+        }
+        input[type="email"]{
+            width: 20vw;
+        }
+        .l2 {
+            width: 22.3vw;
+            display: flex;
+            flex-flow: row;
+        }
+        input[type="password"]  {
+            width: 20vw;
+        }
+        .contact p {
+            text-align: center;
+            font-size: 2vw;
+        }
+        input {
+            padding: 1vw;
+        }
+        input[type="submit"] {
+            background: green;
+            color: white;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background: chartreuse;
+        }
+        .accbtn {
+            background:rgb(50, 150, 47); 
+            color:floralwhite;
+            margin: 0.5vw;
+            padding: 1vw;
+            width: 20vw;
+            display: flex;
+            flex-flow: row;
+            justify-content: space-around;
+        }
+        .accbtn:hover {
+            background: rgb(47, 255, 57);
+            cursor: pointer;
+        }
+        .accbtn div:last-child {
+            text-align: center;
+            width: 16vw;
+        }
+        .last {
+            background: rgb(129, 115, 31);
+            color: rgb(29, 15, 3);
+            padding: 1vw;
+            width: 20vw;
+            margin: 1vw;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="contact">
+            <p>Login to my hearth</p>
+            <a href="https://www.google.com.vn/" class="accbtn">
+                <div><img src="google-plus-xxl.png" width="16px"></div>
+                <div>Facebook account</div>
+            </a>
+            <a href="https://www.facebook.com/" class="accbtn">
+                <div><img src="facebook-white-icon-300x300.png" width="16px"></div>
+                <div>Google+ account</div>
+            </a>
+        </div>
+        <div class="select">
+            <p>Or use your email</p>
+            <p>|</p>
+            <p>Forgot password?</p>
+        </div>
+        <form name="f" action="https://www.google.com.vn/">
+            <input type="email" placeholder="Your email" name="email" required>
+            <div class="l2">
+                <input type="password" placeholder="Password" name="psw" title="Password phai co chu thuong, chu hoa, chu so, dai tu 6 - 12 ki tu"
+                    required pattern="(?=.*|A-Z|)(?=.*\d)(?=.*|a-z|).{6,12}">
+                <input type="submit" value="Go">
+            </div>
+        </form>
+        <div class="last">Create new account</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using QuanLyNhuanButDemo.Areas.Identity.Data
+@inject SignInManager<QuanLyNhuanButDemoUser> SignInManager
+@inject UserManager<QuanLyNhuanButDemoUser> UserManager
+@{
+    ViewData["Title"] = "ThongTinCaNhan";
+}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <i class="fas fa-address-card"></i>
+        Thông tin tài khoản
+    </li>
+</ol>
+<div class="row">
+    <div class="col-md-3">
+        <img src="~/img/user.png" width="100%" />
+        <h2 class="text-center">
+            @ViewData["name"]
+            <span data-toggle="modal" data-target="#modalUpdtAccForm">
+                <a href="javascript: void (0)" data-toggle="tooltip" data-placement="right" title="Thay đổi tên hiển thị" class="ml-1">
+                    <i class="fas fa-pencil-alt" style="font-size:16px;">
+                    </i>
+                </a>
+            </span>
+        </h2>
+        <p class="title text-center">@@@User.Identity.Name</p>
+        <p class="text-center">@ViewData["role"]</p>
+    </div>
+    <div class="col-md-9">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <i class="fas fa-key"></i>
+                Đổi mật khẩu
+            </li>
+        </ol>
+        <form id="form-change-pwd" asp-area="" asp-controller="User" asp-action="ChangePassword" method="POST">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="PasswordOld"><strong>Mật khẩu cũ</strong></label>
+                        <input type="password" class="form-control" placeholder="" name="PasswordOld" id="PasswordOld" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                    </div>
+                </div>
+            </div>
+            <!--  row   -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="PasswordNew"><strong>Mật khẩu mới</strong></label>
+                        <input type="password" class="form-control" placeholder="" name="PasswordNew" id="PasswordNew" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="RepPassNew"><strong>Nhập lại mật khẩu</strong></label>
+                        <input type="password" class="form-control" placeholder="" name="RepPassNew" id="RepPassNew" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" value="@User.Identity.Name" id="Username" name="Username" />
+            <button type="submit" class="btn btn-success mb-3">Thay đổi</button>
+        </form>
+    </div>
+</div>
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-clipboard-list"></i>
+        Nhật ký hoạt động
+    </div>
+    <div class="card-body">
+        <form class="form-inline" id="search-log" method="POST">
+            <div class="form-group">
+                <label for="dateExecuted"><strong>Ngày thực hiện</strong></label>
+                <div class="flex-column">
+                    <input type="text" class="form-control ml-2" placeholder="" name="dateExecuted" id="dateExecuted" value="@DateTime.Now.ToString("dd/MM/yyyy")">
+                </div>
+                <button type="button" id="toggle1" class="btn btn-secondary">
+                    <i class="far fa-calendar-alt"></i>
+                </button>
+            </div>
+            <button type="submit" class="btn btn-success ml-2">Tìm kiếm</button>
+        </form>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover animated fadeIn" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hoạt động</th>
+                        <th>Mô tả</th>
+                        <th>Thời gian thực hiện</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hoạt động</th>
+                        <th>Mô tả</th>
+                        <th>Thời gian thực hiện</th>
+                    </tr>
+                </tfoot>
+                <tbody id="dataTable-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Cập nhật lúc @DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")</div>
+</div>
+<div class="modal fade" id="modalUpdtAccForm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="row ml-auto mr-2 mt-2">
+                <button type="button" id="myBtn" class="close" data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
+            </div>
+            <h3 class="text-center mt-2" style="color: #00cc33">Thay đổi tên hiển thị</h3>
+            <form class="modal-body" id="form-acc-updt" asp-area="" asp-controller="User" asp-action="ChangeName" method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="NameUpdt"><strong>Tên</strong></label>
+                            <input type="text" class="form-control" value="@ViewData["name"]" data-original-value="@ViewData["name"]" name="NameUpdt" id="NameUpdt" pattern=".{1,40}">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button type="submit" class="btn btn-success mb-3 m-auto">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js"></script>
+    <script src="~/js/profile.js"></script>
+}

@@ -1,0 +1,3 @@
+SE123456;Nguyen Van A;Male;4.5
+SE123457;Nguyen Van B;Male;5.5
+SE123458;Nguyen Van C;Female;0

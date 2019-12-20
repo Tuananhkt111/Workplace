@@ -1,0 +1,6 @@
+D:\Google Drive\C#\DemoAssembly\MyLibrary\bin\Debug\MyLibrary.dll
+D:\Google Drive\C#\DemoAssembly\MyLibrary\bin\Debug\MyLibrary.pdb
+D:\Google Drive\C#\DemoAssembly\MyLibrary\obj\Debug\MyLibrary.csprojAssemblyReference.cache
+D:\Google Drive\C#\DemoAssembly\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\DemoAssembly\MyLibrary\obj\Debug\MyLibrary.dll
+D:\Google Drive\C#\DemoAssembly\MyLibrary\obj\Debug\MyLibrary.pdb

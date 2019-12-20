@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .d1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid aqua;
+            margin: auto;
+            position: relative;
+        }
+        .d2 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid gold;
+            margin: auto;
+        }
+        .con1 {
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        .con2 {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+        .con3 {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            position: relative;
+            right: 50px;
+            top: 50px;
+        }
+        .d3 {
+            width: 250px;
+            height: 120px;
+            border: 1px solid blueviolet;
+            box-shadow: 5px 5px 5px rgba(234, 123, 34, 0.8);
+            position: fixed;
+            top: 0;
+            text-align: center;
+        }
+        .d3 img {
+            float: left;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .d3 span {
+            position: absolute;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+    function bienmat()
+    {
+        //lay the div co id = "qc"
+        var tag;
+        tag = document.getElementById("qc");
+        //tag.style.opacity=0;
+        //tag.style.visibility="hidden";
+        tag.style.display="none";
+
+    }
+    function hienra()
+    {
+        //lay the div co id = "qc"
+        var tag;
+        tag = document.getElementById("qc");
+        tag.style.display="block";
+        window.setInterval(hienra, 5000);
+        //sau 5s se goi ham hien ra
+    }
+    </script>
+</head>
+<body>
+    <div class="d1">
+        <div class="con1"></div>
+        <div class="con2"></div>
+    </div>
+    <div class="d2">
+            <div class="con3"></div>
+    </div>
+    <div class="d3" id="qc">
+        <span onclick="bienmat()">x</span>
+        <p>
+            <img src="Annotation.png">
+            top 5 ki la <br>
+            view more <br>
+            www.abc.com
+        </p>
+    </div>
+</body>
+</html>

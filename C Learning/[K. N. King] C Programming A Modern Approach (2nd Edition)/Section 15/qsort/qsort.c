@@ -1,0 +1,16 @@
+//Sorts an array of integers using Quicksort algorithm
+#include <stdio.h>
+#include "quicksort.h"
+int main (void)
+{
+    int a[N], i;
+    printf("Enter %d numbers to be sorted: ", N);
+    for (i = 0; i < 10; i++)
+        scanf("%d", &a[i]);
+    quicksort(a, 0, N - 1);
+    printf("In sorted order: ");
+    for (i = 0; i < 10; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}

@@ -1,0 +1,7 @@
+D:\Google Drive\C#\DemoInterface\DemoInterface\bin\Debug\DemoInterface.exe.config
+D:\Google Drive\C#\DemoInterface\DemoInterface\bin\Debug\DemoInterface.exe
+D:\Google Drive\C#\DemoInterface\DemoInterface\bin\Debug\DemoInterface.pdb
+D:\Google Drive\C#\DemoInterface\DemoInterface\obj\Debug\DemoInterface.csprojAssemblyReference.cache
+D:\Google Drive\C#\DemoInterface\DemoInterface\obj\Debug\DemoInterface.csproj.CoreCompileInputs.cache
+D:\Google Drive\C#\DemoInterface\DemoInterface\obj\Debug\DemoInterface.exe
+D:\Google Drive\C#\DemoInterface\DemoInterface\obj\Debug\DemoInterface.pdb

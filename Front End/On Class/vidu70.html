@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            height: 200px;
+            margin:1%;
+        }
+        div img {
+            width: 100px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" onkeyup="show(this)">
+    <div id="d1" onkey>
+        <img src="608641.png">
+    </div>
+    <div id="d2">
+        <img src="61aZwj3rIyL._SX425_.jpg">
+    </div>
+    <script>
+        function show(theinput) {
+            var t1 = document.getElementById("d1");
+            var t2 = document.getElementById("d2");
+            var s = theinput.value;
+            if(s.search("quan") >= 0 && s.search("ao") >= 0) {
+                t1.style.display = "none";
+                t2.style.display = "none";
+            }
+            else if(s.search("quan") >= 0) {
+                t1.style.display = "block";
+                t2.style.display = "none";
+            }
+            else if (s.search("ao") >= 0) {
+                t2.style.display = "block";
+                t1.style.display = "none";
+            }
+            else {
+                t1.style.display = "block";
+                t2.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

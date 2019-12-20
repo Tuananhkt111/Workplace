@@ -1,0 +1,34 @@
+/*
+  This program includes a method inside the box class.
+ */
+package methodinsideclass;
+class Box
+{
+    double width, height, depth;
+    //display volume of a box
+    void volume()
+    {
+        System.out.print("Volume is ");
+        System.out.println(width*height*depth);
+    }
+}
+public class MethodInsideClass
+{
+    public static void main(String[] args)
+    {
+        Box mybox1 = new Box();
+        Box mybox2 = new Box();
+        //assigns values to mybox1 's instance variables
+        mybox1.width = 10;
+        mybox1.height = 20;
+        mybox1.depth = 15;
+        //assigns different values to mybox2's
+        mybox2.width = 3;
+        mybox2.height = 6; 
+        mybox2.depth = 9;
+        //display volume of first box
+        mybox1.volume();
+        //display volume of second box
+        mybox2.volume();
+    }
+}

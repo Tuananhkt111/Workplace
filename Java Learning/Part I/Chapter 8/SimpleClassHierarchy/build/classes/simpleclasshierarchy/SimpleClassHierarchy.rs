@@ -1,0 +1,3 @@
+simpleclasshierarchy.SimpleClassHierarchy
+simpleclasshierarchy.B
+simpleclasshierarchy.A

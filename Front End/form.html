@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input, select {
+            margin: 1%;
+        }
+        span {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form name="f">
+        <input type="text" placeholder="nhap userID" name="t1"><span>error</span>
+        <br>
+        <input type="password" placeholder="nhap password" name="t2"><span>error</span>
+        <br>
+        <input type="text" placeholder="nhap name" name="t3"><span>error</span>
+        <br>
+        <select name="se">
+            <option>choose your country</option>
+            <option>VN</option>
+            <option>English</option>
+        </select><span>error</span>
+        <br>
+        <input type="text" placeholder="nhap ZIPcode" name="t4"><span>error</span>
+        <br>
+        <input type="button" value="submit" onclick="check()">
+    </form>
+    <script>
+        function check() {
+            var user = document.f.t1;
+            var password = document.f.t2;
+            var name = document.f.t3;
+            var country = document.f.se;
+            var ZIPcode = document.f.t4;
+            //lay ds the span trong form f
+            var a = document.f.getElementsByTagName("span");
+            if(user.value.length < 5 || user.value.length > 12) {
+                a[0].style.display = "block";
+            }
+            else {
+                a[0].style.display = "none";
+            }
+            if(password.value.length < 7 || password.value.length > 12) {
+                a[1].style.display = "block";
+            }
+            else {
+                a[1].style.display = "none";
+            }
+            var mau = /^[A-Za-z]+(\s[A-Za-z]+)*$/;
+            if(mau.test(name.value) == false) {
+                a[2].style.display = "block";
+            } else {
+                a[2].style.display = "none";
+            }
+            var i = country.selectedIndex;
+            if(i == 0) {
+                a[3].style.display = "block";
+            }
+            else {
+                a[3].style.display = "none";
+            }
+            var mau2 = /^[0-9]+$/;
+            if(mau2.test(ZIPcode.value) == false) {
+                a[4].style.display = "block";
+            }
+            else {
+                a[4].style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

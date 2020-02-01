@@ -34,7 +34,6 @@
                     sp.setAttribute("data-placement", "top");
                     sp.setAttribute("title", row.longDes);
                     sp.innerHTML = row.shortDes;
-                    $('#' + row.actLogId).tooltip();
                     return sp.outerHTML;
                 }
             },
@@ -92,4 +91,5 @@
             $('#dataTable').show();
         }
     });
+    $('body').tooltip({ selector: '[data-toggle="tooltip"]' });
 });

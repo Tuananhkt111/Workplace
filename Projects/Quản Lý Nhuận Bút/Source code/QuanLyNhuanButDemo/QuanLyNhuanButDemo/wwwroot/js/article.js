@@ -269,7 +269,8 @@ $(document).ready(function () {
                 required: true
             },
             TimeBroadcastAdd: {
-                required: true
+                required: true,
+                maxlength: 10
             },
             MarkAdd: {
                 required: true
@@ -281,7 +282,8 @@ $(document).ready(function () {
                 pattern: "Nội dung tin bài có 1 - 400 kí tự."
             },
             TimeBroadcastAdd: {
-                required: "Ngày phát sóng không thể bỏ trống."
+                required: "Ngày phát sóng không thể bỏ trống.",
+                maxlength: "Ngày phát sóng có format dd/mm/yyyy."
             },
             MarkAdd: {
                 required: "Điểm không được bỏ trống",

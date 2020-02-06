@@ -77,12 +77,14 @@
     $('#search-log').validate({
         rules: {
             dateExecuted: {
-                required: true
+                required: true,
+                maxlength: 10
             },
         },
         messages: {
             dateExecuted: {
-                required: "Ngày thực hiện không thể bỏ trống."
+                required: "Ngày thực hiện không thể bỏ trống.",
+                maxlength: "Ngày thực hiện có format đ/mm/yyyy."
             },
         },
         submitHandler: function () {

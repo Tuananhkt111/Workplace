@@ -767,3 +767,4 @@ D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButD
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.csproj.CopyComplete
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.dll
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.pdb
+D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Article\Index.cshtml.g.cs

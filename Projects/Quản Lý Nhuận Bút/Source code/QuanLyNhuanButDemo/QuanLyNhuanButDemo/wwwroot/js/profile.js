@@ -43,6 +43,7 @@
         'columns': [
             {
                 "data": "actLogId",
+                "visible": false
             },
             { "data": "actType" },
             { "data": "longDes" },

@@ -115,12 +115,15 @@
                         <span>Duyệt điểm nhuận bút</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <i class="fas fa-info"></i>
-                        <span>Nhập tin & chấm điểm</span>
-                    </a>
-                </li>
+                @if (User.IsInRole("Biên tập viên"))
+                {
+                    <li class="nav-item @RenderSection("NhapTin", required: false)">
+                        <a class="nav-link" asp-area="" asp-controller="Article" asp-action="Index">
+                            <i class="fas fa-info"></i>
+                            <span>Nhập tin & chấm điểm</span>
+                        </a>
+                    </li>
+                }
             }
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

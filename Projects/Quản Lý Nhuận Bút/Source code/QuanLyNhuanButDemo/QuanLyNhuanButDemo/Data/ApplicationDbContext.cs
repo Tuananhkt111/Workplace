@@ -11,6 +11,8 @@ namespace QuanLyNhuanButDemo.Data
     public class ApplicationDbContext : IdentityDbContext<QuanLyNhuanButDemoUser>
     {
         public DbSet<ActivityLog> ActivityLog { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

@@ -100,7 +100,7 @@ namespace QuanLyNhuanButDemo.Areas.Admin.Controllers
         {
             UserDAO dao = new UserDAO(_userManager, _signInManager, _context);
             userRg.TimeModified = DateTime.Now;
-            string msg = "";
+            string msg;
             bool result = await dao.Update(userRg);
             if (!result)
             {

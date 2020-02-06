@@ -10,7 +10,7 @@
         },
         messages: {
             username: {
-                required: "Tên đăng nhập không thể bỏ trốngg.",
+                required: "Tên đăng nhập không thể bỏ trống.",
                 pattern: "Tên đăng nhập có tối đa 30 kí tự, chỉ bao gồm chữ số và chữ cái."
             },
             password: {

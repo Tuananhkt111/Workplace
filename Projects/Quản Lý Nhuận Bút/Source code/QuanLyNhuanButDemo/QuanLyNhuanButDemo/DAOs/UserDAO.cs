@@ -110,5 +110,17 @@ namespace QuanLyNhuanButDemo.DAOs
                 return await _context.SaveChangesAsync() != 0;
             }
         }
+        public async Task<List<ReporterDTO>> GetAllReportersAsync()
+        {
+            List<ReporterDTO> result = new List<ReporterDTO>();
+            var list = _context.Users.ToList();
+            foreach (var item in list)
+            {
+                var roleList = await _userManager.GetRolesAsync(item);
+                if (roleList != null && roleList.Contains("Phóng viên"))
+                    result.Add(new ReporterDTO { Name = item.Name, UserName = item.UserName });
+            }
+            return result;
+        }
     }
 }

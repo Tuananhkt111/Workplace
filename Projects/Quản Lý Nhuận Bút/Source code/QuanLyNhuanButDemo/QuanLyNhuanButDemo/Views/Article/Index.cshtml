@@ -77,7 +77,21 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Danh sách tin bài theo tháng
+        Danh sách tin bài chưa duyệt theo tháng
+    </div>
+    <div class="card-body">
+        <form class="form-inline" id="search-log" method="POST">
+            <div class="form-group">
+                <label for="timeSearch"><strong>Tin bài tháng:</strong></label>
+                <div class="flex-column">
+                    <input type="text" class="form-control ml-2" placeholder="" name="timeSearch" id="timeSearch" value="@DateTime.Now.ToString("MM/yyyy")">
+                </div>
+                <button type="button" id="toggle1" class="btn btn-secondary">
+                    <i class="far fa-calendar-alt"></i>
+                </button>
+            </div>
+            <button type="submit" class="btn btn-success ml-2">Tìm kiếm</button>
+        </form>
     </div>
     <div class="card-body">
         <div class="table-responsive">

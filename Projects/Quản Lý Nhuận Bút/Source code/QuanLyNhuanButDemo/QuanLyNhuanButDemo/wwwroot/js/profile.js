@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    $.datetimepicker.setLocale('vi');
     $('#dateExecuted').datetimepicker({
         timepicker: false,
         datepicker: true,

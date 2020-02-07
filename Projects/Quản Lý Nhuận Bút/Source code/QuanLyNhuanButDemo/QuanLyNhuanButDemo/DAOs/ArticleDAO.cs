@@ -44,9 +44,9 @@ namespace QuanLyNhuanButDemo.DAOs
             return _context.SaveChanges() != 0;
         }
 
-        public async Task<List<ArticleTableDTO>> GetAllArticlesByMonth()
+        public async Task<List<ArticleTableDTO>> GetAllArticlesByMonth(DateTime timeSearch)
         {
-            return await _context.Articles.Include(a => a.Category).Where(a => a.Status == StatusTypes.NOT_APPROVED).Select(a => new ArticleTableDTO
+            return await _context.Articles.Include(a => a.Category).Where(a => a.Status == StatusTypes.NOT_APPROVED && a.TimeBroadcast.Year == timeSearch.Year && a.TimeBroadcast.Month == timeSearch.Month).Select(a => new ArticleTableDTO
             {
                 ArticleId = a.ArticleId,
                 CategoryId = a.CategoryId,

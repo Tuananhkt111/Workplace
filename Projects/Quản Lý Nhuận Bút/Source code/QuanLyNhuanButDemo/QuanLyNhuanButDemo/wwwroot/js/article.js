@@ -24,11 +24,23 @@ function resetForm() {
     $('#ContentAdd').val("");
 };
 $(document).ready(function () {
+    $.datetimepicker.setLocale('vi');
     $('#TimeBroadcastAdd').datetimepicker({
         timepicker: false,
         datepicker: true,
         format: 'd/m/Y',
         weeks: false
+    });
+    $('#timeSearch').datetimepicker({
+        timepicker: false,
+        format: 'm/Y',
+        onChangeMonth: function (cur, $i) {
+            $('#timeSearch').val(moment(new Date(cur)).format("MM/YYYY"));
+        },
+        weeks: false
+    });
+    $('#toggle1').on('click', function () {
+        $('#timeSearch').datetimepicker('toggle')
     });
     $('#CategoryAdd').on('change', function () {
         setMarkInput();
@@ -40,8 +52,13 @@ $(document).ready(function () {
     var t = $('#dataTable').DataTable({
         "ajax": {
             url: "/Article/LoadAllArticlesByMonth",
+            type: "POST",
             dataSrc: "",
-            dataType: "json"
+            contentType: "application/json",
+            dataType: "json",
+            data: function () {
+                return JSON.stringify($('#timeSearch').val());
+            }
         },
         'columns': [
             {
@@ -133,7 +150,7 @@ $(document).ready(function () {
                 }
             }
         ],
-        "order": [[5, "desc"]],
+        "order": [[6, "desc"]],
         "language": {
             "emptyTable": "Không có tin bài nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ tin bài mỗi trang",
@@ -334,6 +351,26 @@ $(document).ready(function () {
     });
     $("#modalUpdtArticleForm").on("hidden.bs.modal", function () {
         validator_update.resetForm();
+    });
+    $('#search-log').validate({
+        rules: {
+            timeSearch: {
+                required: true,
+                maxlength: 10
+            },
+        },
+        messages: {
+            timeSearch: {
+                required: "Tháng không thể bỏ trống.",
+                maxlength: "Tháng có format mm/yyyy."
+            },
+        },
+        submitHandler: function () {
+            t.ajax.reload();
+            $('#dataTable').hide();
+            t.columns.adjust().draw();
+            $('#dataTable').show();
+        }
     });
     $('body').tooltip({ selector: '[data-toggle="tooltip"]' });
 });

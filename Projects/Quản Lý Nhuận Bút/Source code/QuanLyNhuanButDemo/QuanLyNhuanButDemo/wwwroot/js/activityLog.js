@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    $.datetimepicker.setLocale('vi');
     $('#dateExecuted').datetimepicker({
         timepicker: false,
         datepicker: true,
@@ -16,7 +17,7 @@
             dataSrc: "",
             contentType: "application/json",
             dataType: "json",
-            data: function (d) {
+            data: function () {
                 return JSON.stringify($('#dateExecuted').val());
             }
         },

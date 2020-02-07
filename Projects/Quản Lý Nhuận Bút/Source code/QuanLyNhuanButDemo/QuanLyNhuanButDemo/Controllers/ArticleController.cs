@@ -185,11 +185,12 @@ namespace QuanLyNhuanButDemo.Controllers
             }
             return new JsonResult(msg);
         }
-        [HttpGet]
-        public async Task<IActionResult> LoadAllArticlesByMonth()
+        [HttpPost]
+        public async Task<IActionResult> LoadAllArticlesByMonth([FromBody] string timeSearchText)
         {
+            DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
-            List<ArticleTableDTO> list = await articleDAO.GetAllArticlesByMonth();
+            List<ArticleTableDTO> list = await articleDAO.GetAllArticlesByMonth(timeSearch);
             return new JsonResult(list);
         }
     }

@@ -1,0 +1,240 @@
+﻿@{
+    ViewData["Title"] = "Duyệt điểm nhuận bút";
+}
+@using QuanLyNhuanButDemo.DTOs
+@model ArticleViewModel
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <i class="fas fa-plus-square"></i>
+        Tạo mới tin bài
+    </li>
+</ol>
+<form id="form-article-add" method="POST">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="ContentAdd"><strong>Nội dung</strong></label>
+                <input type="text" class="form-control" placeholder="" name="ContentAdd" id="ContentAdd" pattern=".{1,400}">
+            </div>
+        </div>
+    </div>
+    <!--  row   -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="CategoryAdd"><strong>Thể loại</strong></label>
+                <select class="form-control" id="CategoryAdd">
+                    @if (Model.Categories.Count != 0)
+                    {
+                        @foreach (var item in Model.Categories)
+                        {
+                            <option value="@item.CategoryId" data-min="@item.MinMark" data-max="@item.MaxMark">@item.CategoryName</option>
+                        }
+                    }
+                    else
+                    {
+                        <option value="">Không có thể loại nào có sẵn</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="ExecutorAdd"><strong>Người thực hiện</strong></label>
+                <select class="form-control" id="ExecutorAdd">
+                    @if (Model.Reporters.Count != 0)
+                    {
+                        @foreach (var item in Model.Reporters)
+                        {
+                            <option value="@item.UserName">@item.Name</option>
+                        }
+                    }
+                    else
+                    {
+                        <option value="">Không có phóng viên nào có sẵn</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="TimeBroadcastAdd"><strong>Ngày phát sóng</strong></label>
+                <input type="text" class="form-control" placeholder="" name="TimeBroadcastAdd" id="TimeBroadcastAdd" value="@DateTime.Now.ToString("dd/MM/yyyy")">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="MarkAdd"><strong>Điểm</strong></label>
+                <input type="number" class="form-control" placeholder="" name="MarkAdd" id="MarkAdd" min="1" step="1" max="10" value="1">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success mb-3">Tạo mới</button>
+</form>
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Danh sách tin bài chưa duyệt theo tháng
+    </div>
+    <div class="card-body">
+        <form class="form-inline" id="search-log" method="POST">
+            <div class="form-group">
+                <label for="timeSearch"><strong>Tin bài tháng:</strong></label>
+                <div class="flex-column">
+                    <input type="text" class="form-control ml-2" placeholder="" name="timeSearch" id="timeSearch" value="@DateTime.Now.ToString("MM/yyyy")">
+                </div>
+                <button type="button" id="toggle1" class="btn btn-secondary">
+                    <i class="far fa-calendar-alt"></i>
+                </button>
+            </div>
+            <button type="submit" class="btn btn-success ml-2">Tìm kiếm</button>
+        </form>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover animated fadeIn" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nội dung</th>
+                        <th>Thể loại ID</th>
+                        <th>Thể loại</th>
+                        <th>Người thực hiện</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày phát sóng</th>
+                        <th>Điểm</th>
+                        <th>Người chấm</th>
+                        <th>Điểm (GĐ)</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nội dung</th>
+                        <th>Thể loại ID</th>
+                        <th>Thể loại</th>
+                        <th>Người thực hiện</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày phát sóng</th>
+                        <th>Điểm</th>
+                        <th>Người chấm</th>
+                        <th>Điểm (GĐ)</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                </tfoot>
+                <tbody id="dataTable-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Cập nhật lúc @DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")</div>
+</div>
+<div class="modal fade" id="modalUpdtArticleForm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="row ml-auto mr-2 mt-2">
+                <button type="button" id="myBtn" class="close" data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
+            </div>
+            <h3 class="text-center mt-2" style="color: #00cc33">Chỉnh sửa tin bài</h3>
+            <form class="modal-body" id="form-acc-updt">
+                <input type="hidden" name="ArticleIdUpdt" id="ArticleIdUpdt">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="ContentUpdt"><strong>Nội dung</strong></label>
+                            <input type="text" class="form-control" placeholder="" name="ContentUpdt" id="ContentUpdt" pattern=".{1,400}">
+                        </div>
+                    </div>
+                </div>
+                <!--  row   -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="CategoryUpdt"><strong>Thể loại</strong></label>
+                            <select class="form-control" id="CategoryUpdt">
+                                @if (Model.Categories.Count != 0)
+                                {
+                                    @foreach (var item in Model.Categories)
+                                    {
+                                        <option value="@item.CategoryId" data-min="@item.MinMark" data-max="@item.MaxMark">@item.CategoryName</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">Không có thể loại nào có sẵn</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ExecutorUpdt"><strong>Người thực hiện</strong></label>
+                            <select class="form-control" id="ExecutorUpdt">
+                                @if (Model.Reporters.Count != 0)
+                                {
+                                    @foreach (var item in Model.Reporters)
+                                    {
+                                        <option value="@item.UserName">@item.Name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">Không có phóng viên nào có sẵn</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="TimeBroadcastUpdt"><strong>Ngày phát sóng</strong></label>
+                            <input type="text" class="form-control" placeholder="" name="TimeBroadcastUpdt" id="TimeBroadcastUpdt" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="MarkUpdt"><strong>Điểm</strong></label>
+                            <input type="number" class="form-control" placeholder="" name="MarkUpdt" id="MarkUpdt" min="1" step="1" max="10" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button type="submit" class="btn btn-success mb-3 m-auto">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn xóa?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Nhấn "Xóa" ở dưới nếu đồng ý.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Bỏ qua</button>
+                <button class="btn btn-primary" id="delArticleBtn">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section DuyetDiem {
+    active
+}
+@section Scripts {
+    <script src="~/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js"></script>
+    <script src="~/js/article.js"></script>
+}
+

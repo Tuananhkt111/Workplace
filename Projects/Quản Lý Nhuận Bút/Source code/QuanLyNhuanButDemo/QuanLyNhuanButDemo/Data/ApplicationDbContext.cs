@@ -13,6 +13,7 @@ namespace QuanLyNhuanButDemo.Data
         public DbSet<ActivityLog> ActivityLog { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<MarkValue> MarkValue { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

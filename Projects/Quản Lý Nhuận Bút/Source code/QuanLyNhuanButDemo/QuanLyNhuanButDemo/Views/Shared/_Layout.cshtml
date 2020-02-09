@@ -127,6 +127,15 @@
                         </a>
                     </li>
                 }
+                @if (User.IsInRole("Kế toán"))
+                {
+                    <li class="nav-item @RenderSection("NhapThangDiem", required: false)">
+                        <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">
+                            <i class="fas fa-list-alt"></i>
+                            <span>Nhập thang điểm</span>
+                        </a>
+                    </li>
+                }
             }
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

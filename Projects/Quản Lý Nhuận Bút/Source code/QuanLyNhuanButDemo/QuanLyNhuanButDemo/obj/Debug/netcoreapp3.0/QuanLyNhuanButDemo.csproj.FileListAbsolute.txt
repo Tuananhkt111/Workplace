@@ -739,8 +739,6 @@ D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButD
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.csprojAssemblyReference.cache
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\staticwebassets\QuanLyNhuanButDemo.StaticWebAssets.Manifest.cache
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\staticwebassets\QuanLyNhuanButDemo.StaticWebAssets.xml
-D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.MvcApplicationPartsAssemblyInfo.cs
-D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.MvcApplicationPartsAssemblyInfo.cache
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.RazorAssemblyInfo.cache
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.RazorAssemblyInfo.cs
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.AssemblyInfoInputs.cache
@@ -769,3 +767,6 @@ D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButD
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.pdb
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Article\Index.cshtml.g.cs
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Article\ApproveMarkManage.cshtml.g.cs
+D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Category\Index.cshtml.g.cs
+D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.MvcApplicationPartsAssemblyInfo.cs
+D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.MvcApplicationPartsAssemblyInfo.cache

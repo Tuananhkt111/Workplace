@@ -3,76 +3,6 @@
 }
 @using QuanLyNhuanButDemo.DTOs
 @model ArticleViewModel
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <i class="fas fa-plus-square"></i>
-        Tạo mới tin bài
-    </li>
-</ol>
-<form id="form-article-add" method="POST">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="ContentAdd"><strong>Nội dung</strong></label>
-                <input type="text" class="form-control" placeholder="" name="ContentAdd" id="ContentAdd" pattern=".{1,400}">
-            </div>
-        </div>
-    </div>
-    <!--  row   -->
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="CategoryAdd"><strong>Thể loại</strong></label>
-                <select class="form-control" id="CategoryAdd">
-                    @if (Model.Categories.Count != 0)
-                    {
-                        @foreach (var item in Model.Categories)
-                        {
-                            <option value="@item.CategoryId" data-min="@item.MinMark" data-max="@item.MaxMark">@item.CategoryName</option>
-                        }
-                    }
-                    else
-                    {
-                        <option value="">Không có thể loại nào có sẵn</option>
-                    }
-                </select>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="ExecutorAdd"><strong>Người thực hiện</strong></label>
-                <select class="form-control" id="ExecutorAdd">
-                    @if (Model.Reporters.Count != 0)
-                    {
-                        @foreach (var item in Model.Reporters)
-                        {
-                            <option value="@item.UserName">@item.Name</option>
-                        }
-                    }
-                    else
-                    {
-                        <option value="">Không có phóng viên nào có sẵn</option>
-                    }
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="TimeBroadcastAdd"><strong>Ngày phát sóng</strong></label>
-                <input type="text" class="form-control" placeholder="" name="TimeBroadcastAdd" id="TimeBroadcastAdd" value="@DateTime.Now.ToString("dd/MM/yyyy")">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="MarkAdd"><strong>Điểm</strong></label>
-                <input type="number" class="form-control" placeholder="" name="MarkAdd" id="MarkAdd" min="1" step="1" max="10" value="1">
-            </div>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-success mb-3">Tạo mới</button>
-</form>
 <!-- DataTables Example -->
 <div class="card mb-3">
     <div class="card-header">
@@ -94,10 +24,18 @@
         </form>
     </div>
     <div class="card-body">
+        <div class="form-check">
+            <input type="checkbox" id="selectBtn" class="form-check-input mb-4">
+            <label class="form-check-label mr-2 mb-4" for="selectBtn">
+                Chọn tất cả chưa duyệt
+            </label>
+        </div>
+        <button class="btn btn-primary mb-4" id="approveBtn" disabled>Duyệt tất cả đã chọn</button>
         <div class="table-responsive">
             <table class="table table-bordered table-hover animated fadeIn" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>ID</th>
                         <th>Nội dung</th>
                         <th>Thể loại ID</th>
@@ -105,14 +43,15 @@
                         <th>Người thực hiện</th>
                         <th>Trạng thái</th>
                         <th>Ngày phát sóng</th>
-                        <th>Điểm</th>
                         <th>Người chấm</th>
+                        <th>Điểm (BTV)</th>
                         <th>Điểm (GĐ)</th>
                         <th>Chỉnh sửa</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
+                        <th></th>
                         <th>ID</th>
                         <th>Nội dung</th>
                         <th>Thể loại ID</th>
@@ -120,8 +59,8 @@
                         <th>Người thực hiện</th>
                         <th>Trạng thái</th>
                         <th>Ngày phát sóng</th>
-                        <th>Điểm</th>
                         <th>Người chấm</th>
+                        <th>Điểm (BTV)</th>
                         <th>Điểm (GĐ)</th>
                         <th>Chỉnh sửa</th>
                     </tr>
@@ -198,7 +137,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="MarkUpdt"><strong>Điểm</strong></label>
+                            <label for="MarkUpdt" class="d-flex justify-content-between"><strong>Điểm</strong></label>
                             <input type="number" class="form-control" placeholder="" name="MarkUpdt" id="MarkUpdt" min="1" step="1" max="10" value="1">
                         </div>
                     </div>
@@ -233,8 +172,9 @@
 @section Scripts {
     <script src="~/vendor/datatables/jquery.dataTables.js"></script>
     <script src="~/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="~/js/dataTables.select.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js"></script>
-    <script src="~/js/article.js"></script>
+    <script src="~/js/approveMark.js"></script>
 }
 

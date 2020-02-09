@@ -1,36 +1,22 @@
-﻿function setMarkInput() {
-    let selectedOption = $('#CategoryAdd').children("option:selected");
-    let minMark = selectedOption.data("min");
-    let maxMark = selectedOption.data("max")
-    $('#MarkAdd').attr({
-        "max": maxMark,
-        "min": minMark,
-        "value": minMark,
-    });
-    $("label[for='MarkAdd']").html("<strong>Điểm (" + minMark + " - " + maxMark + ")</strong>");
-};
-function setMarkInputUpdt(oldValue) {
+﻿function setMarkInputUpdt(oldEditorValue, oldManagerValue) {
     let selectedOption = $('#CategoryUpdt').children("option:selected");
     let minMark = selectedOption.data("min");
-    let maxMark = selectedOption.data("max")
+    let maxMark = selectedOption.data("max");
+    let initValue = oldManagerValue !== "_" ? oldManagerValue : oldEditorValue;
+    if (minMark > initValue) {
+        initValue = minMark;
+    } else if (maxMark < initValue) {
+        initValue = maxMark;
+    }
     $('#MarkUpdt').attr({
         "max": maxMark,
         "min": minMark,
-        "value": minMark > oldValue ? minMark : oldValue,
+        "value": initValue,
     });
-    $("label[for='MarkUpdt']").html("<strong>Điểm (" + minMark + " - " + maxMark + ")</strong>");
-};
-function resetForm() {
-    $('#ContentAdd').val("");
+    $("label[for='MarkUpdt']").html("<strong>Điểm (" + minMark + " - " + maxMark + ")</strong><strong>BTV chấm: " + oldEditorValue + "</strong>");
 };
 $(document).ready(function () {
     $.datetimepicker.setLocale('vi');
-    $('#TimeBroadcastAdd').datetimepicker({
-        timepicker: false,
-        datepicker: true,
-        format: 'd/m/Y',
-        weeks: false
-    });
     $('#timeSearch').datetimepicker({
         timepicker: false,
         format: 'm/Y',
@@ -42,16 +28,12 @@ $(document).ready(function () {
     $('#toggle1').on('click', function () {
         $('#timeSearch').datetimepicker('toggle')
     });
-    $('#CategoryAdd').on('change', function () {
-        setMarkInput();
-    });
-    setMarkInput();
 });
 $(document).ready(function () {
     $.fn.dataTable.moment('DD-MM-YYYY');
     var t = $('#dataTable').DataTable({
         "ajax": {
-            url: "/Article/LoadAllArticlesNotApprovedByMonth",
+            url: "/Article/LoadAllArticlesByMonth",
             type: "POST",
             dataSrc: "",
             contentType: "application/json",
@@ -60,7 +42,15 @@ $(document).ready(function () {
                 return JSON.stringify($('#timeSearch').val());
             }
         },
+
         'columns': [
+            {
+                data: null,
+                defaultContent: "",
+                "orderable": false,
+                "searchable": false,
+                "className": "select-checkbox",
+            },
             {
                 "data": "articleId",
                 "visible": false,
@@ -98,7 +88,7 @@ $(document).ready(function () {
             },
             {
                 "data": "status",
-                "visible": false
+                "visible": true
             },
             {
                 "data": "timeBroadcast",
@@ -108,14 +98,14 @@ $(document).ready(function () {
                 }
             },
             {
-                "data": "editorMark"
-            },
-            {
                 "data": "marker"
             },
             {
+                "data": "editorMark"
+            },
+            {
                 "data": "managerMark",
-                "visible": false
+                "visible": true
             },
             {
                 "data": function (row) {
@@ -132,6 +122,7 @@ $(document).ready(function () {
                     editLink.setAttribute("data-executor", row.executor);
                     editLink.setAttribute("data-time-broadcast", row.timeBroadcast);
                     editLink.setAttribute("data-editor-mark", row.editorMark);
+                    editLink.setAttribute("data-manager-mark", row.managerMark);
                     editLink.setAttribute("data-marker", row.marker);
                     editLink.setAttribute("data-id", row.articleId);
                     editLink.setAttribute("class", "updtArticle");
@@ -150,7 +141,11 @@ $(document).ready(function () {
                 }
             }
         ],
-        "order": [[6, "desc"]],
+        "select": {
+            "style": "os",
+            "selector": "td:first-child"
+        },
+        "aaSorting": [[7, "desc"], [6, "asc"]],
         "language": {
             "emptyTable": "Không có tin bài nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ tin bài mỗi trang",
@@ -170,20 +165,77 @@ $(document).ready(function () {
             "aria": {
                 "sortAscending": ": Sắp xếp tăng đân",
                 "sortDescending": ": Sắp xếp giảm dần"
+            },
+            "select": {
+                "rows": {
+                    "_": "%d hàng đã chọn",
+                    "0": "",
+                    "1": "%d hàng đã chọn"
+                }
             }
         },
         "stateSave": true,
         "pagingType": "full_numbers"
     });
+    function approveAll() {
+        let selectedRows = t.rows({ selected: true }).data();
+        let ids = [];
+        for (var i = 0; i < selectedRows.length; i++) {
+            ids.push(selectedRows[i].articleId);
+        }
+        if (ids.length > 0) {
+            $.ajax({
+                type: "POST",
+                url: "/Article/ApproveAll",
+                dataType: "json",
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(ids),
+                success: function (result) {
+                    if (result === "") {
+                        showMessage("Duyệt các tin bài thành công");
+                        t.ajax.reload();
+                        $('#approveBtn').prop("disabled", true);
+                        $('#selectBtn').prop("checked", false);
+                    } else {
+                        showMessage(result);
+                        $('#approveBtn').prop("disabled", true);
+                    }
+                }
+            });
+        }
+    };
+    $('#approveBtn').on('click', function () {
+        approveAll();
+    });
+    $("#selectBtn").on("click", function (e) {
+        let indexes = t.rows().eq(0).filter(function (rowIdx) {
+            return t.cell(rowIdx, 6).data() === 'Chưa duyệt' ? true : false;
+        });
+        if ($(this).is(":checked")) {
+            t.rows(indexes).select();
+
+        } else {
+            t.rows().deselect();
+            $('#approveBtn').prop("disabled", true);
+        }
+    });
+    $('body').on('DOMSubtreeModified', '#dataTable_info', function () {
+        let selectedRows = t.rows({ selected: true }).data();
+        if (selectedRows.length > 0)
+            $('#approveBtn').prop("disabled", false);
+        else {
+            t.rows().deselect();
+            $('#approveBtn').prop("disabled", true);
+        }
+    })
     $('#dataTable tbody').on('click', '.updtArticle', function () {
         let x = $(this);
         $('#CategoryUpdt').val($(this).data("category"));
-        setMarkInputUpdt(x.data("editorMark"));
+        setMarkInputUpdt(x.data("editorMark"), x.data("managerMark"));
         $('#CategoryUpdt').on('change', function () {
-            setMarkInputUpdt(x.data("editorMark"));
+            setMarkInputUpdt(x.data("editorMark"), x.data("managerMark"));
         });
         $('#ArticleIdUpdt').val($(this).data("id"));
-        console.log($('#ArticleIdUpdt').val());
         $('#ContentUpdt').val($(this).data("content"));
         $('#ExecutorUpdt').val($(this).data("executor"));
         let date = new Date($(this).data("time-broadcast"));
@@ -204,42 +256,13 @@ $(document).ready(function () {
             deleteArticle(id);
         });
     });
-    function createArticle() {
-        let obj = {
-            ArticleId: "A" + new Date().getTime(),
-            Content: $('#ContentAdd').val(),
-            CategoryId: $('#CategoryAdd').val(),
-            EditorMark: parseInt($('#MarkAdd').val()),
-            ManagerMark: 1,
-            Status: 0,
-            Executor: $('#ExecutorAdd').val(),
-            TimeBroadcast: $('#TimeBroadcastAdd').val(),
-            Marker: "",
-        }
-        $.ajax({
-            type: "POST",
-            url: "/Article/InsertArticle",
-            dataType: "json",
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(obj),
-            success: function (result) {
-                if (result === "") {
-                    showMessage("Tạo tin bài thành công");
-                    resetForm();
-                    t.ajax.reload();
-                } else {
-                    showMessage(result);
-                }
-            }
-        });
-    }
     function updateArticle() {
         let obj = {
             ArticleId: $('#ArticleIdUpdt').val(),
             Content: $('#ContentUpdt').val(),
             CategoryId: $('#CategoryUpdt').val(),
-            EditorMark: parseInt($('#MarkUpdt').val()),
-            ManagerMark: 1,
+            EditorMark: 1,
+            ManagerMark: parseInt($('#MarkUpdt').val()),
             Status: 0,
             Executor: $('#ExecutorUpdt').val(),
             TimeBroadcast: $('#TimeBroadcastUpdt').val(),
@@ -247,7 +270,7 @@ $(document).ready(function () {
         }
         $.ajax({
             type: "POST",
-            url: "Article/UpdateArticle",
+            url: "/Article/UpdateArticleByManager",
             dataType: "json",
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(obj),
@@ -280,40 +303,6 @@ $(document).ready(function () {
             }
         });
     }
-    $('#form-article-add').validate({
-        rules: {
-            ContentAdd: {
-                required: true
-            },
-            TimeBroadcastAdd: {
-                required: true,
-                maxlength: 10
-            },
-            MarkAdd: {
-                required: true
-            },
-        },
-        messages: {
-            ContentAdd: {
-                required: "Nội dung tin bài không thể bỏ trống.",
-                pattern: "Nội dung tin bài có 1 - 400 kí tự."
-            },
-            TimeBroadcastAdd: {
-                required: "Ngày phát sóng không thể bỏ trống.",
-                maxlength: "Ngày phát sóng có format dd/mm/yyyy."
-            },
-            MarkAdd: {
-                required: "Điểm không được bỏ trống",
-                min: "Điểm lớn hơn hoặc bằng {0}",
-                max: "Điểm nhỏ hơn hoặc bằng {0}",
-                step: "Điểm không có phần thập phân",
-                number: "Vui lòng nhập số"
-            }
-        },
-        submitHandler: function () {
-            createArticle();
-        }
-    });
     var validator_update = $('#form-acc-updt').validate({
         rules: {
             ContentUpdt: {

@@ -148,7 +148,7 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
         [HttpPost]
-        [Authorize(Roles = "Biên tập viên")]
+        [Authorize(Roles = "Biên tập viên, Giám đốc")]
         public IActionResult DeleteArticle([FromBody] string articleId)
         {
             DateTime currentDate = DateTime.Now;
@@ -189,6 +189,15 @@ namespace QuanLyNhuanButDemo.Controllers
         }
         [HttpPost]
         [Authorize(Roles = "Biên tập viên, Giám đốc")]
+        public async Task<IActionResult> LoadAllArticlesNotApprovedByMonth([FromBody] string timeSearchText)
+        {
+            DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
+            List<ArticleTableDTO> list = await articleDAO.GetAllArticlesNotApprovedByMonth(timeSearch);
+            return new JsonResult(list);
+        }
+        [HttpPost]
+        [Authorize(Roles = "Giám đốc")]
         public async Task<IActionResult> LoadAllArticlesByMonth([FromBody] string timeSearchText)
         {
             DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -205,6 +214,96 @@ namespace QuanLyNhuanButDemo.Controllers
             List<ReporterDTO> reporters = await userDAO.GetAllReportersAsync();
             ArticleViewModel viewModel = new ArticleViewModel { Categories = categories, Reporters = reporters };
             return View(viewModel);
+        }
+        [HttpPost]
+        [Authorize(Roles = "Giám đốc")]
+        public IActionResult UpdateArticleByManager([FromBody] ArticleDTO articleDTO)
+        {
+            DateTime currentDate = DateTime.Now;
+            String msg;
+            ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
+            if (!articleDAO.UpdateByManager(articleDTO))
+            {
+                msg = "Cập nhật tin bài thất bại";
+            }
+            else
+            {
+                var userId = _userManager.GetUserId(User);
+                if (userId == null)
+                    msg = "Ghi hoạt động thất bại";
+                else
+                {
+                    ActivityLogDAO alDAO = new ActivityLogDAO(_userManager, _signInManager, _context);
+                    string actLogId = "AL" + currentDate.Ticks;
+                    string actType = "Cập nhật tin bài";
+                    string shortDes = "Đã cập nhật một tin bài";
+                    string longDes = "Đã cập nhật tin bài có ID: \""
+                        + articleDTO.ArticleId + "\", nội dung: \""
+                        + articleDTO.Content + "\", thể loại ID: \""
+                        + articleDTO.CategoryId + "\", điểm duyệt: \""
+                        + articleDTO.ManagerMark + "\", người thực hiện: \""
+                        + articleDTO.Executor + "\", ngày phát sóng: \""
+                        + articleDTO.TimeBroadcast + "\"";
+                    ActivityLog alDTO = new ActivityLog
+                    {
+                        ActLogId = actLogId,
+                        ActType = actType,
+                        ShortDes = shortDes,
+                        LongDes = longDes,
+                        TimeExecuted = currentDate,
+                        QuanLyNhuanButDemoUserId = userId
+                    };
+                    if (alDAO.Create(alDTO))
+                        msg = "";
+                    else
+                        msg = "Ghi hoạt động thất bại";
+                }
+            }
+            return new JsonResult(msg);
+        }
+        [HttpPost]
+        [Authorize(Roles = "Giám đốc")]
+        public IActionResult ApproveAll([FromBody] List<string> ids)
+        {
+            String msg = "";
+            ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
+            if (!articleDAO.ApproveAll(ids))
+            {
+                msg = "Duyệt tin bài thất bại";
+            }
+            else
+            {
+                var userId = _userManager.GetUserId(User);
+                if (userId == null)
+                    msg = "Ghi hoạt động thất bại";
+                else
+                {
+                    foreach (string id in ids)
+                    {
+                        var article = _context.Articles.Find(id);
+                        DateTime currentDate = DateTime.Now;
+                        ActivityLogDAO alDAO = new ActivityLogDAO(_userManager, _signInManager, _context);
+                        string actLogId = "AL" + currentDate.Ticks;
+                        string actType = "Cập nhật tin bài";
+                        string shortDes = "Đã cập nhật một tin bài";
+                        string longDes = "Đã cập nhật tin bài có ID: \""
+                            + article.ArticleId + "\", điểm duyệt: \""
+                            + article.ManagerMark + "\"";
+                        ActivityLog alDTO = new ActivityLog
+                        {
+                            ActLogId = actLogId,
+                            ActType = actType,
+                            ShortDes = shortDes,
+                            LongDes = longDes,
+                            TimeExecuted = currentDate,
+                            QuanLyNhuanButDemoUserId = userId
+                        };
+                        if (!alDAO.Create(alDTO))
+                            msg = "Ghi hoạt động thất bại";
+                    }
+                }
+            }
+            return new JsonResult(msg);
         }
     }
 }

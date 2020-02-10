@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.Data;
 using QuanLyNhuanButDemo.Models;
@@ -30,6 +31,29 @@ namespace QuanLyNhuanButDemo.DAOs
         {
             Category category = await _context.Categories.FindAsync(id);
             return category.CategoryName;
+        }
+        public bool Create(Category category)
+        {
+            _context.Categories.Add(category);
+            return _context.SaveChanges() != 0;
+        }
+        public bool Update(Category category)
+        {
+            _context.Categories.Update(category);
+            return _context.SaveChanges() != 0;
+        }
+        public bool Delete(string id)
+        {
+            try
+            {
+                var category = _context.Categories.Find(id);
+                _context.Categories.Remove(category);
+                return _context.SaveChanges() != 0;
+            }
+            catch (DbUpdateException)
+            {
+                return false;
+            }
         }
     }
 }

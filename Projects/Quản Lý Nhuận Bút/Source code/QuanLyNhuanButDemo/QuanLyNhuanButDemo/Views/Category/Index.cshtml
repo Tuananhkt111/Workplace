@@ -27,29 +27,29 @@
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
         <i class="fas fa-plus-square"></i>
-        Tạo mới tin bài
+        Tạo mới thể loại
     </li>
 </ol>
-<form id="form-article-add" method="POST">
+<form id="form-category-add" method="POST">
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="ContentAdd"><strong>Nội dung</strong></label>
-                <input type="text" class="form-control" placeholder="" name="ContentAdd" id="ContentAdd" pattern=".{1,400}">
+                <label for="CategoryAdd"><strong>Thể loại</strong></label>
+                <input type="text" class="form-control" placeholder="" name="CategoryAdd" id="CategoryAdd" pattern=".{1,400}">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label for="TimeBroadcastAdd"><strong>Ngày phát sóng</strong></label>
-                <input type="text" class="form-control" placeholder="" name="TimeBroadcastAdd" id="TimeBroadcastAdd" value="@DateTime.Now.ToString("dd/MM/yyyy")">
+                <label for="MinMarkAdd"><strong>Điểm thấp nhất</strong></label>
+                <input type="number" class="form-control" placeholder="" name="MinMarkAdd" id="MinMarkAdd" value="1" min="1" step="1">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label for="MarkAdd"><strong>Điểm</strong></label>
-                <input type="number" class="form-control" placeholder="" name="MarkAdd" id="MarkAdd" min="1" step="1" max="10" value="1">
+                <label for="MaxMarkAdd"><strong>Điểm cao nhất</strong></label>
+                <input type="number" class="form-control" placeholder="" name="MaxMarkAdd" id="MaxMarkAdd" min="1" step="1" value="1">
             </div>
         </div>
     </div>
@@ -59,21 +59,7 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Danh sách tin bài chưa duyệt theo tháng
-    </div>
-    <div class="card-body">
-        <form class="form-inline" id="search-log" method="POST">
-            <div class="form-group">
-                <label for="timeSearch"><strong>Tin bài tháng:</strong></label>
-                <div class="flex-column">
-                    <input type="text" class="form-control ml-2" placeholder="" name="timeSearch" id="timeSearch" value="@DateTime.Now.ToString("MM/yyyy")">
-                </div>
-                <button type="button" id="toggle1" class="btn btn-secondary">
-                    <i class="far fa-calendar-alt"></i>
-                </button>
-            </div>
-            <button type="submit" class="btn btn-success ml-2">Tìm kiếm</button>
-        </form>
+        Danh sách thể loại
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -81,30 +67,18 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nội dung</th>
-                        <th>Thể loại ID</th>
                         <th>Thể loại</th>
-                        <th>Người thực hiện</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày phát sóng</th>
-                        <th>Điểm</th>
-                        <th>Người chấm</th>
-                        <th>Điểm (GĐ)</th>
+                        <th>Điểm thấp nhất</th>
+                        <th>Điểm cao nhất</th>
                         <th>Chỉnh sửa</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>ID</th>
-                        <th>Nội dung</th>
-                        <th>Thể loại ID</th>
                         <th>Thể loại</th>
-                        <th>Người thực hiện</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày phát sóng</th>
-                        <th>Điểm</th>
-                        <th>Người chấm</th>
-                        <th>Điểm (GĐ)</th>
+                        <th>Điểm thấp nhất</th>
+                        <th>Điểm cao nhất</th>
                         <th>Chỉnh sửa</th>
                     </tr>
                 </tfoot>
@@ -115,40 +89,38 @@
     </div>
     <div class="card-footer small text-muted">Cập nhật lúc @DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")</div>
 </div>
-<div class="modal fade" id="modalUpdtArticleForm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalUpdtCategoryForm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="row ml-auto mr-2 mt-2">
                 <button type="button" id="myBtn" class="close" data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
             </div>
-            <h3 class="text-center mt-2" style="color: #00cc33">Chỉnh sửa tin bài</h3>
+            <h3 class="text-center mt-2" style="color: #00cc33">Chỉnh sửa thể loại</h3>
             <form class="modal-body" id="form-acc-updt">
-                <input type="hidden" name="ArticleIdUpdt" id="ArticleIdUpdt">
+                <input type="hidden" name="CategoryIdUpdt" id="CategoryIdUpdt">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="ContentUpdt"><strong>Nội dung</strong></label>
-                            <input type="text" class="form-control" placeholder="" name="ContentUpdt" id="ContentUpdt" pattern=".{1,400}">
+                            <label for="CategoryUpdt"><strong>Thể loại</strong></label>
+                            <input type="text" class="form-control" placeholder="" name="CategoryUpdt" id="CategoryUpdt" pattern=".{1,400}">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="TimeBroadcastUpdt"><strong>Ngày phát sóng</strong></label>
-                            <input type="text" class="form-control" placeholder="" name="TimeBroadcastUpdt" id="TimeBroadcastUpdt" value="">
+                            <label for="MinMarkUpdt"><strong>Điểm thấp nhất</strong></label>
+                            <input type="number" class="form-control" placeholder="" name="MinMarkUpdt" id="MinMarkUpdt" value="1" min="1" step="1">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="MarkUpdt"><strong>Điểm</strong></label>
-                            <input type="number" class="form-control" placeholder="" name="MarkUpdt" id="MarkUpdt" min="1" step="1" max="10" value="1">
+                            <label for="MaxMarkUpdt"><strong>Điểm cao nhất</strong></label>
+                            <input type="number" class="form-control" placeholder="" name="MaxMarkUpdt" id="MaxMarkUpdt" min="1" step="1" value="1">
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-2">
-                    <button type="submit" class="btn btn-success mb-3 m-auto">Cập nhật</button>
-                </div>
+                <button type="submit" class="btn btn-success mb-3">Cập nhật</button>
             </form>
         </div>
     </div>
@@ -165,7 +137,7 @@
             <div class="modal-body">Nhấn "Xóa" ở dưới nếu đồng ý.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Bỏ qua</button>
-                <button class="btn btn-primary" id="delArticleBtn">Xóa</button>
+                <button class="btn btn-primary" id="delCategoryBtn">Xóa</button>
             </div>
         </div>
     </div>

@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Nhập thang điểm";
 }
+@using QuanLyNhuanButDemo.DTOs
+@model List<UnitTypeDTO>
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
         <i class="fas fa-edit"></i>
@@ -40,16 +42,27 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group">
-                <label for="MinMarkAdd"><strong>Điểm thấp nhất</strong></label>
-                <input type="number" class="form-control" placeholder="" name="MinMarkAdd" id="MinMarkAdd" value="1" min="1" step="1">
+                <label for="UnitTypeAdd"><strong>Loại tin bài</strong></label>
+                <select class="form-control" id="UnitTypeAdd" name="UnitTypeAdd">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.UnitTypeId">@item.UnitType</option>
+                    }
+                </select>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="MinMarkAdd"><strong>Điểm thấp nhất</strong></label>
+                <input type="number" class="form-control" placeholder="" name="MinMarkAdd" id="MinMarkAdd" value="1" min="1" step="any">
+            </div>
+        </div>
+        <div class="col-md-4">
             <div class="form-group">
                 <label for="MaxMarkAdd"><strong>Điểm cao nhất</strong></label>
-                <input type="number" class="form-control" placeholder="" name="MaxMarkAdd" id="MaxMarkAdd" min="1" step="1" value="1">
+                <input type="number" class="form-control" placeholder="" name="MaxMarkAdd" id="MaxMarkAdd" min="1" step="any" value="1">
             </div>
         </div>
     </div>
@@ -67,18 +80,22 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Loại tin bài</th>
                         <th>Thể loại</th>
                         <th>Điểm thấp nhất</th>
                         <th>Điểm cao nhất</th>
+                        <th>Điểm</th>
                         <th>Chỉnh sửa</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>ID</th>
+                        <th>Loại tin bài</th>
                         <th>Thể loại</th>
                         <th>Điểm thấp nhất</th>
                         <th>Điểm cao nhất</th>
+                        <th>Điểm</th>
                         <th>Chỉnh sửa</th>
                     </tr>
                 </tfoot>
@@ -107,16 +124,27 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="MinMarkUpdt"><strong>Điểm thấp nhất</strong></label>
-                            <input type="number" class="form-control" placeholder="" name="MinMarkUpdt" id="MinMarkUpdt" value="1" min="1" step="1">
+                            <label for="UnitTypeUpdt"><strong>Loại tin bài</strong></label>
+                            <select class="form-control" id="UnitTypeUpdt" name="UnitTypeUpdt">
+                                @foreach (var item in Model)
+                                {
+                                    <option value="@item.UnitTypeId">@item.UnitType</option>
+                                }
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="MinMarkUpdt"><strong>Điểm thấp nhất</strong></label>
+                            <input type="number" class="form-control" placeholder="" name="MinMarkUpdt" id="MinMarkUpdt" value="1" min="1" step="any">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="MaxMarkUpdt"><strong>Điểm cao nhất</strong></label>
-                            <input type="number" class="form-control" placeholder="" name="MaxMarkUpdt" id="MaxMarkUpdt" min="1" step="1" value="1">
+                            <input type="number" class="form-control" placeholder="" name="MaxMarkUpdt" id="MaxMarkUpdt" min="1" step="any" value="1">
                         </div>
                     </div>
                 </div>

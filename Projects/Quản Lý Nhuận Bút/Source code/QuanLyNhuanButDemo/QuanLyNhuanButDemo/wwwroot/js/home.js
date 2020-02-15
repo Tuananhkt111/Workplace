@@ -5,7 +5,7 @@ $(document).ready(function () {
             "emptyTable": "Không có tin bài nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ tin bài mỗi trang",
             "zeroRecords": "Không tìm thấy tin nào",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_ từ tất cả _MAX_ tin bài",
             "infoEmpty": "Hiển thị trang 0 trên 0",
             "infoFiltered": "(đã lọc từ tất cả _MAX_ tin bài)",
             "loadingRecords": "Đang tải...",

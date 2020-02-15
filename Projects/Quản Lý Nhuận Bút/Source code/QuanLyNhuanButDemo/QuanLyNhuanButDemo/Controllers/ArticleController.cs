@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.DAOs;
 using QuanLyNhuanButDemo.Data;
 using QuanLyNhuanButDemo.DTOs;
 using QuanLyNhuanButDemo.Library;
 using QuanLyNhuanButDemo.Models;
+using static QuanLyNhuanButDemo.Library.QuanLyNhuanButConstants;
 
 namespace QuanLyNhuanButDemo.Controllers
 {
@@ -27,18 +31,25 @@ namespace QuanLyNhuanButDemo.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
         }
-        [Authorize(Roles = "Biên tập viên")]
+        [Authorize(Roles = Roles.EDITOR_ROLE)]
         public async Task<IActionResult> Index()
         {
             CategoryDAO catDAO = new CategoryDAO(_userManager, _signInManager, _context);
             UserDAO userDAO = new UserDAO(_userManager, _signInManager, _context);
-            List<Category> categories = catDAO.GetAllCategories();
+            List<CategoryDTO> categories = catDAO.GetCategoriesDropdown();
             List<ReporterDTO> reporters = await userDAO.GetAllReportersAsync();
             ArticleViewModel viewModel = new ArticleViewModel { Categories = categories, Reporters = reporters };
             return View(viewModel);
         }
+
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
+        public IActionResult Invoice()
+        {
+            return View();
+        }
+
         [HttpPost]
-        [Authorize(Roles = "Biên tập viên")]
+        [Authorize(Roles = Roles.EDITOR_ROLE)]
         public IActionResult InsertArticle([FromBody] ArticleDTO articleDTO)
         {
             DateTime currentDate = DateTime.Now;
@@ -99,7 +110,7 @@ namespace QuanLyNhuanButDemo.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Biên tập viên")]
+        [Authorize(Roles = Roles.EDITOR_ROLE)]
         public IActionResult UpdateArticle([FromBody] ArticleDTO articleDTO)
         {
             DateTime currentDate = DateTime.Now;
@@ -148,7 +159,7 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
         [HttpPost]
-        [Authorize(Roles = "Biên tập viên, Giám đốc")]
+        [Authorize(Roles = Roles.EDITOR_ROLE + ", " + Roles.MANAGER_ROLE)]
         public IActionResult DeleteArticle([FromBody] string articleId)
         {
             DateTime currentDate = DateTime.Now;
@@ -188,7 +199,7 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
         [HttpPost]
-        [Authorize(Roles = "Biên tập viên, Giám đốc")]
+        [Authorize(Roles = Roles.EDITOR_ROLE + ", " + Roles.MANAGER_ROLE)]
         public async Task<IActionResult> LoadAllArticlesNotApprovedByMonth([FromBody] string timeSearchText)
         {
             DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -196,8 +207,19 @@ namespace QuanLyNhuanButDemo.Controllers
             List<ArticleTableDTO> list = await articleDAO.GetAllArticlesNotApprovedByMonth(timeSearch);
             return new JsonResult(list);
         }
+
         [HttpPost]
-        [Authorize(Roles = "Giám đốc")]
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
+        public async Task<IActionResult> LoadAllArticlesApprovedByMonth([FromBody] string timeSearchText)
+        {
+            DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
+            List<ArticleTableDTO> list = await articleDAO.GetAllArticlesApprovedByMonth(timeSearch);
+            return new JsonResult(list);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = Roles.MANAGER_ROLE)]
         public async Task<IActionResult> LoadAllArticlesByMonth([FromBody] string timeSearchText)
         {
             DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -205,18 +227,18 @@ namespace QuanLyNhuanButDemo.Controllers
             List<ArticleTableDTO> list = await articleDAO.GetAllArticlesByMonth(timeSearch);
             return new JsonResult(list);
         }
-        [Authorize(Roles = "Giám đốc")]
+        [Authorize(Roles = Roles.MANAGER_ROLE)]
         public async Task<IActionResult> ApproveMarkManage()
         {
             CategoryDAO catDAO = new CategoryDAO(_userManager, _signInManager, _context);
             UserDAO userDAO = new UserDAO(_userManager, _signInManager, _context);
-            List<Category> categories = catDAO.GetAllCategories();
+            List<CategoryDTO> categories = catDAO.GetCategoriesDropdown();
             List<ReporterDTO> reporters = await userDAO.GetAllReportersAsync();
             ArticleViewModel viewModel = new ArticleViewModel { Categories = categories, Reporters = reporters };
             return View(viewModel);
         }
         [HttpPost]
-        [Authorize(Roles = "Giám đốc")]
+        [Authorize(Roles = Roles.MANAGER_ROLE)]
         public IActionResult UpdateArticleByManager([FromBody] ArticleDTO articleDTO)
         {
             DateTime currentDate = DateTime.Now;
@@ -262,7 +284,7 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
         [HttpPost]
-        [Authorize(Roles = "Giám đốc")]
+        [Authorize(Roles = Roles.MANAGER_ROLE)]
         public IActionResult ApproveAll([FromBody] List<string> ids)
         {
             String msg = "";
@@ -304,6 +326,30 @@ namespace QuanLyNhuanButDemo.Controllers
                 }
             }
             return new JsonResult(msg);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
+        public async Task<IActionResult> ExportV2()
+        {
+            await Task.Yield();
+            ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
+            string timeSearchText = "02/2020";
+            DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            var list = await articleDAO.GetAllArticlesApprovedByMonth(timeSearch);
+            var stream = new MemoryStream();
+
+            using (var package = new ExcelPackage(stream))
+            {
+                var workSheet = package.Workbook.Worksheets.Add("Sheet1");
+                workSheet.Cells.LoadFromCollection<ArticleTableDTO>(list, true);
+                package.Save();
+            }
+            stream.Position = 0;
+            string excelName = $"UserList-{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xlsx";
+
+            //return File(stream, "application/octet-stream", excelName);  
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
         }
     }
 }

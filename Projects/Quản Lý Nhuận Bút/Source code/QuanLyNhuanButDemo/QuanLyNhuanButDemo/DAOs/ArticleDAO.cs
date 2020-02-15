@@ -70,11 +70,12 @@ namespace QuanLyNhuanButDemo.DAOs
 
         public async Task<List<ArticleTableDTO>> GetAllArticlesByMonth(DateTime timeSearch)
         {
-            return await _context.Articles.Include(a => a.Category).Where(a => a.TimeBroadcast.Year == timeSearch.Year && a.TimeBroadcast.Month == timeSearch.Month).Select(a => new ArticleTableDTO
+            List<ArticleTableDTO> list = await _context.Articles.Include(a => a.Category).Where(a => a.TimeBroadcast.Year == timeSearch.Year && a.TimeBroadcast.Month == timeSearch.Month).Select(a => new ArticleTableDTO
             {
                 ArticleId = a.ArticleId,
                 CategoryId = a.CategoryId,
                 CategoryName = a.Category.CategoryName,
+                UnitType = (int)a.Category.UnitType,
                 Content = a.Content,
                 EditorMark = a.EditorMark,
                 ManagerMark = a.ManagerMark == null ? "_" : a.ManagerMark.ToString(),
@@ -83,15 +84,25 @@ namespace QuanLyNhuanButDemo.DAOs
                 Status = a.Status.GetDescription(),
                 TimeBroadcast = a.TimeBroadcast
             }).ToListAsync();
+            foreach (var article in list)
+            {
+                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor)).SingleOrDefaultAsync();
+                article.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.ExecutorName = executor.Name;
+                var marker = await _userManager.FindByNameAsync(article.Marker);
+                article.MarkerName = marker.Name;
+            }
+            return list;
         }
 
         public async Task<List<ArticleTableDTO>> GetAllArticlesNotApprovedByMonth(DateTime timeSearch)
         {
-            return await _context.Articles.Include(a => a.Category).Where(a => a.Status == StatusTypes.NOT_APPROVED && a.TimeBroadcast.Year == timeSearch.Year && a.TimeBroadcast.Month == timeSearch.Month).Select(a => new ArticleTableDTO
+            List<ArticleTableDTO> list = await _context.Articles.Include(a => a.Category).Where(a => a.Status == StatusTypes.NOT_APPROVED && a.TimeBroadcast.Year == timeSearch.Year && a.TimeBroadcast.Month == timeSearch.Month).Select(a => new ArticleTableDTO
             {
                 ArticleId = a.ArticleId,
                 CategoryId = a.CategoryId,
                 CategoryName = a.Category.CategoryName,
+                UnitType = (int)a.Category.UnitType,
                 Content = a.Content,
                 EditorMark = a.EditorMark,
                 ManagerMark = a.ManagerMark == null ? "_" : a.ManagerMark.ToString(),
@@ -100,6 +111,42 @@ namespace QuanLyNhuanButDemo.DAOs
                 Status = a.Status.GetDescription(),
                 TimeBroadcast = a.TimeBroadcast
             }).ToListAsync();
+            foreach (var article in list)
+            {
+                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor)).SingleOrDefaultAsync();
+                article.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.ExecutorName = executor.Name;
+                var marker = await _userManager.FindByNameAsync(article.Marker);
+                article.MarkerName = marker.Name;
+            }
+            return list;
+        }
+
+        public async Task<List<ArticleTableDTO>> GetAllArticlesApprovedByMonth(DateTime timeSearch)
+        {
+            List<ArticleTableDTO> list = await _context.Articles.Include(a => a.Category).Where(a => a.Status == StatusTypes.APPROVED && a.TimeBroadcast.Year == timeSearch.Year && a.TimeBroadcast.Month == timeSearch.Month).Select(a => new ArticleTableDTO
+            {
+                ArticleId = a.ArticleId,
+                CategoryId = a.CategoryId,
+                CategoryName = a.Category.CategoryName,
+                UnitType = (int)a.Category.UnitType,
+                Content = a.Content,
+                EditorMark = a.EditorMark,
+                ManagerMark = a.ManagerMark == null ? "_" : a.ManagerMark.ToString(),
+                Executor = a.Executor,
+                Marker = a.Marker,
+                Status = a.Status.GetDescription(),
+                TimeBroadcast = a.TimeBroadcast
+            }).ToListAsync();
+            foreach (var article in list)
+            {
+                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor)).SingleOrDefaultAsync();
+                article.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.ExecutorName = executor.Name;
+                var marker = await _userManager.FindByNameAsync(article.Marker);
+                article.MarkerName = marker.Name;
+            }
+            return list;
         }
 
         public bool Delete(String articleId)

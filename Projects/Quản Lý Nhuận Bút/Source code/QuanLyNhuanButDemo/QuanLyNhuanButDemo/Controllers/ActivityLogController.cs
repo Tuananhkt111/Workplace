@@ -10,6 +10,7 @@ using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.DAOs;
 using QuanLyNhuanButDemo.Data;
 using QuanLyNhuanButDemo.DTOs;
+using static QuanLyNhuanButDemo.Library.QuanLyNhuanButConstants;
 
 namespace QuanLyNhuanButDemo.Controllers
 {
@@ -36,14 +37,14 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(x);
         }
         [HttpPost]
-        [Authorize(Roles = "Quản trị viên")]
+        [Authorize(Roles = Roles.ADMIN_ROLE)]
         public async Task<IActionResult> LoadAllActivityLog([FromBody] string timeExecuted)
         {
             ActivityLogDAO dao = new ActivityLogDAO(_userManager, _signInManager, _context);
             var x = await dao.LoadAllActivityLog(DateTime.ParseExact(timeExecuted, "dd/MM/yyyy", CultureInfo.InvariantCulture));
             return new JsonResult(x);
         }
-        [Authorize(Roles = "Quản trị viên")]
+        [Authorize(Roles = Roles.ADMIN_ROLE)]
         public IActionResult Index()
         {
             return View();

@@ -24,6 +24,22 @@ function checkUsernameExisted() {
     });
 }
 $(document).ready(function () {
+    $('#departmentInput').hide();
+    $('#RoleRg').on('change', function () {
+        if ($(this).val() === "Phóng viên") {
+            $('#departmentInput').show();
+        } else {
+            $('#departmentInput').hide();
+        }
+    });
+    $('#departmentInput2').hide();
+    $('#RoleUpdt').on('change', function () {
+        if ($(this).val() === "Phóng viên") {
+            $('#departmentInput2').show();
+        } else {
+            $('#departmentInput2').hide();
+        }
+    });
     $.fn.dataTable.moment('DD-MM-YYYY HH:mm:ss');
     var t = $('#dataTable').DataTable({
         "ajax": {
@@ -35,6 +51,13 @@ $(document).ready(function () {
             { "data": "userName" },
             { "data": "name" },
             { "data": "role" },
+            {
+                "data": "departmentId",
+                "visible": false
+            },
+            {
+                "data": "departmentName",
+            },
             {
                 "data": "status",
                 "render": function (data) {
@@ -64,6 +87,11 @@ $(document).ready(function () {
                     editLink.setAttribute("data-toggle", "modal");
                     editLink.href = 'javascript: void (0)';
                     editLink.setAttribute("data-target", "#modalUpdtAccForm");
+                    editLink.setAttribute("data-id", row.userName);
+                    editLink.setAttribute("data-depid", row.departmentId);
+                    editLink.setAttribute("data-status", row.status);
+                    editLink.setAttribute("data-name", row.name);
+                    editLink.setAttribute("data-role", row.role);
                     editLink.style = "cursor: pointer";
                     editLink.classList.add("updtAcc");
                     editLink.innerHTML = "Chỉnh sửa";
@@ -74,12 +102,12 @@ $(document).ready(function () {
                 }
             }
         ],
-        "order": [[4, "desc"]],
+        "order": [[6, "desc"]],
         "language": {
             "emptyTable": "Không có tài khoản nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ tài khoản mỗi trang",
             "zeroRecords": "Không tìm thấy tài khoản nào",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_ từ tất cả _MAX_ tài khoản",
             "infoEmpty": "Hiển thị trang 0 trên 0",
             "infoFiltered": "(đã lọc từ tất cả _MAX_ tài khoản)",
             "loadingRecords": "Đang tải...",
@@ -100,30 +128,37 @@ $(document).ready(function () {
         "pagingType": "full_numbers"
     });
     $('#dataTable tbody').on('click', '.updtAcc', function () {
-        let $tr = this.parentElement.parentElement.parentElement;
-        let data = $tr.childNodes;
-        $('#UsernameUpdt').val(data[0].innerHTML);
-        $('#NameUpdt').val(data[1].innerHTML);
-        $('#RoleUpdt').val(data[2].innerHTML);
-        if (data[3].innerHTML != "Đã vô hiệu hóa") {
+        let row = $(this);
+        $('#UsernameUpdt').val(row.data("id"));
+        $('#NameUpdt').val(row.data("name"));
+        $('#RoleUpdt').val(row.data("role"));
+        if ($('#RoleUpdt').val() === "Phóng viên") {
+            $('#departmentInput2').show();
+        } else {
+            $('#departmentInput2').hide();
+        }
+        console.log(row.data("depid"));
+        $('#DepartmentUpdt').val(row.data("depid"));
+        $('#DepartmentUpdt').change();
+        if (!row.data("status")) {
             $('#IsDeletedUpdt').val("false");
         } else {
             $('#IsDeletedUpdt').val("true");
         }
     });
     $('#dataTable tbody').on('click', '.updtPass', function () {
-        let $tr = this.parentElement.parentElement.parentElement;
-        let data = $tr.childNodes;
-        $('#UsernameUpdtPass').val(data[0].innerHTML);
+        $('#UsernameUpdtPass').val($(this).data("id"));
     });
     function createAccount() {
+        let departmentId = $('#DepartmentRg').val();
         let obj = {
             Username: $('#UsernameRg').val(),
             Name: $('#NameRg').val(),
             Role: $('#RoleRg').val(),
             Password: $('#PasswordRg').val(),
             Status: false,
-            TimeModified: new Date()
+            TimeModified: new Date(),
+            DepartmentId: $('#RoleRg').val() === "Phóng viên" ? departmentId : null
         }
         $.ajax({
             type: "POST",
@@ -143,13 +178,15 @@ $(document).ready(function () {
         });
     }
     function UpdateAccount() {
+        let departmentId = $('#DepartmentUpdt').val();
         let obj = {
             UserName: $('#UsernameUpdt').val(),
             Name: $('#NameUpdt').val(),
             Role: $('#RoleUpdt').val(),
             Password: "",
             Status: $('#IsDeletedUpdt').val() === "true" ? true : false,
-            TimeModified: new Date()
+            TimeModified: new Date(),
+            DepartmentId: $('#RoleUpdt').val() === "Phóng viên" ? departmentId : null
         }
         $.ajax({
             type: "POST",
@@ -227,7 +264,11 @@ $(document).ready(function () {
             }
         },
         submitHandler: function () {
-            createAccount();
+            if ($('#DepartmentRg').val() === "" && $('#RoleRg').val() === "Phóng viên") {
+                showMessage("Chưa chọn đơn vị không thể tạo mới");
+            } else {
+                createAccount();
+            }
         }
     });
     var validator_update = $('#form-acc-updt').validate({
@@ -243,7 +284,11 @@ $(document).ready(function () {
             }
         },
         submitHandler: function () {
-            UpdateAccount();
+            if ($('#DepartmentUpdt').val() === "" && $('#RoleUpdt').val() === "Phóng viên") {
+                showMessage("Chưa chọn đơn vị không thể cập nhật");
+            } else {
+                UpdateAccount();
+            }
         }
     });
     $('#modalUpdtAccForm').on('click', '.close', function () {

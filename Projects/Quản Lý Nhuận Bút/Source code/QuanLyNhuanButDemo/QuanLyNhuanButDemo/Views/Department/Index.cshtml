@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Quản lý đơn vị";
+}
+@using QuanLyNhuanButDemo.DTOs
+@model List<DepartmentTypeDTO>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <i class="fas fa-plus-square"></i>
+        Tạo mới dơn vị
+    </li>
+</ol>
+<form id="form-department-add" method="POST">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="DepartmentTypeAdd"><strong>Loại đơn vị</strong></label>
+                <select class="form-control" id="DepartmentTypeAdd" name="DepartmentTypeAdd">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.DepartmentTypeId">@item.DepartmentType</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="DepartmentAdd"><strong>Tên đơn vị</strong></label>
+                <input type="text" class="form-control" placeholder="" name="DepartmentAdd" id="DepartmentAdd" pattern=".{1,400}">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success mb-3">Tạo mới</button>
+</form>
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Danh sách đơn vị
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover animated fadeIn" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th></th>
+                        <th>Loại đơn vị</th>
+                        <th>Tên đơn vị</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th></th>
+                        <th>Loại đơn vị</th>
+                        <th>Tên đơn vị</th>
+                        <th>Chỉnh sửa</th>
+                    </tr>
+                </tfoot>
+                <tbody id="dataTable-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Cập nhật lúc @DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")</div>
+</div>
+<div class="modal fade" id="modalUpdtDepartmentForm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="row ml-auto mr-2 mt-2">
+                <button type="button" id="myBtn" class="close" data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
+            </div>
+            <h3 class="text-center mt-2" style="color: #00cc33">Chỉnh sửa đơn vị</h3>
+            <form class="modal-body" id="form-acc-updt">
+                <input type="hidden" name="DepartmentIdUpdt" id="DepartmentIdUpdt">
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="DepartmentTypeUpdt"><strong>Loại đơn vị</strong></label>
+                            <select class="form-control" id="DepartmentTypeUpdt" name="DepartmentTypeUpdt">
+                                @foreach (var item in Model)
+                                {
+                                    <option value="@item.DepartmentTypeId">@item.DepartmentType</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="DepartmentUpdt"><strong>Tên đơn vị</strong></label>
+                            <input type="text" class="form-control" placeholder="" name="DepartmentUpdt" id="DepartmentUpdt" pattern=".{1,400}">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mb-2">
+                    <button type="submit" class="btn btn-success">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn xóa?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Nhấn "Xóa" ở dưới nếu đồng ý.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Bỏ qua</button>
+                <button class="btn btn-primary" id="delDepartmentBtn">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section QuanLyDonVi {
+    active
+}
+@section Scripts {
+    <script src="~/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js"></script>
+    <script src="~/js/jquery.masknumber.js"></script>
+    <script src="~/js/department.js"></script>
+}
+

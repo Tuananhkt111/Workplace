@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using QuanLyNhuanButDemo.Areas.Identity.Data
 @using Microsoft.AspNetCore.Antiforgery
+@using QuanLyNhuanButDemo.Library
 @inject SignInManager<QuanLyNhuanButDemoUser> SignInManager
 @inject UserManager<QuanLyNhuanButDemoUser> UserManager
 @{
@@ -27,6 +28,7 @@
     <!-- Custom styles for this template-->
     <link href="~/css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/bootstrap-select.min.css" rel="stylesheet" />
     <link href="~/css/jquery.datetimepicker.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -94,7 +96,7 @@
             </li>
             @if (SignInManager.IsSignedIn(User))
             {
-                @if (User.IsInRole("Quản trị viên"))
+                @if (User.IsInRole(QuanLyNhuanButConstants.Roles.ADMIN_ROLE))
                 {
                     <li class="nav-item @RenderSection("NhatKyHoatDong", required: false)">
                         <a class="nav-link" asp-area="" asp-controller="ActivityLog" asp-action="Index">
@@ -108,8 +110,14 @@
                             <span>Quản lý tai khoản</span>
                         </a>
                     </li>
+                    <li class="nav-item @RenderSection("QuanLyDonVi", required: false)">
+                        <a class="nav-link" asp-area="" asp-controller="Department" asp-action="Index">
+                            <i class="fas fa-building"></i>
+                            <span>Quản lý đơn vị</span>
+                        </a>
+                    </li>
                 }
-                @if (User.IsInRole("Giám đốc"))
+                @if (User.IsInRole(QuanLyNhuanButConstants.Roles.MANAGER_ROLE))
                 {
                     <li class="nav-item @RenderSection("DuyetDiem", required: false)">
                         <a class="nav-link" asp-area="" asp-controller="Article" asp-action="ApproveMarkManage">
@@ -118,7 +126,7 @@
                         </a>
                     </li>
                 }
-                @if (User.IsInRole("Biên tập viên"))
+                @if (User.IsInRole(QuanLyNhuanButConstants.Roles.EDITOR_ROLE))
                 {
                     <li class="nav-item @RenderSection("NhapTin", required: false)">
                         <a class="nav-link" asp-area="" asp-controller="Article" asp-action="Index">
@@ -127,7 +135,7 @@
                         </a>
                     </li>
                 }
-                @if (User.IsInRole("Kế toán"))
+                @if (User.IsInRole(QuanLyNhuanButConstants.Roles.ACCOUNTANT_ROLE))
                 {
                     <li class="nav-item @RenderSection("NhapThangDiem", required: false)">
                         <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">
@@ -135,24 +143,14 @@
                             <span>Nhập thang điểm</span>
                         </a>
                     </li>
+                    <li class="nav-item @RenderSection("XuatHoaDon", required: false)">
+                        <a class="nav-link" asp-area="" asp-controller="Article" asp-action="Invoice">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Xuất hóa đơn</span>
+                        </a>
+                    </li>
                 }
             }
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <h6 class="dropdown-header">Login Screens:</h6>
-                    <a class="dropdown-item" href="login.html">Login</a>
-                    <a class="dropdown-item" href="register.html">Register</a>
-                    <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="dropdown-divider"></div>
-                    <h6 class="dropdown-header">Other Pages:</h6>
-                    <a class="dropdown-item" href="404.html">404 Page</a>
-                    <a class="dropdown-item active" href="blank.html">Blank Page</a>
-                </div>
-            </li>
         </ul>
         <div id="content-wrapper">
 

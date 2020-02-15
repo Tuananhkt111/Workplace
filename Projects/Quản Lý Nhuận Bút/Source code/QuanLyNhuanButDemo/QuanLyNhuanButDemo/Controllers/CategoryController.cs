@@ -8,11 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.DAOs;
 using QuanLyNhuanButDemo.Data;
+using QuanLyNhuanButDemo.DTOs;
+using QuanLyNhuanButDemo.Library;
 using QuanLyNhuanButDemo.Models;
+using static QuanLyNhuanButDemo.Library.QuanLyNhuanButConstants;
 
 namespace QuanLyNhuanButDemo.Controllers
 {
-    [Authorize(Roles = "Kế toán")]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -25,11 +27,26 @@ namespace QuanLyNhuanButDemo.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
         }
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
         public IActionResult Index()
         {
-            return View();
+            List<UnitTypeDTO> unitTypeDTOs = new List<UnitTypeDTO>
+            {
+                new UnitTypeDTO
+                {
+                    UnitTypeId = (int) UnitTypes.TRUYEN_HINH,
+                    UnitType = UnitTypes.TRUYEN_HINH.GetDescription()
+                },
+                new UnitTypeDTO
+                {
+                    UnitTypeId = (int) UnitTypes.PHAT_THANH,
+                    UnitType = UnitTypes.PHAT_THANH.GetDescription()
+                },
+            };
+            return View(unitTypeDTOs);
         }
         [HttpGet]
+        [Authorize]
         public IActionResult GetMarkValue()
         {
             MarkValueDAO valueDAO = new MarkValueDAO(_userManager, _signInManager, _context);
@@ -38,6 +55,7 @@ namespace QuanLyNhuanButDemo.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
         public IActionResult ChangeMarkValue([FromBody] ulong markValue)
         {
             DateTime currentDate = DateTime.Now;
@@ -75,6 +93,7 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
         [HttpGet]
+        [Authorize]
         public IActionResult GetAllCategories()
         {
             CategoryDAO catDAO = new CategoryDAO(_userManager, _signInManager, _context);
@@ -82,6 +101,7 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(list);
         }
         [HttpPost]
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
         public IActionResult InsertCategory([FromBody] Category category)
         {
             DateTime currentDate = DateTime.Now;
@@ -105,7 +125,8 @@ namespace QuanLyNhuanButDemo.Controllers
                         + category.CategoryId + "\", tên thể loại: \""
                         + category.CategoryName + "\", điểm thấp nhất: \""
                         + category.MinMark + "\", điểm cao nhất: \""
-                        + category.MaxMark + "\"";
+                        + category.MaxMark + "\", loại tin bài: \""
+                        + category.UnitType + "\"";
                     ActivityLog alDTO = new ActivityLog
                     {
                         ActLogId = actLogId,
@@ -124,6 +145,7 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
         [HttpPost]
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
         public IActionResult UpdateCategory([FromBody] Category category)
         {
             DateTime currentDate = DateTime.Now;
@@ -146,7 +168,8 @@ namespace QuanLyNhuanButDemo.Controllers
                         + category.CategoryId + "\", tên thể loại: \""
                         + category.CategoryName + "\", điểm thấp nhất: \""
                         + category.MinMark + "\", điểm cao nhất: \""
-                        + category.MaxMark + "\"";
+                        + category.MaxMark + "\", loại tin bài: \""
+                        + category.UnitType + "\"";
                     ActivityLog alDTO = new ActivityLog
                     {
                         ActLogId = actLogId,
@@ -165,13 +188,14 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
         [HttpPost]
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
         public IActionResult DeleteCategory([FromBody] string id)
         {
             DateTime currentDate = DateTime.Now;
             string msg;
             CategoryDAO catDAO = new CategoryDAO(_userManager, _signInManager, _context);
             if (!catDAO.Delete(id))
-                msg = "Xóa thể loại thất bại";
+                msg = "Thể loại đang có tin bài. Không thể xóa";
             else
             {
                 var userId = _userManager.GetUserId(User);

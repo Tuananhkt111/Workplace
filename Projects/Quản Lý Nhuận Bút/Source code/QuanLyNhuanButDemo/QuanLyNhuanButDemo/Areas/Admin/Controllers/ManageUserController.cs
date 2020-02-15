@@ -10,11 +10,12 @@ using QuanLyNhuanButDemo.DAOs;
 using QuanLyNhuanButDemo.Data;
 using QuanLyNhuanButDemo.DTOs;
 using QuanLyNhuanButDemo.Models;
+using static QuanLyNhuanButDemo.Library.QuanLyNhuanButConstants;
 
 namespace QuanLyNhuanButDemo.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Quản trị viên")]
+    [Authorize(Roles = Roles.ADMIN_ROLE)]
     public class ManageUserController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -30,8 +31,15 @@ namespace QuanLyNhuanButDemo.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<IdentityRole> listRole = _context.Roles.Where(r => r.Name != "Quản trị viên").ToList();
-            return View(listRole);
+            List<IdentityRole> listRole = _context.Roles.Where(r => r.Name != Roles.ADMIN_ROLE).ToList();
+            DepartmentDAO depDAO = new DepartmentDAO(_userManager, _signInManager, _context);
+            List<DepartmentNameDTO> listDepartment = depDAO.GetAllDepartmentNames();
+            ManageUserViewModel viewModel = new ManageUserViewModel
+            {
+                Departments = listDepartment,
+                IdentityRoles = listRole
+            };
+            return View(viewModel);
         }
         [HttpPost]
         public IActionResult CheckUsername([FromBody]string UsernameRg)
@@ -46,7 +54,7 @@ namespace QuanLyNhuanButDemo.Areas.Admin.Controllers
             UserDAO dao = new UserDAO(_userManager, _signInManager, _context);
             userRg.TimeModified = DateTime.Now;
             string msg = "";
-            QuanLyNhuanButDemoUser user = new QuanLyNhuanButDemoUser { UserName = userRg.Username, Email = userRg.Username, Status = userRg.Status, Name = userRg.Name, TimeModified = userRg.TimeModified };
+            QuanLyNhuanButDemoUser user = new QuanLyNhuanButDemoUser { UserName = userRg.Username, Email = userRg.Username, Status = userRg.Status, Name = userRg.Name, TimeModified = userRg.TimeModified, DepartmentId = userRg.DepartmentId };
             IdentityResult createResult = await dao.CreateUser(user, userRg.Password);
             if (createResult.Succeeded)
             {

@@ -162,6 +162,9 @@ namespace QuanLyNhuanButDemo.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -213,6 +216,8 @@ namespace QuanLyNhuanButDemo.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 
@@ -262,14 +267,14 @@ namespace QuanLyNhuanButDemo.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EditorMark")
-                        .HasColumnType("int");
+                    b.Property<float>("EditorMark")
+                        .HasColumnType("real");
 
                     b.Property<string>("Executor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ManagerMark")
-                        .HasColumnType("int");
+                    b.Property<float?>("ManagerMark")
+                        .HasColumnType("real");
 
                     b.Property<string>("Marker")
                         .HasColumnType("nvarchar(max)");
@@ -295,15 +300,34 @@ namespace QuanLyNhuanButDemo.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MaxMark")
-                        .HasColumnType("int");
+                    b.Property<float>("MaxMark")
+                        .HasColumnType("real");
 
-                    b.Property<int>("MinMark")
+                    b.Property<float>("MinMark")
+                        .HasColumnType("real");
+
+                    b.Property<int>("UnitType")
                         .HasColumnType("int");
 
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("QuanLyNhuanButDemo.Models.Department", b =>
+                {
+                    b.Property<string>("DepartmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DepartmentName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DepartmentType")
+                        .HasColumnType("int");
+
+                    b.HasKey("DepartmentId");
+
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("QuanLyNhuanButDemo.Models.MarkValue", b =>
@@ -370,6 +394,13 @@ namespace QuanLyNhuanButDemo.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("QuanLyNhuanButDemo.Areas.Identity.Data.QuanLyNhuanButDemoUser", b =>
+                {
+                    b.HasOne("QuanLyNhuanButDemo.Models.Department", "Department")
+                        .WithMany("QuanLyNhuanButDemoUsers")
+                        .HasForeignKey("DepartmentId");
                 });
 
             modelBuilder.Entity("QuanLyNhuanButDemo.Models.ActivityLog", b =>

@@ -11,8 +11,8 @@ namespace QuanLyNhuanButDemo.DTOs
         public string ArticleId { get; set; }
         public string Content { get; set; }
         public string CategoryId { get; set; }
-        public int EditorMark { get; set; }
-        public int ManagerMark { get; set; }
+        public float EditorMark { get; set; }
+        public float ManagerMark { get; set; }
         public StatusTypes Status { get; set; }
         public string Executor { get; set; }
         public string TimeBroadcast { get; set; }

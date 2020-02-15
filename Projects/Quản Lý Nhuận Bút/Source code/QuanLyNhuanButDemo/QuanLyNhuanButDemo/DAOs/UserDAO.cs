@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.Data;
 using QuanLyNhuanButDemo.DTOs;
+using QuanLyNhuanButDemo.Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static QuanLyNhuanButDemo.Library.QuanLyNhuanButConstants;
 
 namespace QuanLyNhuanButDemo.DAOs
 {
@@ -30,12 +32,12 @@ namespace QuanLyNhuanButDemo.DAOs
         public async Task<List<UserInfoDTO>> LoadAllAccount()
         {
             List<UserInfoDTO> result = new List<UserInfoDTO>();
-            var list = _context.Users.ToList();
+            var list = _context.Users.Include(user => user.Department).ToList();
             foreach (var item in list)
             {
                 var roleList = await _userManager.GetRolesAsync(item);
-                if (roleList != null && !roleList.Contains("Quản trị viên"))
-                    result.Add(new UserInfoDTO { Name = item.Name, Role = roleList.SingleOrDefault(), Status = item.Status, TimeModified = item.TimeModified, UserName = item.UserName });
+                if (roleList != null && !roleList.Contains(Roles.ADMIN_ROLE))
+                    result.Add(new UserInfoDTO { Name = item.Name, Role = roleList.SingleOrDefault(), Status = item.Status, TimeModified = item.TimeModified, UserName = item.UserName, DepartmentId = item.DepartmentId, DepartmentName = roleList.SingleOrDefault().Equals(Roles.REPORTER_ROLE) ? (item.Department.DepartmentType.GetDescription() + " " + item.Department.DepartmentName) : "_" });
             }
             return result;
         }
@@ -45,6 +47,7 @@ namespace QuanLyNhuanButDemo.DAOs
             user.Name = p.Name;
             user.Status = p.Status;
             user.TimeModified = p.TimeModified;
+            user.DepartmentId = p.Role.Equals(Roles.REPORTER_ROLE) ? p.DepartmentId : null;
             var oldRoleNameList = await _userManager.GetRolesAsync(user);
             if (!oldRoleNameList.Contains(p.Role))
             {
@@ -113,12 +116,12 @@ namespace QuanLyNhuanButDemo.DAOs
         public async Task<List<ReporterDTO>> GetAllReportersAsync()
         {
             List<ReporterDTO> result = new List<ReporterDTO>();
-            var list = _context.Users.ToList();
+            var list = _context.Users.Include(user => user.Department).OrderBy(user => user.Name).ToList();
             foreach (var item in list)
             {
                 var roleList = await _userManager.GetRolesAsync(item);
-                if (roleList != null && roleList.Contains("Phóng viên"))
-                    result.Add(new ReporterDTO { Name = item.Name, UserName = item.UserName });
+                if (roleList != null && roleList.Contains(Roles.REPORTER_ROLE))
+                    result.Add(new ReporterDTO { Name = item.Name, UserName = item.UserName, DepartmentName = item.Department.DepartmentType.GetDescription() + " " + item.Department.DepartmentName });
             }
             return result;
         }

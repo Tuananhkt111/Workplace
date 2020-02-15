@@ -23,6 +23,15 @@ function resetForm() {
     $('#CategoryAdd').val("");
 };
 $(document).ready(function () {
+    $.validator.addMethod("greaterThan", function (value, element, param) {
+        var $min = $(param);
+        if (this.settings.onfocusout) {
+            $min.off(".validate-greaterThan").on("blur.validate-greaterThan", function () {
+                $(element).valid();
+            });
+        }
+        return parseFloat(value) > parseFloat($min.val());
+    }, "Điểm cao nhất lớn hơn điểm thấp nhất");
     getMarkValue();
     $('#MarkVal').maskNumber({
         integer: true
@@ -61,16 +70,34 @@ $(document).ready(function () {
         'columns': [
             {
                 "data": "categoryId",
-                "visible": false,
+                "visible": false
+            },
+            {
+                "data": "unitType",
+                "render": function (data) {
+                    if (data === 0) {
+                        return "Truyền hình";
+                    }
+                    else {
+                        return "Phát thanh";
+                    }
+                }
             },
             {
                 "data": "categoryName"
             },
             {
-                "data": "minMark"
+                "data": "minMark",
+                "visible": false
             },
             {
-                "data": "maxMark"
+                "data": "maxMark",
+                "visible": false
+            },
+            {
+                "data": function (row) {
+                    return row.minMark + " - " + row.maxMark;
+                }
             },
             {
                 "data": function (row) {
@@ -85,6 +112,7 @@ $(document).ready(function () {
                     editLink.setAttribute("data-name", row.categoryName);
                     editLink.setAttribute("data-min", row.minMark);
                     editLink.setAttribute("data-max", row.maxMark);
+                    editLink.setAttribute("data-unit", row.unitType);
                     editLink.setAttribute("class", "updtCategory");
                     editLink.style = "cursor: pointer";
                     editLink.innerHTML = "Chỉnh sửa";
@@ -106,7 +134,7 @@ $(document).ready(function () {
             "emptyTable": "Không có thể loại nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ thể loại mỗi trang",
             "zeroRecords": "Không tìm thấy thể loại nào",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_ từ tất cả _MAX_ thể loại",
             "infoEmpty": "Hiển thị trang 0 trên 0",
             "infoFiltered": "(đã lọc từ tất cả _MAX_ thể loại)",
             "loadingRecords": "Đang tải...",
@@ -132,10 +160,10 @@ $(document).ready(function () {
         $('#CategoryIdUpdt').val($(this).data("id"));
         $('#MinMarkUpdt').val($(this).data("min"));
         $('#MaxMarkUpdt').val($(this).data("max"));
+        $('#UnitTypeUpdt').val($(this).data("unit"));
     });
     $('#dataTable tbody').on('click', '.delCategory', function () {
         let id = $(this).data("id");
-        console.log(id);
         $("#confirmDeleteModal").modal("show");
         $('#delCategoryBtn').on('click', function () {
             deleteCategory(id);
@@ -145,8 +173,9 @@ $(document).ready(function () {
         let obj = {
             CategoryId: "C" + new Date().getTime(),
             CategoryName: $('#CategoryAdd').val(),
-            MinMark: parseInt($('#MinMarkAdd').val()),
-            MaxMark: parseInt($('#MaxMarkAdd').val())
+            MinMark: parseFloat($('#MinMarkAdd').val()),
+            MaxMark: parseFloat($('#MaxMarkAdd').val()),
+            UnitType: parseInt($('#UnitTypeAdd').val())
         }
         $.ajax({
             type: "POST",
@@ -169,8 +198,9 @@ $(document).ready(function () {
         let obj = {
             CategoryId: $('#CategoryIdUpdt').val(),
             CategoryName: $('#CategoryUpdt').val(),
-            MinMark: parseInt($('#MinMarkUpdt').val()),
-            MaxMark: parseInt($('#MaxMarkUpdt').val())
+            MinMark: parseFloat($('#MinMarkUpdt').val()),
+            MaxMark: parseFloat($('#MaxMarkUpdt').val()),
+            UnitType: parseInt($('#UnitTypeUpdt').val())
         }
         $.ajax({
             type: "POST",
@@ -217,7 +247,8 @@ $(document).ready(function () {
                 required: true
             },
             MaxMarkAdd: {
-                required: true
+                required: true,
+                greaterThan: '#MinMarkAdd'
             },
         },
         messages: {
@@ -227,13 +258,11 @@ $(document).ready(function () {
             },
             MinMarkAdd: {
                 required: "Điểm thấp nhất không thể bỏ trống.",
-                step: "Điểm thấp nhất không có phần thập phân.",
                 min: "Điểm thấp nhất lớn hơn hoặc bằng 1",
                 number: "Vui lòng nhập số"
             },
             MaxMarkAdd: {
                 required: "Điểm cao nhất không thể bỏ trống.",
-                step: "Điểm cao nhất không có phần thập phân.",
                 min: "Điểm cao nhất lớn hơn hoặc bằng 1",
                 number: "Vui lòng nhập số"
             }
@@ -251,7 +280,8 @@ $(document).ready(function () {
                 required: true
             },
             MaxMarkUpdt: {
-                required: true
+                required: true,
+                greaterThan: '#MinMarkAdd'
             },
         },
         messages: {
@@ -261,13 +291,11 @@ $(document).ready(function () {
             },
             MinMarkUpdt: {
                 required: "Điểm thấp nhất không thể bỏ trống.",
-                step: "Điểm thấp nhất không có phần thập phân.",
                 min: "Điểm thấp nhất lớn hơn hoặc bằng 1",
                 number: "Vui lòng nhập số"
             },
             MaxMarkUpdt: {
                 required: "Điểm cao nhất không thể bỏ trống.",
-                step: "Điểm cao nhất không có phần thập phân.",
                 min: "Điểm cao nhất lớn hơn hoặc bằng 1",
                 number: "Vui lòng nhập số"
             }

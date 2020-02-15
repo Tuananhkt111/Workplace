@@ -23,12 +23,12 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="CategoryAdd"><strong>Thể loại</strong></label>
-                <select class="form-control" id="CategoryAdd">
+                <select class="form-control selectpicker" id="CategoryAdd" data-show-subtext="true" data-live-search="true">
                     @if (Model.Categories.Count != 0)
                     {
                         @foreach (var item in Model.Categories)
                         {
-                            <option value="@item.CategoryId" data-min="@item.MinMark" data-max="@item.MaxMark">@item.CategoryName</option>
+                            <option data-subtext="@item.UnitType" value="@item.CategoryId" data-min="@item.MinMark" data-max="@item.MaxMark">@item.CategoryName</option>
                         }
                     }
                     else
@@ -41,12 +41,12 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="ExecutorAdd"><strong>Người thực hiện</strong></label>
-                <select class="form-control" id="ExecutorAdd">
+                <select class="form-control selectpicker" id="ExecutorAdd" data-show-subtext="true" data-live-search="true">
                     @if (Model.Reporters.Count != 0)
                     {
                         @foreach (var item in Model.Reporters)
                         {
-                            <option value="@item.UserName">@item.Name</option>
+                            <option data-subtext="@item.DepartmentName" value="@item.UserName">@item.Name</option>
                         }
                     }
                     else
@@ -67,7 +67,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="MarkAdd"><strong>Điểm</strong></label>
-                <input type="number" class="form-control" placeholder="" name="MarkAdd" id="MarkAdd" min="1" step="1" max="10" value="1">
+                <input type="number" class="form-control" placeholder="" name="MarkAdd" id="MarkAdd" min="1" step="any" max="10" value="1">
             </div>
         </div>
     </div>
@@ -101,11 +101,18 @@
                         <th>ID</th>
                         <th>Nội dung</th>
                         <th>Thể loại ID</th>
+                        <th></th>
+                        <th></th>
                         <th>Thể loại</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                         <th>Người thực hiện</th>
                         <th>Trạng thái</th>
                         <th>Ngày phát sóng</th>
                         <th>Điểm</th>
+                        <th></th>
+                        <th></th>
                         <th>Người chấm</th>
                         <th>Điểm (GĐ)</th>
                         <th>Chỉnh sửa</th>
@@ -116,11 +123,18 @@
                         <th>ID</th>
                         <th>Nội dung</th>
                         <th>Thể loại ID</th>
+                        <th></th>
+                        <th></th>
                         <th>Thể loại</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                         <th>Người thực hiện</th>
                         <th>Trạng thái</th>
                         <th>Ngày phát sóng</th>
                         <th>Điểm</th>
+                        <th></th>
+                        <th></th>
                         <th>Người chấm</th>
                         <th>Điểm (GĐ)</th>
                         <th>Chỉnh sửa</th>
@@ -155,12 +169,12 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="CategoryUpdt"><strong>Thể loại</strong></label>
-                            <select class="form-control" id="CategoryUpdt">
+                            <select class="form-control selectpicker" id="CategoryUpdt" data-show-subtext="true" data-live-search="true">
                                 @if (Model.Categories.Count != 0)
                                 {
                                     @foreach (var item in Model.Categories)
                                     {
-                                        <option value="@item.CategoryId" data-min="@item.MinMark" data-max="@item.MaxMark">@item.CategoryName</option>
+                                        <option data-subtext="@item.UnitType" value="@item.CategoryId" data-min="@item.MinMark" data-max="@item.MaxMark">@item.CategoryName</option>
                                     }
                                 }
                                 else
@@ -173,12 +187,12 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ExecutorUpdt"><strong>Người thực hiện</strong></label>
-                            <select class="form-control" id="ExecutorUpdt">
+                            <select class="form-control selectpicker" id="ExecutorUpdt" data-show-subtext="true" data-live-search="true">
                                 @if (Model.Reporters.Count != 0)
                                 {
                                     @foreach (var item in Model.Reporters)
                                     {
-                                        <option value="@item.UserName">@item.Name</option>
+                                        <option data-subtext="@item.DepartmentName" value="@item.UserName">@item.Name</option>
                                     }
                                 }
                                 else
@@ -199,7 +213,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="MarkUpdt"><strong>Điểm</strong></label>
-                            <input type="number" class="form-control" placeholder="" name="MarkUpdt" id="MarkUpdt" min="1" step="1" max="10" value="1">
+                            <input type="number" class="form-control" placeholder="" name="MarkUpdt" id="MarkUpdt" min="1" step="any" max="10" value="1">
                         </div>
                     </div>
                 </div>
@@ -233,6 +247,8 @@
 @section Scripts {
     <script src="~/vendor/datatables/jquery.dataTables.js"></script>
     <script src="~/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="~/js/bootstrap-select.min.js"></script>
+    <script src="~/js/defaults-vi_VN.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js"></script>
     <script src="~/js/article.js"></script>

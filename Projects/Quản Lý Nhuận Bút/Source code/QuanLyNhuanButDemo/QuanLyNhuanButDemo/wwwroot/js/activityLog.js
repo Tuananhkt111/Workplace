@@ -4,7 +4,8 @@
         timepicker: false,
         datepicker: true,
         format: 'd/m/Y',
-        weeks: false
+        weeks: false,
+        scrollInput: false
     });
     $('#toggle1').on('click', function () {
         $('#dateExecuted').datetimepicker('toggle')
@@ -55,7 +56,7 @@
             "emptyTable": "Không có hoạt động nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ hoạt động mỗi trang",
             "zeroRecords": "Không tìm thấy hoạt động nào",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_ từ tất cả _MAX_ hoạt động",
             "infoEmpty": "Hiển thị trang 0 trên 0",
             "infoFiltered": "(đã lọc từ tất cả _MAX_ hoạt động)",
             "loadingRecords": "Đang tải...",

@@ -11,7 +11,7 @@
     $('#MarkUpdt').attr({
         "max": maxMark,
         "min": minMark,
-        "value": initValue,
+        "value": initValue
     });
     $("label[for='MarkUpdt']").html("<strong>Điểm (" + minMark + " - " + maxMark + ")</strong><strong>BTV chấm: " + oldEditorValue + "</strong>");
 };
@@ -23,7 +23,8 @@ $(document).ready(function () {
         onChangeMonth: function (cur, $i) {
             $('#timeSearch').val(moment(new Date(cur)).format("MM/YYYY"));
         },
-        weeks: false
+        weeks: false,
+        scrollInput: false
     });
     $('#toggle1').on('click', function () {
         $('#timeSearch').datetimepicker('toggle')
@@ -59,7 +60,7 @@ $(document).ready(function () {
                 "data": "content",
                 "render": function (data) {
                     let dataDiv = document.createElement("div");
-                    dataDiv.classList = "truncate";
+                    //dataDiv.classList = "truncate";
                     dataDiv.setAttribute("data-toggle", "tooltip");
                     dataDiv.setAttribute("data-placement", "top");
                     dataDiv.setAttribute("title", data);
@@ -72,23 +73,73 @@ $(document).ready(function () {
                 "visible": false
             },
             {
+                "data": "unitType",
+                "visible": false
+            },
+            {
                 "data": "categoryName",
-                "render": function (data) {
+                "visible": false
+            },
+            {
+                "data": function (row) {
                     let dataDiv = document.createElement("div");
-                    dataDiv.classList = "truncate";
+                    let unit = document.createElement("p");
+                    let catName = document.createElement("span");
+                    //dataDiv.classList = "truncate";
                     dataDiv.setAttribute("data-toggle", "tooltip");
                     dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", data);
-                    dataDiv.innerHTML = data;
+                    dataDiv.setAttribute("title", row.categoryName);
+                    catName.innerHTML = row.categoryName;
+                    let unitName;
+                    if (row.unitType === 0) {
+                        unitName = "Truyền hình";
+                        unit.setAttribute("style", "color: red");
+                    }
+                    else {
+                        unitName = "Phát thanh";
+                        unit.setAttribute("style", "color: blue");
+                    }
+                    unit.innerHTML = unitName;
+                    dataDiv.appendChild(unit);
+                    dataDiv.appendChild(catName);
                     return dataDiv.outerHTML;
                 }
             },
             {
-                "data": "executor"
+                "data": "executor",
+                "visible": false
             },
             {
-                "data": "status",
-                "visible": true
+                "data": "departmentName",
+                "visible": false
+            },
+            {
+                "data": "executorName",
+                "visible": false
+            },
+            {
+                "data": function (row) {
+                    let dataDiv = document.createElement("div");
+                    let username = document.createElement("p");
+                    let name = document.createElement("p");
+                    let departmentName = document.createElement("p");
+                    username.setAttribute("style", "color: blue");
+                    departmentName.setAttribute("style", "color: green");
+                    //dataDiv.classList = "truncate";
+                    dataDiv.setAttribute("data-toggle", "tooltip");
+                    dataDiv.setAttribute("data-placement", "top");
+                    dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor + ", tên: " + row.executorName + ", đơn vị: " + row.departmentName);
+                    username.innerHTML = row.executor;
+                    name.innerHTML = row.executorName;
+                    departmentName.innerHTML = row.departmentName;
+                    dataDiv.appendChild(username);
+                    dataDiv.appendChild(name);
+                    dataDiv.appendChild(departmentName);
+                    return dataDiv.outerHTML;
+                }
+            },
+            {
+                "data": "status"
             },
             {
                 "data": "timeBroadcast",
@@ -98,14 +149,35 @@ $(document).ready(function () {
                 }
             },
             {
-                "data": "marker"
+                "data": "marker",
+                "visible": false
+            },
+            {
+                "data": "markerName",
+                "visible": false
+            },
+            {
+                "data": function (row) {
+                    let dataDiv = document.createElement("div");
+                    let username = document.createElement("p");
+                    let name = document.createElement("p");
+                    username.setAttribute("style", "color: blue");
+                    //dataDiv.classList = "truncate";
+                    dataDiv.setAttribute("data-toggle", "tooltip");
+                    dataDiv.setAttribute("data-placement", "top");
+                    dataDiv.setAttribute("title", "Tên đăng nhập: " + row.marker + ", tên: " + row.markerName);
+                    username.innerHTML = row.marker;
+                    name.innerHTML = row.markerName;
+                    dataDiv.appendChild(username);
+                    dataDiv.appendChild(name);
+                    return dataDiv.outerHTML;
+                }
             },
             {
                 "data": "editorMark"
             },
             {
-                "data": "managerMark",
-                "visible": true
+                "data": "managerMark"
             },
             {
                 "data": function (row) {
@@ -145,12 +217,12 @@ $(document).ready(function () {
             "style": "os",
             "selector": "td:first-child"
         },
-        "aaSorting": [[7, "desc"], [6, "asc"]],
+        "aaSorting": [[12, "desc"], [11, "asc"]],
         "language": {
             "emptyTable": "Không có tin bài nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ tin bài mỗi trang",
             "zeroRecords": "Không tìm thấy tin bài nào",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_ từ tất cả _MAX_ tin bài",
             "infoEmpty": "Hiển thị trang 0 trên 0",
             "infoFiltered": "(đã lọc từ tất cả _MAX_ tin bài)",
             "loadingRecords": "Đang tải...",
@@ -209,7 +281,7 @@ $(document).ready(function () {
     });
     $("#selectBtn").on("click", function (e) {
         let indexes = t.rows().eq(0).filter(function (rowIdx) {
-            return t.cell(rowIdx, 6).data() === 'Chưa duyệt' ? true : false;
+            return t.cell(rowIdx, 11).data() === 'Chưa duyệt' ? true : false;
         });
         if ($(this).is(":checked")) {
             t.rows(indexes).select();
@@ -246,8 +318,10 @@ $(document).ready(function () {
             datepicker: true,
             format: 'd/m/Y',
             weeks: false,
+            scrollInput: false,
             defaultDate: dateValue
         });
+        $('.selectpicker').selectpicker('refresh');
     });
     $('#dataTable tbody').on('click', '.delArticle', function () {
         let id = $(this).data("id");
@@ -262,7 +336,7 @@ $(document).ready(function () {
             Content: $('#ContentUpdt').val(),
             CategoryId: $('#CategoryUpdt').val(),
             EditorMark: 1,
-            ManagerMark: parseInt($('#MarkUpdt').val()),
+            ManagerMark: parseFloat($('#MarkUpdt').val()),
             Status: 0,
             Executor: $('#ExecutorUpdt').val(),
             TimeBroadcast: $('#TimeBroadcastUpdt').val(),
@@ -327,7 +401,6 @@ $(document).ready(function () {
                 required: "Điểm không được bỏ trống",
                 min: "Điểm lớn hơn hoặc bằng {0}",
                 max: "Điểm nhỏ hơn hoặc bằng {0}",
-                step: "Điểm không có phần thập phân",
                 number: "Vui lòng nhập số"
             }
         },

@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.Data;
+using QuanLyNhuanButDemo.DTOs;
+using QuanLyNhuanButDemo.Library;
 using QuanLyNhuanButDemo.Models;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,17 @@ namespace QuanLyNhuanButDemo.DAOs
         public List<Category> GetAllCategories()
         {
             return _context.Categories.ToList();
+        }
+        public List<CategoryDTO> GetCategoriesDropdown()
+        {
+            return _context.Categories.OrderBy(cat => cat.CategoryName).Select(cat => new CategoryDTO
+            {
+                CategoryId = cat.CategoryId,
+                CategoryName = cat.CategoryName,
+                MinMark = cat.MinMark,
+                MaxMark = cat.MaxMark,
+                UnitType = cat.UnitType.GetDescription()
+            }).ToList();
         }
         public async Task<string> GetCategoryNameById(String id)
         {

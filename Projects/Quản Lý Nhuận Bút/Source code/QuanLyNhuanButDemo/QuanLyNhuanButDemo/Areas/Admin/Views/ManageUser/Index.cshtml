@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model List<IdentityRole>
+@using QuanLyNhuanButDemo.DTOs
+@model ManageUserViewModel
 @{
     ViewData["Title"] = "QuanLyTaiKhoan";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,12 +24,28 @@
             <div class="form-group">
                 <label for="RoleRg"><strong>Chức vụ</strong></label>
                 <select class="form-control" id="RoleRg">
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.IdentityRoles)
                     {
                         <option value="@item.Name">@item.Name</option>
                     }
                 </select>
             </div>
+        </div>
+    </div>
+    <div class="row" id="departmentInput">
+        <div class="col-md-12">
+            <label for="DepartmentRg"><strong>Đơn vị</strong><small style="color:blue">* Bạn cần chọn đơn vị nếu bạn là phóng viên</small></label>
+            <select class="form-control selectpicker" id="DepartmentRg" name="DepartmentRg" data-show-subtext="true" data-live-search="true">
+                @if (Model.Departments.Count() == 0)
+                {
+                    <option value="">Không có đơn vị nào có sẵn</option>
+                }
+                else
+                    foreach (var item in Model.Departments)
+                    {
+                        <option data-subtext="@item.DepartmentType" value="@item.DepartmentId">@item.DepartmentName</option>
+                    }
+            </select>
         </div>
     </div>
     <!--  row   -->
@@ -72,6 +89,8 @@
                         <th>Tên đăng nhập</th>
                         <th>Tên</th>
                         <th>Chức vụ</th>
+                        <th></th>
+                        <th>Đơn vị</th>
                         <th>Trạng thái</th>
                         <th>Ngày cập nhật</th>
                         <th>Chỉnh sửa</th>
@@ -82,6 +101,8 @@
                         <th>Tên đăng nhập</th>
                         <th>Tên</th>
                         <th>Chức vụ</th>
+                        <th></th>
+                        <th>Đơn vị</th>
                         <th>Trạng thái</th>
                         <th>Ngày cập nhật</th>
                         <th>Chỉnh sửa</th>
@@ -124,7 +145,7 @@
                         <div class="form-group">
                             <label for="RoleUpdt"><strong>Chức vụ</strong></label>
                             <select class="form-control" id="RoleUpdt">
-                                @foreach (var item in Model)
+                                @foreach (var item in Model.IdentityRoles)
                                 {
                                     <option value="@item.Name">@item.Name</option>
                                 }
@@ -139,6 +160,17 @@
                                 <option value=false>Có thể sử dụng</option>
                             </select>
                         </div>
+                    </div>
+                </div>
+                <div class="row" id="departmentInput2">
+                    <div class="col-md-12">
+                        <label for="DepartmentUpdt"><strong>Đơn vị</strong><small style="color:blue">* Bạn cần chọn đơn vị nếu bạn là phóng viên</small></label>
+                        <select class="form-control selectpicker" id="DepartmentUpdt" name="DepartmentUpdt" data-show-subtext="true" data-live-search="true">
+                            @foreach (var item in Model.Departments)
+                            {
+                                <option data-subtext="@item.DepartmentType" value="@item.DepartmentId">@item.DepartmentName</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="text-center mt-2">
@@ -194,6 +226,7 @@
 @section Scripts {
     <script src="~/vendor/datatables/jquery.dataTables.js"></script>
     <script src="~/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="~/js/bootstrap-select.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js"></script>
     <script src="~/js/user.js"></script>

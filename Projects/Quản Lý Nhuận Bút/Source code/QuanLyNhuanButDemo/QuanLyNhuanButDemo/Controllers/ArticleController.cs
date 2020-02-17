@@ -61,6 +61,7 @@ namespace QuanLyNhuanButDemo.Controllers
                 Content = articleDTO.Content,
                 EditorMark = articleDTO.EditorMark,
                 Executor = articleDTO.Executor,
+                Executor2 = articleDTO.Executor2,
                 ManagerMark = null,
                 Marker = User.Identity.Name ?? "",
                 Status = articleDTO.Status,
@@ -88,7 +89,8 @@ namespace QuanLyNhuanButDemo.Controllers
                         + article.CategoryId + "\", điểm: \""
                         + article.EditorMark + "\", trạng thái: \""
                         + article.Status.GetDescription() + "\", người thực hiện: \""
-                        + article.Executor + "\", ngày phát sóng: \""
+                        + article.Executor + "\", người thực hiện 2: \""
+                        + article.Executor2 + "\", ngày phát sóng: \""
                         + article.TimeBroadcast.ToString("dd/MM/yyyy") + "\", người chấm: \""
                         + article.Marker + "\"";
                     ActivityLog alDTO = new ActivityLog
@@ -138,7 +140,8 @@ namespace QuanLyNhuanButDemo.Controllers
                         + articleDTO.Content + "\", thể loại ID: \""
                         + articleDTO.CategoryId + "\", điểm: \""
                         + articleDTO.EditorMark + "\", người thực hiện: \""
-                        + articleDTO.Executor + "\", ngày phát sóng: \""
+                        + articleDTO.Executor + "\", người thực hiện 2: \""
+                        + articleDTO.Executor2 + "\", ngày phát sóng: \""
                         + articleDTO.TimeBroadcast + "\", người chấm: \""
                         + articleDTO.Marker + "\"";
                     ActivityLog alDTO = new ActivityLog
@@ -264,7 +267,8 @@ namespace QuanLyNhuanButDemo.Controllers
                         + articleDTO.Content + "\", thể loại ID: \""
                         + articleDTO.CategoryId + "\", điểm duyệt: \""
                         + articleDTO.ManagerMark + "\", người thực hiện: \""
-                        + articleDTO.Executor + "\", ngày phát sóng: \""
+                        + articleDTO.Executor + "\", người thực hiện 2: \""
+                        + articleDTO.Executor2 + "\", ngày phát sóng: \""
                         + articleDTO.TimeBroadcast + "\"";
                     ActivityLog alDTO = new ActivityLog
                     {
@@ -348,7 +352,6 @@ namespace QuanLyNhuanButDemo.Controllers
             stream.Position = 0;
             string excelName = $"UserList-{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xlsx";
 
-            //return File(stream, "application/octet-stream", excelName);  
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
         }
     }

@@ -1,4 +1,4 @@
-﻿function setMarkInput() {
+﻿function setInput() {
     let selectedOption = $('#CategoryAdd').children("option:selected");
     let minMark = selectedOption.data("min");
     let maxMark = selectedOption.data("max")
@@ -8,8 +8,14 @@
         "value": minMark
     });
     $("label[for='MarkAdd']").html("<strong>Điểm (" + minMark + " - " + maxMark + ")</strong>");
+    let unitType = selectedOption.data("subtext");
+    if (unitType === "Truyền hình") {
+        $('#Executor2AddInput').show();
+    } else {
+        $('#Executor2AddInput').hide();
+    }
 };
-function setMarkInputUpdt(oldValue) {
+function setInputUpdt(oldValue) {
     let selectedOption = $('#CategoryUpdt').children("option:selected");
     let minMark = selectedOption.data("min");
     let maxMark = selectedOption.data("max");
@@ -25,6 +31,12 @@ function setMarkInputUpdt(oldValue) {
         "value": initValue
     });
     $("label[for='MarkUpdt']").html("<strong>Điểm (" + minMark + " - " + maxMark + ")</strong>");
+    let unitType = selectedOption.data("subtext");
+    if (unitType === "Truyền hình") {
+        $('#Executor2UpdtInput').show();
+    } else {
+        $('#Executor2UpdtInput').hide();
+    }
 };
 function resetForm() {
     $('#ContentAdd').val("");
@@ -48,12 +60,12 @@ $(document).ready(function () {
         scrollInput: false
     });
     $('#toggle1').on('click', function () {
-        $('#timeSearch').datetimepicker('toggle')
+        $('#timeSearch').datetimepicker('toggle');
     });
     $('#CategoryAdd').on('change', function () {
-        setMarkInput();
+        setInput();
     });
-    setMarkInput();
+    setInput();
 });
 $(document).ready(function () {
     $.fn.dataTable.moment('DD-MM-YYYY');
@@ -127,31 +139,49 @@ $(document).ready(function () {
                 "visible": false
             },
             {
-                "data": "departmentName",
-                "visible": false
-            },
-            {
-                "data": "executorName",
+                "data": "executor2",
                 "visible": false
             },
             {
                 "data": function (row) {
                     let dataDiv = document.createElement("div");
-                    let username = document.createElement("p");
-                    let name = document.createElement("p");
-                    let departmentName = document.createElement("p");
+                    let div1 = document.createElement("p");
+                    let username = document.createElement("span");
+                    let name = document.createElement("span");
+                    let departmentName = document.createElement("span");
                     username.setAttribute("style", "color: blue");
                     departmentName.setAttribute("style", "color: green");
                     dataDiv.classList = "truncate";
                     dataDiv.setAttribute("data-toggle", "tooltip");
                     dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor + ", tên: " + row.executorName + ", đơn vị: " + row.departmentName);
-                    username.innerHTML = row.executor;
-                    name.innerHTML = row.executorName;
-                    departmentName.innerHTML = row.departmentName;
-                    dataDiv.appendChild(username);
-                    dataDiv.appendChild(name);
-                    dataDiv.appendChild(departmentName);
+                    username.innerHTML = row.executor.executor;
+                    name.innerHTML = row.executor.executorName;
+                    departmentName.innerHTML = row.executor.departmentName;
+                    div1.appendChild(username);
+                    div1.appendChild(document.createElement("br"));
+                    div1.appendChild(name);
+                    div1.appendChild(document.createElement("br"));
+                    div1.appendChild(departmentName);
+                    dataDiv.appendChild(div1);
+                    dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor.executor + ", tên: " + row.executor.executorName + ", đơn vị: " + row.executor.departmentName);
+                    if (row.executor.executor !== row.executor2.executor) {
+                        let div2 = document.createElement("p");
+                        let username2 = document.createElement("span");
+                        let name2 = document.createElement("span");
+                        let departmentName2 = document.createElement("span");
+                        username2.setAttribute("style", "color: blue");
+                        departmentName2.setAttribute("style", "color: green");
+                        username2.innerHTML = row.executor2.executor;
+                        name2.innerHTML = row.executor2.executorName;
+                        departmentName2.innerHTML = row.executor2.departmentName;
+                        div2.appendChild(username2);
+                        div2.appendChild(document.createElement("br"));
+                        div2.appendChild(name2);
+                        div2.appendChild(document.createElement("br"));
+                        div2.appendChild(departmentName2);
+                        dataDiv.appendChild(div2);
+                        dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor.executor + ", tên: " + row.executor.executorName + ", đơn vị: " + row.executor.departmentName + "  /  " + "Tên đăng nhập: " + row.executor2.executor + ", tên: " + row.executor2.executorName + ", đơn vị: " + row.executor2.departmentName);
+                    }
                     return dataDiv.outerHTML;
                 }
             },
@@ -210,7 +240,8 @@ $(document).ready(function () {
                     editLink.setAttribute("data-id", row.articleId);
                     editLink.setAttribute("data-category", row.categoryId);
                     editLink.setAttribute("data-content", row.content);
-                    editLink.setAttribute("data-executor", row.executor);
+                    editLink.setAttribute("data-executor", row.executor.executor);
+                    editLink.setAttribute("data-executor2", row.executor2.executor);
                     editLink.setAttribute("data-time-broadcast", row.timeBroadcast);
                     editLink.setAttribute("data-editor-mark", row.editorMark);
                     editLink.setAttribute("data-marker", row.marker);
@@ -231,7 +262,7 @@ $(document).ready(function () {
                 }
             }
         ],
-        "order": [[11, "desc"]],
+        "order": [[10, "desc"]],
         "language": {
             "emptyTable": "Không có tin bài nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ tin bài mỗi trang",
@@ -259,14 +290,15 @@ $(document).ready(function () {
     $('#dataTable tbody').on('click', '.updtArticle', function () {
         let x = $(this);
         $('#CategoryUpdt').val($(this).data("category"));
-        setMarkInputUpdt(x.data("editorMark"));
+        setInputUpdt(x.data("editorMark"));
         $('#CategoryUpdt').on('change', function () {
-            setMarkInputUpdt(x.data("editorMark"));
+            setInputUpdt(x.data("editorMark"));
         });
         $('#ArticleIdUpdt').val($(this).data("id"));
         console.log($('#ArticleIdUpdt').val());
         $('#ContentUpdt').val($(this).data("content"));
         $('#ExecutorUpdt').val($(this).data("executor"));
+        $('#Executor2Updt').val($(this).data("executor2"));
         let date = new Date($(this).data("time-broadcast"));
         let dateValue = moment(date).format('DD/MM/YYYY');
         $('#TimeBroadcastUpdt').val(dateValue);
@@ -288,6 +320,8 @@ $(document).ready(function () {
         });
     });
     function createArticle() {
+        let selectedOption = $('#CategoryAdd').children("option:selected");
+        let unitType = selectedOption.data("subtext");
         let obj = {
             ArticleId: "A" + new Date().getTime(),
             Content: $('#ContentAdd').val(),
@@ -296,6 +330,7 @@ $(document).ready(function () {
             ManagerMark: 1,
             Status: 0,
             Executor: $('#ExecutorAdd').val(),
+            Executor2: unitType === "Truyền hình" ? $('#Executor2Add').val() : $('#ExecutorAdd').val(),
             TimeBroadcast: $('#TimeBroadcastAdd').val(),
             Marker: "",
         }
@@ -317,6 +352,8 @@ $(document).ready(function () {
         });
     }
     function updateArticle() {
+        let selectedOption = $('#CategoryUpdt').children("option:selected");
+        let unitType = selectedOption.data("subtext");
         let obj = {
             ArticleId: $('#ArticleIdUpdt').val(),
             Content: $('#ContentUpdt').val(),
@@ -325,6 +362,7 @@ $(document).ready(function () {
             ManagerMark: 1,
             Status: 0,
             Executor: $('#ExecutorUpdt').val(),
+            Executor2: unitType === "Truyền hình" ? $('#Executor2Updt').val() : $('#ExecutorUpdt').val(),
             TimeBroadcast: $('#TimeBroadcastUpdt').val(),
             Marker: "",
         }
@@ -394,9 +432,9 @@ $(document).ready(function () {
         },
         submitHandler: function () {
             if ($('#CategoryAdd').val() === "") {
-                showMessage("Chưa chọn thể loại không thể cập nhật");
+                showMessage("Chưa chọn thể loại không thể tạo mới");
             } else if ($('#ExecutorAdd').val() === "") {
-                showMessage("Chưa chọn người thực hiện không thể cập nhật");
+                showMessage("Chưa chọn người thực hiện không thể tạo mới");
             } else {
                 createArticle();
             }

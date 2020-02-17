@@ -15,6 +15,7 @@ namespace QuanLyNhuanButDemo.DTOs
         public float ManagerMark { get; set; }
         public StatusTypes Status { get; set; }
         public string Executor { get; set; }
+        public string Executor2 { get; set; }
         public string TimeBroadcast { get; set; }
         public string Marker { get; set; }
     }

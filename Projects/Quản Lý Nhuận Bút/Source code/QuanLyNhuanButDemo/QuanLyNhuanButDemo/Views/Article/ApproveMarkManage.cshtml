@@ -44,7 +44,6 @@
                         <th>Thể loại</th>
                         <th></th>
                         <th></th>
-                        <th></th>
                         <th>Người thực hiện</th>
                         <th>Trạng thái</th>
                         <th>Ngày phát sóng</th>
@@ -65,7 +64,6 @@
                         <th></th>
                         <th></th>
                         <th>Thể loại</th>
-                        <th></th>
                         <th></th>
                         <th></th>
                         <th>Người thực hiện</th>
@@ -105,7 +103,7 @@
                 </div>
                 <!--  row   -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label for="CategoryUpdt"><strong>Thể loại</strong></label>
                             <select class="form-control selectpicker" id="CategoryUpdt" data-show-subtext="true" data-live-search="true">
@@ -123,10 +121,30 @@
                             </select>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ExecutorUpdt"><strong>Người thực hiện</strong></label>
                             <select class="form-control selectpicker" id="ExecutorUpdt" data-show-subtext="true" data-live-search="true">
+                                @if (Model.Reporters.Count != 0)
+                                {
+                                    @foreach (var item in Model.Reporters)
+                                    {
+                                        <option data-subtext="@item.DepartmentName" value="@item.UserName">@item.Name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">Không có phóng viên nào có sẵn</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="Executor2UpdtInput">
+                        <div class="form-group">
+                            <label for="Executor2Updt"><strong>Người thực hiện 2</strong></label>
+                            <select class="form-control selectpicker" id="Executor2Updt" data-show-subtext="true" data-live-search="true">
                                 @if (Model.Reporters.Count != 0)
                                 {
                                     @foreach (var item in Model.Reporters)

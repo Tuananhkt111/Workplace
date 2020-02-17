@@ -80,6 +80,7 @@ $(document).ready(function () {
                     passLink.setAttribute("data-toggle", "modal");
                     passLink.href = 'javascript: void (0)';
                     passLink.setAttribute("data-target", "#modalUpdtPassForm");
+                    passLink.setAttribute("data-id", row.userName);
                     passLink.style = "cursor: pointer";
                     passLink.classList.add("updtPass");
                     passLink.innerHTML = "Đổi mật khẩu";
@@ -137,7 +138,6 @@ $(document).ready(function () {
         } else {
             $('#departmentInput2').hide();
         }
-        console.log(row.data("depid"));
         $('#DepartmentUpdt').val(row.data("depid"));
         $('#DepartmentUpdt').change();
         if (!row.data("status")) {
@@ -264,9 +264,12 @@ $(document).ready(function () {
             }
         },
         submitHandler: function () {
-            if ($('#DepartmentRg').val() === "" && $('#RoleRg').val() === "Phóng viên") {
-                showMessage("Chưa chọn đơn vị không thể tạo mới");
+            if (($('#DepartmentRg').val() === "") && $('#RoleRg').val() === "Phóng viên") {
+                $('#DepartmentUpdt-exist').html("Chưa chọn đơn vị không thể tạo mới");
+            } else if ($('#Username-exist').html() !== "") {
+                $('#DepartmentUpdt-exist').html("");
             } else {
+                $('#DepartmentUpdt-exist').html("");
                 createAccount();
             }
         }
@@ -284,9 +287,10 @@ $(document).ready(function () {
             }
         },
         submitHandler: function () {
-            if ($('#DepartmentUpdt').val() === "" && $('#RoleUpdt').val() === "Phóng viên") {
-                showMessage("Chưa chọn đơn vị không thể cập nhật");
+            if (($('#DepartmentUpdt').val() === "" || $('#DepartmentUpdt').val() === null) && $('#RoleUpdt').val() === "Phóng viên") {
+                $('#DepartmentUpdt-exist').html("Chưa chọn đơn vị không thể cập nhật");
             } else {
+                $('#DepartmentUpdt-exist').html("");
                 UpdateAccount();
             }
         }

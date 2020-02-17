@@ -26,6 +26,7 @@ namespace QuanLyNhuanButDemo.Models
         public float? ManagerMark { get; set; }
         public StatusTypes Status { get; set; }
         public string Executor { get; set; }
+        public string Executor2 { get; set; }
         public DateTime TimeBroadcast { get; set; }
         public string Marker { get; set; }
         public virtual Category Category { get; set; }

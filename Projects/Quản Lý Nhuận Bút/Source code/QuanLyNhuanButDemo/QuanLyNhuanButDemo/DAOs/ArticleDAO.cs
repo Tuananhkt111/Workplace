@@ -38,6 +38,7 @@ namespace QuanLyNhuanButDemo.DAOs
             article.Content = articleDTO.Content;
             article.EditorMark = articleDTO.EditorMark;
             article.Executor = articleDTO.Executor;
+            article.Executor2 = articleDTO.Executor2;
             article.Marker = articleDTO.Marker;
             article.TimeBroadcast = DateTime.ParseExact(articleDTO.TimeBroadcast, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             _context.Articles.Update(article);
@@ -50,6 +51,7 @@ namespace QuanLyNhuanButDemo.DAOs
             article.CategoryId = articleDTO.CategoryId;
             article.Content = articleDTO.Content;
             article.Executor = articleDTO.Executor;
+            article.Executor2 = articleDTO.Executor2;
             article.ManagerMark = articleDTO.ManagerMark;
             article.Status = StatusTypes.APPROVED;
             article.TimeBroadcast = DateTime.ParseExact(articleDTO.TimeBroadcast, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -79,16 +81,20 @@ namespace QuanLyNhuanButDemo.DAOs
                 Content = a.Content,
                 EditorMark = a.EditorMark,
                 ManagerMark = a.ManagerMark == null ? "_" : a.ManagerMark.ToString(),
-                Executor = a.Executor,
+                Executor = new ExecutorDTO { Executor = a.Executor },
+                Executor2 = new ExecutorDTO { Executor = a.Executor2 },
                 Marker = a.Marker,
                 Status = a.Status.GetDescription(),
                 TimeBroadcast = a.TimeBroadcast
             }).ToListAsync();
             foreach (var article in list)
             {
-                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor)).SingleOrDefaultAsync();
-                article.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
-                article.ExecutorName = executor.Name;
+                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor.Executor)).SingleOrDefaultAsync();
+                var executor2 = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor2.Executor)).SingleOrDefaultAsync();
+                article.Executor.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.Executor.ExecutorName = executor.Name;
+                article.Executor2.DepartmentName = executor2.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.Executor2.ExecutorName = executor2.Name;
                 var marker = await _userManager.FindByNameAsync(article.Marker);
                 article.MarkerName = marker.Name;
             }
@@ -106,16 +112,20 @@ namespace QuanLyNhuanButDemo.DAOs
                 Content = a.Content,
                 EditorMark = a.EditorMark,
                 ManagerMark = a.ManagerMark == null ? "_" : a.ManagerMark.ToString(),
-                Executor = a.Executor,
+                Executor = new ExecutorDTO { Executor = a.Executor },
+                Executor2 = new ExecutorDTO { Executor = a.Executor2 },
                 Marker = a.Marker,
                 Status = a.Status.GetDescription(),
                 TimeBroadcast = a.TimeBroadcast
             }).ToListAsync();
             foreach (var article in list)
             {
-                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor)).SingleOrDefaultAsync();
-                article.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
-                article.ExecutorName = executor.Name;
+                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor.Executor)).SingleOrDefaultAsync();
+                var executor2 = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor2.Executor)).SingleOrDefaultAsync();
+                article.Executor.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.Executor.ExecutorName = executor.Name;
+                article.Executor2.DepartmentName = executor2.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.Executor2.ExecutorName = executor2.Name;
                 var marker = await _userManager.FindByNameAsync(article.Marker);
                 article.MarkerName = marker.Name;
             }
@@ -133,16 +143,20 @@ namespace QuanLyNhuanButDemo.DAOs
                 Content = a.Content,
                 EditorMark = a.EditorMark,
                 ManagerMark = a.ManagerMark == null ? "_" : a.ManagerMark.ToString(),
-                Executor = a.Executor,
+                Executor = new ExecutorDTO { Executor = a.Executor },
+                Executor2 = new ExecutorDTO { Executor = a.Executor2 },
                 Marker = a.Marker,
                 Status = a.Status.GetDescription(),
                 TimeBroadcast = a.TimeBroadcast
             }).ToListAsync();
             foreach (var article in list)
             {
-                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor)).SingleOrDefaultAsync();
-                article.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
-                article.ExecutorName = executor.Name;
+                var executor = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor.Executor)).SingleOrDefaultAsync();
+                var executor2 = await _context.Users.Include(user => user.Department).Where(user => user.UserName.Equals(article.Executor2.Executor)).SingleOrDefaultAsync();
+                article.Executor.DepartmentName = executor.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.Executor.ExecutorName = executor.Name;
+                article.Executor2.DepartmentName = executor2.Department.DepartmentType.GetDescription() + " " + executor.Department.DepartmentName;
+                article.Executor2.ExecutorName = executor2.Name;
                 var marker = await _userManager.FindByNameAsync(article.Marker);
                 article.MarkerName = marker.Name;
             }

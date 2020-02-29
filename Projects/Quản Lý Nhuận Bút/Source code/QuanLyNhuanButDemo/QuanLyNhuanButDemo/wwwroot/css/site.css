@@ -108,3 +108,7 @@ body {
 .card-body #dateExecuted-error {
     position: absolute;
 }
+
+.card-body #timeSearch-error {
+    position: absolute;
+}

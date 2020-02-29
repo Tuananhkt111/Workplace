@@ -230,6 +230,18 @@ namespace QuanLyNhuanButDemo.Controllers
             List<ArticleTableDTO> list = await articleDAO.GetAllArticlesByMonth(timeSearch);
             return new JsonResult(list);
         }
+
+        [HttpPost]
+        [Authorize(Roles = Roles.REPORTER_ROLE)]
+        public async Task<IActionResult> LoadAllArticlesByReporterAndMonth([FromBody] string timeSearchText)
+        {
+            string userName = User.Identity.Name ?? "";
+            DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
+            List<ArticleRepDTO> list = await articleDAO.GetAllArticlesByReporterAndMonth(userName, timeSearch);
+            return new JsonResult(list);
+        }
+
         [Authorize(Roles = Roles.MANAGER_ROLE)]
         public async Task<IActionResult> ApproveMarkManage()
         {

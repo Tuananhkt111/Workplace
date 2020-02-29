@@ -163,6 +163,25 @@ namespace QuanLyNhuanButDemo.DAOs
             return list;
         }
 
+        public async Task<List<ArticleRepDTO>> GetAllArticlesByReporterAndMonth(string userName, DateTime timeSearch)
+        {
+            List<ArticleRepDTO> list = await _context.Articles.Include(a => a.Category).Where(a => a.Status == StatusTypes.APPROVED && a.TimeBroadcast.Year == timeSearch.Year && a.TimeBroadcast.Month == timeSearch.Month && (a.Executor.Equals(userName) || a.Executor2.Equals(userName))).Select(a => new ArticleRepDTO
+            {
+                CategoryName = a.Category.CategoryName,
+                UnitType = (int)a.Category.UnitType,
+                Content = a.Content,
+                Marker = a.Marker,
+                Mark = (a.Category.UnitType.Equals(UnitTypes.TRUYEN_HINH) && a.Executor2.Equals(a.Executor)) ? (a.ManagerMark * 2).ToString() : a.ManagerMark.ToString(),
+                TimeBroadcast = a.TimeBroadcast
+            }).ToListAsync();
+            foreach (var article in list)
+            {
+                var marker = await _userManager.FindByNameAsync(article.Marker);
+                article.MarkerName = marker.Name;
+            }
+            return list;
+        }
+
         public bool Delete(String articleId)
         {
             var article = _context.Articles.Find(articleId);

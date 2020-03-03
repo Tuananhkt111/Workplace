@@ -40,6 +40,12 @@ namespace QuanLyNhuanButDemo.DAOs
                 UnitType = cat.UnitType.GetDescription()
             }).ToList();
         }
+
+        public List<string> GetCategoryNames()
+        {
+            return _context.Categories.OrderBy(cat => cat.CategoryName).Select(cat => cat.CategoryName).ToList();
+        }
+
         public async Task<string> GetCategoryNameById(String id)
         {
             Category category = await _context.Categories.FindAsync(id);

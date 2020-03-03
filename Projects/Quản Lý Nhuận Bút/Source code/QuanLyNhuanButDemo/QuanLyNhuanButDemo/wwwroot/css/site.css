@@ -105,10 +105,16 @@ body {
     margin: 5px 0;
 }
 
-.card-body #dateExecuted-error {
+.card-body #dateExecuted-error, #timeSearch-error {
     position: absolute;
 }
 
-.card-body #timeSearch-error {
+#StockRateAdd-error, #StockRateUpdt-error {
     position: absolute;
+    top: 40px;
+}
+
+.form-control[readonly] {
+    background-color: white;
+    opacity: 1;
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.DAOs;
 using QuanLyNhuanButDemo.Data;
@@ -43,9 +45,27 @@ namespace QuanLyNhuanButDemo.Controllers
         }
 
         [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
-        public IActionResult Invoice()
+        public async Task<IActionResult> Invoice()
         {
-            return View();
+            DepartmentDAO depDAO = new DepartmentDAO(_userManager, _signInManager, _context);
+            UserDAO userDAO = new UserDAO(_userManager, _signInManager, _context);
+            List<ReporterDTO> reporters = await userDAO.GetAllReportersAsync();
+            List<DepartmentNameDTO> departments = depDAO.GetAllDepartmentNames();
+            List<UnitTypeDTO> unitTypeDTOs = new List<UnitTypeDTO>
+            {
+                new UnitTypeDTO
+                {
+                    UnitTypeId = (int) UnitTypes.TRUYEN_HINH,
+                    UnitType = UnitTypes.TRUYEN_HINH.GetDescription()
+                },
+                new UnitTypeDTO
+                {
+                    UnitTypeId = (int) UnitTypes.PHAT_THANH,
+                    UnitType = UnitTypes.PHAT_THANH.GetDescription()
+                },
+            };
+            InvoiceViewModel model = new InvoiceViewModel { Departments = departments, UnitTypes = unitTypeDTOs, Reporters = reporters };
+            return View(model);
         }
 
         [HttpPost]
@@ -344,25 +364,124 @@ namespace QuanLyNhuanButDemo.Controllers
             return new JsonResult(msg);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
-        public async Task<IActionResult> ExportV2()
+        public async Task<IActionResult> ExportGeneral([FromForm] String departmentSearch, int unitTypeSearch, String monthSearch)
         {
             await Task.Yield();
             ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
-            string timeSearchText = "02/2020";
-            DateTime timeSearch = DateTime.ParseExact("01/" + timeSearchText, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            var list = await articleDAO.GetAllArticlesApprovedByMonth(timeSearch);
-            var stream = new MemoryStream();
+            UserDAO userDAO = new UserDAO(_userManager, _signInManager, _context);
+            DepartmentDAO depDAO = new DepartmentDAO(_userManager, _signInManager, _context);
+            CategoryDAO catDAO = new CategoryDAO(_userManager, _signInManager, _context);
 
+            string departmentName = await depDAO.GetDepartmentNameById(departmentSearch);
+            string unitTypeName = ((UnitTypes)unitTypeSearch).GetDescription().ToLower();
+
+            List<string> listUserName = userDAO.GetAllReportersByDepartment(departmentSearch);
+            List<string> listCategoryName = catDAO.GetCategoryNames();
+
+            DateTime timeSearch = DateTime.ParseExact("01/" + monthSearch, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime curTime = DateTime.Now;
+
+            var list = await articleDAO.GetGeneralReportList(listUserName, unitTypeSearch, timeSearch);
+
+            var stream = new MemoryStream();
             using (var package = new ExcelPackage(stream))
             {
-                var workSheet = package.Workbook.Worksheets.Add("Sheet1");
-                workSheet.Cells.LoadFromCollection<ArticleTableDTO>(list, true);
+                var workSheet = package.Workbook.Worksheets.Add("Tổng hợp tin bài " + unitTypeName);
+
+                workSheet.DefaultColWidth = 13;
+                workSheet.Cells.Style.Font.Name = "Times New Roman";
+                workSheet.Cells.Style.Font.Size = 12;
+                workSheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                workSheet.Cells.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                workSheet.Column(1).Width = 3.89;
+                workSheet.Column(2).Width = 28.33;
+
+                workSheet.Cells["B1:D1"].Merge = true;
+                workSheet.Cells["B2:D2"].Merge = true;
+                workSheet.Cells["B1:D1"].Value = "Đài Phát thanh - Truyền hình Kon Tum";
+                workSheet.Cells["B2:D2"].Value = "Đơn vị: " + departmentName;
+                workSheet.Cells["B1:D2"].Style.Font.Size = 12;
+                workSheet.Cells["B1:D2"].Style.Font.Bold = true;
+                workSheet.Cells[4, 1, 4, listCategoryName.Count() + 2].Merge = true;
+                workSheet.Cells[5, 1, 5, listCategoryName.Count() + 2].Merge = true;
+                workSheet.Cells[4, 1, 4, listCategoryName.Count() + 2].Value = "BẢNG TỔNG HỢP TIN BÀI " + unitTypeName.ToUpper();
+                workSheet.Cells[5, 1, 5, listCategoryName.Count() + 2].Value = "Tháng " + monthSearch;
+                workSheet.Cells[4, 1, 5, listCategoryName.Count() + 2].Style.Font.Size = 14;
+                workSheet.Cells[4, 1, 5, listCategoryName.Count() + 2].Style.Font.Bold = true;
+
+                workSheet.Cells["A7:A8"].Merge = true;
+                workSheet.Cells["A7:A8"].Value = "TT";
+                workSheet.Cells["B7:B8"].Merge = true;
+                workSheet.Cells["B7:B8"].Value = "Họ và tên tác giả";
+                workSheet.Cells["A9"].Value = "A";
+                workSheet.Cells["B9"].Value = "B";
+                workSheet.Cells["A7:B8"].Style.Font.Bold = true;
+                workSheet.Cells[7, 3, 7, listCategoryName.Count() + 2].Merge = true;
+                workSheet.Cells[7, 3, 7, listCategoryName.Count() + 2].Value = "Thể loại";
+                workSheet.Cells[7, 3, 7, listCategoryName.Count() + 2].Style.Font.Bold = true;
+                workSheet.Cells[9, 1, 9, listCategoryName.Count() + 2].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells[9, 1, 9, listCategoryName.Count() + 2].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(192, 192, 192));
+
+                for (int i = 0; i < listCategoryName.Count(); i++)
+                {
+                    workSheet.Cells[8, i + 3].Value = listCategoryName[i];
+                    workSheet.Cells[9, i + 3].Value = i + 1;
+                    workSheet.Cells[8, i + 3].Style.WrapText = true;
+                }
+
+                var groupList = list.GroupBy(gr => gr.ReporterName);
+                int counter = 0;
+                foreach (var item in groupList)
+                {
+                    workSheet.Cells[counter + 10, 2].Value = item.Key;
+                    workSheet.Cells[counter + 10, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                    workSheet.Cells[counter + 10, 2].Style.WrapText = true;
+                    workSheet.Cells[counter + 10, 1].Value = counter + 1;
+                    int catCounter = 0;
+                    foreach (var grDTO in item)
+                    {
+                        while (catCounter < listCategoryName.Count())
+                        {
+                            if (workSheet.Cells[8, catCounter + 3].Value.Equals(grDTO.CategoryName))
+                                workSheet.Cells[counter + 10, catCounter + 3].Value = grDTO.ArticleCount;
+                            catCounter++;
+                        }
+                    }
+                    counter++;
+                }
+
+                workSheet.Cells[counter + 10, 2].Value = "Tổng cộng";
+                workSheet.Cells[counter + 10, 2].Style.Font.Bold = true;
+                for (int i = 0; i < listCategoryName.Count(); i++)
+                {
+                    workSheet.Cells[counter + 10, i + 3].Formula = "=SUM(" + workSheet.Cells[10, i + 3].Address + ":" + workSheet.Cells[counter + 9, i + 3].Address + ")";
+                }
+                workSheet.Cells[10, 3, counter + 10, listCategoryName.Count() + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+
+                var modelTable = workSheet.Cells[7, 1, counter + 10, listCategoryName.Count() + 2];
+                modelTable.Style.Border.Top.Style = ExcelBorderStyle.Medium;
+                modelTable.Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                modelTable.Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                modelTable.Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+
+                workSheet.Cells[counter + 13, 2].Value = "Lập biểu";
+                workSheet.Cells[counter + 13, 2].Style.Font.Bold = true;
+                workSheet.Cells[counter + 13, 5, counter + 13, 7].Merge = true;
+                workSheet.Cells[counter + 13, 5, counter + 13, 7].Value = "Xác nhận của phòng";
+                workSheet.Cells[counter + 13, 5, counter + 13, 7].Style.Font.Bold = true;
+                workSheet.Cells[counter + 12, 10, counter + 12, 12].Merge = true;
+                workSheet.Cells[counter + 12, 10, counter + 12, 12].Style.Font.Italic = true;
+                workSheet.Cells[counter + 12, 10, counter + 12, 12].Value = "Kon Tum, ngày " + curTime.Day + " tháng " + curTime.Month + " năm " + curTime.Year;
+                workSheet.Cells[counter + 13, 10, counter + 13, 12].Style.Font.Bold = true;
+                workSheet.Cells[counter + 13, 10, counter + 13, 12].Merge = true;
+                workSheet.Cells[counter + 13, 10, counter + 13, 12].Value = "Thủ trưởng đơn vị";
+
                 package.Save();
             }
             stream.Position = 0;
-            string excelName = $"UserList-{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xlsx";
+            string excelName = $"Bảng tổng hợp tin bài " + unitTypeName + " tháng " + monthSearch + ".xlsx";
 
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
         }

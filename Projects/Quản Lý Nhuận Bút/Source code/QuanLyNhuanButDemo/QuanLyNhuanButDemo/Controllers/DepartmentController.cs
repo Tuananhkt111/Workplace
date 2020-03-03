@@ -69,7 +69,8 @@ namespace QuanLyNhuanButDemo.Controllers
                     string longDes = "Đã tạo một đơn vị mới có ID: \""
                         + department.DepartmentId + "\", loại đơn vị: \""
                         + department.DepartmentType.GetDescription() + "\", tên đơn vị: \""
-                        + department.DepartmentName + "\"";
+                        + department.DepartmentName + "\", mức khoán: \""
+                        + department.StockRate + "%\"";
                     ActivityLog alDTO = new ActivityLog
                     {
                         ActLogId = actLogId,
@@ -110,7 +111,8 @@ namespace QuanLyNhuanButDemo.Controllers
                     string longDes = "Đã cập nhật một đơn vị có ID: \""
                         + department.DepartmentId + "\", loại đơn vị: \""
                         + department.DepartmentType.GetDescription() + "\", tên đơn vị: \""
-                        + department.DepartmentName + "\"";
+                        + department.DepartmentName + "\", mức khoán: \""
+                        + department.StockRate + "%\"";
                     ActivityLog alDTO = new ActivityLog
                     {
                         ActLogId = actLogId,

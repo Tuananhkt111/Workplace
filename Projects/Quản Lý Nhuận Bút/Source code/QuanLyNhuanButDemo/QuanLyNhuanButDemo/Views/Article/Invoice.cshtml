@@ -1,90 +1,100 @@
 ﻿@{
     ViewData["Title"] = "Xuất hóa đơn";
 }
-<!-- DataTables Example -->
+@model QuanLyNhuanButDemo.DTOs.InvoiceViewModel
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Danh sách tin bài đã duyệt theo tháng
+        Bảng tổng hợp tin bài theo tháng
     </div>
     <div class="card-body">
-        <form class="form-inline" id="search-log" method="POST">
-            <div class="form-group">
-                <label for="timeSearch"><strong>Tin bài tháng:</strong></label>
-                <div class="flex-column">
-                    <input type="text" class="form-control ml-2" placeholder="" name="timeSearch" id="timeSearch" value="@DateTime.Now.ToString("MM/yyyy")">
+        <form id="search-log" method="POST" asp-action="ExportGeneral" asp-controller="Article">
+            <!--  row   -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="departmentSearch"><strong>Đơn vị</strong></label>
+                        <select class="form-control selectpicker" id="departmentSearch" name="departmentSearch" data-show-subtext="true" data-live-search="true">
+                            @if (Model.Departments.Count() == 0)
+                            {
+                                <option value="">Không có đơn vị nào có sẵn</option>
+                            }
+                            else
+                                foreach (var item in Model.Departments)
+                                {
+                                    <option data-subtext="@item.DepartmentType" value="@item.DepartmentId">@item.DepartmentName</option>
+                                }
+                        </select>
+                        <p class="error" id="DepartmentSearch-exist"></p>
+                    </div>
                 </div>
-                <button type="button" id="toggle1" class="btn btn-secondary">
-                    <i class="far fa-calendar-alt"></i>
-                </button>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="unitTypeSearch"><strong>Loại tin bài</strong></label>
+                        <select class="form-control" id="unitTypeSearch" name="unitTypeSearch">
+                            @foreach (var item in Model.UnitTypes)
+                            {
+                                <option value="@item.UnitTypeId">@item.UnitType</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="monthSearch"><strong>Tháng</strong></label>
+                        <input type="text" class="form-control" placeholder="" readonly name="monthSearch" id="monthSearch" value="@DateTime.Now.ToString("MM/yyyy")">
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-success ml-2">Tìm kiếm</button>
+            <button type="submit" class="btn btn-success" @(Model.Departments.Count() == 0 ? "disabled" : "")><i class="fas fa-file-excel"></i> Xuất ra Excel</button>
         </form>
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover animated fadeIn" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nội dung</th>
-                        <th>Thể loại ID</th>
-                        <th>Thể loại</th>
-                        <th>Người thực hiện</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày phát sóng</th>
-                        <th>Điểm</th>
-                        <th>Người chấm</th>
-                        <th>Điểm (GĐ)</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nội dung</th>
-                        <th>Thể loại ID</th>
-                        <th>Thể loại</th>
-                        <th>Người thực hiện</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày phát sóng</th>
-                        <th>Điểm</th>
-                        <th>Người chấm</th>
-                        <th>Điểm (GĐ)</th>
-                    </tr>
-                </tfoot>
-                <tbody id="dataTable-body">
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="card-footer small text-muted">Cập nhật lúc @DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")</div>
 </div>
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <i class="fas fa-plus-square"></i>
-        Xuất hóa đơn ra file
-    </li>
-</ol>
-<div class="mb-2">
-    <form method="post">
-        <a asp-area="" asp-controller="Article" asp-action="Exportv2" class="btn btn-success">
-            <i class="fas fa-file-excel"></i>
-            Excel File
-        </a>
-        <button type="button" class="btn btn-primary">
-            <i class="fas fa-file-word"></i>
-            Word File
-        </button>
-    </form>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Bảng thanh toán nhuận bút theo tháng
+    </div>
+    <div class="card-body">
+        <form id="search-reporter" method="POST">
+            <!--  row   -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="reporterSearch2"><strong>Tác giả</strong></label>
+                        <select class="form-control selectpicker" id="reporterSearch2" data-show-subtext="true" data-live-search="true">
+                            @if (Model.Reporters.Count != 0)
+                            {
+                                @foreach (var item in Model.Reporters)
+                                {
+                                    <option data-subtext="@item.DepartmentName" value="@item.UserName">@item.Name</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="">Không có phóng viên nào có sẵn</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="monthSearch2"><strong>Tháng</strong></label>
+                        <input type="text" class="form-control" placeholder="" readonly name="monthSearch2" id="monthSearch2" value="@DateTime.Now.ToString("MM/yyyy")">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success" @(Model.Reporters.Count() == 0 ? "disabled" : "")><i class="fas fa-file-excel"></i> Xuất ra Excel</button>
+        </form>
+    </div>
 </div>
 @section XuatHoaDon {
     active
 }
 @section Scripts {
-    <script src="~/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="~/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="~/js/bootstrap-select.min.js"></script>
+    <script src="~/js/defaults-vi_VN.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-    <script src="//cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js"></script>
     <script src="~/js/invoice.js"></script>
 }
 

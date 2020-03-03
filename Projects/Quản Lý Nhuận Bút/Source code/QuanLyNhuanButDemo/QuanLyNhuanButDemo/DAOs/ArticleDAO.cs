@@ -182,6 +182,56 @@ namespace QuanLyNhuanButDemo.DAOs
             return list;
         }
 
+        public async Task<List<GeneralReportDTO>> GetGeneralReportList(List<string> listUserName, int unitTypeSearch, DateTime timeSearch)
+        {
+            var query = _context.Articles.Include(a => a.Category)
+                .Where(a => a.Status == StatusTypes.APPROVED
+                && a.TimeBroadcast.Year == timeSearch.Year
+                && a.TimeBroadcast.Month == timeSearch.Month
+                && a.Category.UnitType == (UnitTypes)unitTypeSearch
+                && (listUserName.Contains(a.Executor) || listUserName.Contains(a.Executor2)));
+            var executorCount = query.GroupBy(a => new { a.CategoryId, a.Executor }).Select(g => new GeneralReportDTO
+            {
+                CategoryName = g.Key.CategoryId,
+                ArticleCount = g.Count(),
+                ReporterName = g.Key.Executor
+            });
+            var executor2Count = query.GroupBy(a => new { a.CategoryId, a.Executor2 }).Select(g => new GeneralReportDTO
+            {
+                CategoryName = g.Key.CategoryId,
+                ArticleCount = g.Count(),
+                ReporterName = g.Key.Executor2
+            });
+            var joinCount = query.Where(a => a.Executor.Equals(a.Executor2)).GroupBy(a => new { a.CategoryId, a.Executor2 }).Select(g => new GeneralReportDTO
+            {
+                CategoryName = g.Key.CategoryId,
+                ArticleCount = g.Count(),
+                ReporterName = g.Key.Executor2
+            });
+            List<GeneralReportDTO> list = await executorCount.Join(executor2Count,
+              executor => new { executor.CategoryName, executor.ReporterName },
+              executor2 => new { executor2.CategoryName, executor2.ReporterName },
+              (executor, executor2) => new GeneralReportDTO
+              {
+                  CategoryName = executor.CategoryName,
+                  ArticleCount = executor.ArticleCount + executor2.ArticleCount,
+                  ReporterName = executor.ReporterName
+              }).Join(joinCount,
+              executor => new { executor.CategoryName, executor.ReporterName },
+              executorJoin => new { executorJoin.CategoryName, executorJoin.ReporterName },
+              (executor, executorJoin) => new GeneralReportDTO
+              {
+                  CategoryName = executor.CategoryName,
+                  ArticleCount = executor.ArticleCount - executorJoin.ArticleCount,
+                  ReporterName = executor.ReporterName
+              }).OrderBy(executor => executor.CategoryName).ThenBy(executor => executor.ReporterName).ToListAsync();
+            foreach (var item in list)
+            {
+                item.CategoryName = query.Where(a => a.CategoryId.Equals(item.CategoryName)).Select(a => a.Category.CategoryName).FirstOrDefault();
+            }
+            return list;
+        }
+
         public bool Delete(String articleId)
         {
             var article = _context.Articles.Find(articleId);

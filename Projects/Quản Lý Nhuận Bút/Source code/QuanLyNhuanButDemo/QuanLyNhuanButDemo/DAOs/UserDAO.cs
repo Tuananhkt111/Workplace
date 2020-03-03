@@ -125,5 +125,10 @@ namespace QuanLyNhuanButDemo.DAOs
             }
             return result;
         }
+
+        public List<string> GetAllReportersByDepartment(string departmentSearch)
+        {
+            return _context.Users.Where(user => user.DepartmentId.Equals(departmentSearch)).Select(user => user.UserName).ToList();
+        }
     }
 }

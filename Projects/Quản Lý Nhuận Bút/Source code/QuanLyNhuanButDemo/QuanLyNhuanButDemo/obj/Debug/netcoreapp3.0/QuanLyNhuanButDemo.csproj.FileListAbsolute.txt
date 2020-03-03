@@ -768,7 +768,6 @@ D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButD
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Article\Index.cshtml.g.cs
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Article\ApproveMarkManage.cshtml.g.cs
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Category\Index.cshtml.g.cs
-D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Article\Invoice.cshtml.g.cs
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\bin\Debug\netcoreapp3.0\EPPlus.dll
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.FileExtensions.dll
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.Json.dll
@@ -792,3 +791,4 @@ D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButD
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.MvcApplicationPartsAssemblyInfo.cs
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\QuanLyNhuanButDemo.MvcApplicationPartsAssemblyInfo.cache
 D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Department\Index.cshtml.g.cs
+D:\GitHub\Workplace\Projects\Quản Lý Nhuận Bút\Source code\QuanLyNhuanButDemo\QuanLyNhuanButDemo\obj\Debug\netcoreapp3.0\Razor\Views\Article\Invoice.cshtml.g.cs

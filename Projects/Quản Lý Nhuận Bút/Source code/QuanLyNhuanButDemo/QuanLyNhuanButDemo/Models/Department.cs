@@ -22,6 +22,7 @@ namespace QuanLyNhuanButDemo.Models
         public string DepartmentId { get; set; }
         public DepartmentTypes DepartmentType { get; set; }
         public string DepartmentName { get; set; }
+        public float StockRate { get; set; }
         public virtual ICollection<QuanLyNhuanButDemoUser> QuanLyNhuanButDemoUsers { get; set; }
     }
 }

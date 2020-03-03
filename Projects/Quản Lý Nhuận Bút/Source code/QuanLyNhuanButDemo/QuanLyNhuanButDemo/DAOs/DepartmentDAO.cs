@@ -32,7 +32,8 @@ namespace QuanLyNhuanButDemo.DAOs
                 DepartmentId = dep.DepartmentId,
                 DepartmentTypeId = dep.DepartmentType,
                 DepartmentType = dep.DepartmentType.GetDescription(),
-                DepartmentName = dep.DepartmentName
+                DepartmentName = dep.DepartmentName,
+                StockRate = dep.StockRate
             }).ToList();
         }
         public List<DepartmentNameDTO> GetAllDepartmentNames()
@@ -47,7 +48,7 @@ namespace QuanLyNhuanButDemo.DAOs
         public async Task<string> GetDepartmentNameById(String id)
         {
             Department category = await _context.Departments.FindAsync(id);
-            return category.DepartmentType.GetDescription() + category.DepartmentName;
+            return category.DepartmentType.GetDescription() + " " + category.DepartmentName.ToLower();
         }
         public bool Create(Department department)
         {

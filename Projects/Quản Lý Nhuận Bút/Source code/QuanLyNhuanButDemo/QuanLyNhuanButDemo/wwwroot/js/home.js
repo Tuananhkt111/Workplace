@@ -7,7 +7,8 @@
             $('#timeSearch').val(moment(new Date(cur)).format("MM/YYYY"));
         },
         weeks: false,
-        scrollInput: false
+        scrollInput: false,
+        validateOnBlur: false
     });
     $('#toggle1').on('click', function () {
         $('#timeSearch').datetimepicker('toggle')

@@ -26,6 +26,12 @@ $(document).ready(function () {
                 "data": "departmentName"
             },
             {
+                "data": "stockRate",
+                "render": function (data) {
+                    return data + "%";
+                }
+            },
+            {
                 "data": function (row) {
                     let linkDiv = document.createElement("div");
                     let editLink = document.createElement("a");
@@ -37,6 +43,7 @@ $(document).ready(function () {
                     editLink.setAttribute("data-id", row.departmentId);
                     editLink.setAttribute("data-type", row.departmentTypeId);
                     editLink.setAttribute("data-name", row.departmentName);
+                    editLink.setAttribute("data-rate", row.stockRate);
                     editLink.setAttribute("class", "updtDepartment");
                     editLink.style = "cursor: pointer";
                     editLink.innerHTML = "Chỉnh sửa";
@@ -83,10 +90,10 @@ $(document).ready(function () {
         $('#DepartmentUpdt').val($(this).data("name"));
         $('#DepartmentIdUpdt').val($(this).data("id"));
         $('#DepartmentTypeUpdt').val($(this).data("type"));
+        $('#StockRateUpdt').val($(this).data("rate"));
     });
     $('#dataTable tbody').on('click', '.delDepartment', function () {
         let id = $(this).data("id");
-        console.log(id);
         $("#confirmDeleteModal").modal("show");
         $('#delDepartmentBtn').on('click', function () {
             deleteDepartment(id);
@@ -97,6 +104,7 @@ $(document).ready(function () {
             DepartmentId: "D" + new Date().getTime(),
             DepartmentType: parseInt($('#DepartmentTypeAdd').val()),
             DepartmentName: $('#DepartmentAdd').val(),
+            StockRate: parseInt($('#StockRateAdd').val())
         }
         $.ajax({
             type: "POST",
@@ -119,7 +127,8 @@ $(document).ready(function () {
         let obj = {
             DepartmentId: $('#DepartmentIdUpdt').val(),
             DepartmentName: $('#DepartmentUpdt').val(),
-            DepartmentType: parseInt($('#DepartmentTypeUpdt').val())
+            DepartmentType: parseInt($('#DepartmentTypeUpdt').val()),
+            StockRate: parseInt($('#StockRateUpdt').val())
         }
         $.ajax({
             type: "POST",
@@ -161,12 +170,21 @@ $(document).ready(function () {
         rules: {
             DepartmentAdd: {
                 required: true
+            },
+            StockRateAdd: {
+                required: true
             }
         },
         messages: {
             DepartmentAdd: {
                 required: "Tên đơn vị không thể bỏ trống.",
                 pattern: "Tên đơn vị có 1 - 400 kí tự."
+            },
+            StockRateAdd: {
+                required: "Mức khoán không thể bỏ trống.",
+                min: "Mức khoán lớn hơn hoặc bằng 0",
+                max: "Mức khoán nhỏ hơn hoặc bằng 100",
+                number: "Vui lòng nhập số"
             }
         },
         submitHandler: function () {
@@ -177,12 +195,21 @@ $(document).ready(function () {
         rules: {
             DepartmentUpdt: {
                 required: true
+            },
+            StockRateUpdt: {
+                required: true
             }
         },
         messages: {
             DepartmentUpdt: {
                 required: "Tên đơn vị không thể bỏ trống.",
                 pattern: "Tên đơn vị có 1 - 400 kí tự."
+            },
+            StockRateUpdt: {
+                required: "Mức khoán không thể bỏ trống.",
+                min: "Mức khoán lớn hơn hoặc bằng 0",
+                max: "Mức khoán nhỏ hơn hoặc bằng 100",
+                number: "Vui lòng nhập số"
             }
         },
         submitHandler: function () {

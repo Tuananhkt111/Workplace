@@ -41,9 +41,9 @@ namespace QuanLyNhuanButDemo.DAOs
             }).ToList();
         }
 
-        public List<string> GetCategoryNames()
+        public List<string> GetCategoryNamesByUnitType(UnitTypes unitType)
         {
-            return _context.Categories.OrderBy(cat => cat.CategoryName).Select(cat => cat.CategoryName).ToList();
+            return _context.Categories.Where(cat => cat.UnitType.Equals(unitType)).OrderBy(cat => cat.CategoryName).Select(cat => cat.CategoryName).ToList();
         }
 
         public async Task<string> GetCategoryNameById(String id)

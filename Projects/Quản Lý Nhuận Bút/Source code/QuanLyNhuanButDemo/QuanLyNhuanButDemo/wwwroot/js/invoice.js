@@ -1,4 +1,12 @@
 ﻿$(document).ready(function () {
+    $('#StockDeduction').on('blur', function () {
+        if ($('#StockDeduction').val() === "") {
+            $('#StockDeduction').val(0);
+        }
+    });
+    $('#StockDeduction').maskNumber({
+        integer: true
+    });
     $.datetimepicker.setLocale('vi');
     $('#monthSearch').datetimepicker({
         timepicker: false,

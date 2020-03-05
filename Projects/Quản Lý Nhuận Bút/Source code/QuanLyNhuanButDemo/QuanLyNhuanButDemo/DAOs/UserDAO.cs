@@ -82,10 +82,24 @@ namespace QuanLyNhuanButDemo.DAOs
                 return _context.SaveChanges() != 0;
             }
         }
-        //public User CheckLogin(string username, string password)
-        //{
-        //    return _context.User.Where(p => p.Username == username && p.Password == password && p.IsDeleted == false).SingleOrDefault() ?? null;
-        //}
+        public async Task<string> GetDepartmentNameByUserNameAsync(String userName)
+        {
+            var departmentName = await _context.Users.Include(user => user.Department)
+                .Where(user => user.UserName.Equals(userName))
+                .Select(user => user.Department.DepartmentType.GetDescription() + " " + user.Department.DepartmentName.ToLower())
+                .FirstOrDefaultAsync();
+            return departmentName;
+        }
+
+        public async Task<float> GetStockRateByUserNameAsync(String userName)
+        {
+            var stockRate = await _context.Users.Include(user => user.Department)
+                .Where(user => user.UserName.Equals(userName))
+                .Select(user => user.Department.StockRate)
+                .FirstOrDefaultAsync();
+            return stockRate;
+        }
+
         public async Task<IdentityResult> AddRole(QuanLyNhuanButDemoUser user, String role)
         {
             IdentityResult result = await _userManager.AddToRoleAsync(user, role);

@@ -56,13 +56,13 @@
         Bảng thanh toán nhuận bút theo tháng
     </div>
     <div class="card-body">
-        <form id="search-reporter" method="POST">
+        <form id="search-reporter" method="POST" asp-action="ExportDetail" asp-controller="Article">
             <!--  row   -->
             <div class="row">
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="reporterSearch2"><strong>Tác giả</strong></label>
-                        <select class="form-control selectpicker" id="reporterSearch2" data-show-subtext="true" data-live-search="true">
+                        <select class="form-control selectpicker" id="reporterSearch2" name="reporterSearch2" data-show-subtext="true" data-live-search="true">
                             @if (Model.Reporters.Count != 0)
                             {
                                 @foreach (var item in Model.Reporters)
@@ -84,6 +84,19 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="StockDeduction"><strong>Giảm trừ khoán</strong></label>
+                        <div class="input-group mr-2">
+                            <input type="text" class="form-control" placeholder="" name="StockDeduction" id="StockDeduction" value="0">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><strong>VND</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="btn btn-success" @(Model.Reporters.Count() == 0 ? "disabled" : "")><i class="fas fa-file-excel"></i> Xuất ra Excel</button>
         </form>
     </div>
@@ -95,6 +108,7 @@
     <script src="~/js/bootstrap-select.min.js"></script>
     <script src="~/js/defaults-vi_VN.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="~/js/jquery.masknumber.js"></script>
     <script src="~/js/invoice.js"></script>
 }
 

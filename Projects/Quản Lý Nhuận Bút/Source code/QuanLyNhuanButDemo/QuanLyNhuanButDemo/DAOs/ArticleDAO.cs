@@ -228,6 +228,44 @@ namespace QuanLyNhuanButDemo.DAOs
             foreach (var item in list)
             {
                 item.CategoryName = query.Where(a => a.CategoryId.Equals(item.CategoryName)).Select(a => a.Category.CategoryName).FirstOrDefault();
+                item.ReporterName = (await _userManager.FindByNameAsync(item.ReporterName)).Name;
+            }
+            return list;
+        }
+
+        public List<DetailReportDTO> GetDetailReportList(string userName, UnitTypes unitTypeSearch, DateTime timeSearch)
+        {
+            var query = _context.Articles.Include(a => a.Category)
+                .Where(a => a.Status == StatusTypes.APPROVED
+                && a.TimeBroadcast.Year == timeSearch.Year
+                && a.TimeBroadcast.Month == timeSearch.Month
+                && a.Category.UnitType == unitTypeSearch
+                && (a.Executor.Equals(userName) || a.Executor2.Equals(userName)));
+            var list = query.Select(a => new
+            {
+                Mark = ((unitTypeSearch.Equals(UnitTypes.TRUYEN_HINH) && a.Executor2.Equals(a.Executor)) ? (a.ManagerMark * 2) : a.ManagerMark) ?? 0,
+                CategoryName = a.CategoryId,
+                a.TimeBroadcast
+            })
+            .GroupBy(dr => new { dr.CategoryName, dr.TimeBroadcast })
+            .Select(dr => new
+            {
+                dr.Key.CategoryName,
+                Mark = dr.Sum(dr => dr.Mark),
+                dr.Key.TimeBroadcast
+            })
+            .OrderBy(dr => dr.CategoryName)
+            .AsEnumerable()
+            .GroupBy(dr => dr.CategoryName)
+            .Select(dr => new DetailReportDTO
+            {
+                CategoryName = dr.Key,
+                MarkDictionary = dr.ToDictionary(dr => dr.TimeBroadcast.Day, dr => dr.Mark)
+            })
+            .ToList();
+            foreach (var item in list)
+            {
+                item.CategoryName = query.Where(a => a.CategoryId.Equals(item.CategoryName)).Select(a => a.Category.CategoryName).FirstOrDefault();
             }
             return list;
         }

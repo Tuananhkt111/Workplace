@@ -366,7 +366,7 @@ namespace QuanLyNhuanButDemo.Controllers
 
         [HttpPost]
         [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
-        public async Task<IActionResult> ExportGeneral([FromForm] String departmentSearch, int unitTypeSearch, String monthSearch)
+        public async Task<IActionResult> ExportGeneral([FromForm] string departmentSearch, int unitTypeSearch, string monthSearch)
         {
             await Task.Yield();
             ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
@@ -378,7 +378,7 @@ namespace QuanLyNhuanButDemo.Controllers
             string unitTypeName = ((UnitTypes)unitTypeSearch).GetDescription().ToLower();
 
             List<string> listUserName = userDAO.GetAllReportersByDepartment(departmentSearch);
-            List<string> listCategoryName = catDAO.GetCategoryNames();
+            List<string> listCategoryName = catDAO.GetCategoryNamesByUnitType((UnitTypes)unitTypeSearch);
 
             DateTime timeSearch = DateTime.ParseExact("01/" + monthSearch, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             DateTime curTime = DateTime.Now;
@@ -404,12 +404,12 @@ namespace QuanLyNhuanButDemo.Controllers
                 workSheet.Cells["B2:D2"].Value = "Đơn vị: " + departmentName;
                 workSheet.Cells["B1:D2"].Style.Font.Size = 12;
                 workSheet.Cells["B1:D2"].Style.Font.Bold = true;
-                workSheet.Cells[4, 1, 4, listCategoryName.Count() + 2].Merge = true;
-                workSheet.Cells[5, 1, 5, listCategoryName.Count() + 2].Merge = true;
-                workSheet.Cells[4, 1, 4, listCategoryName.Count() + 2].Value = "BẢNG TỔNG HỢP TIN BÀI " + unitTypeName.ToUpper();
-                workSheet.Cells[5, 1, 5, listCategoryName.Count() + 2].Value = "Tháng " + monthSearch;
-                workSheet.Cells[4, 1, 5, listCategoryName.Count() + 2].Style.Font.Size = 14;
-                workSheet.Cells[4, 1, 5, listCategoryName.Count() + 2].Style.Font.Bold = true;
+                workSheet.Cells[4, 1, 4, listCategoryName.Count + 2].Merge = true;
+                workSheet.Cells[5, 1, 5, listCategoryName.Count + 2].Merge = true;
+                workSheet.Cells[4, 1, 4, listCategoryName.Count + 2].Value = "BẢNG TỔNG HỢP TIN BÀI " + unitTypeName.ToUpper();
+                workSheet.Cells[5, 1, 5, listCategoryName.Count + 2].Value = "Tháng " + monthSearch;
+                workSheet.Cells[4, 1, 5, listCategoryName.Count + 2].Style.Font.Size = 14;
+                workSheet.Cells[4, 1, 5, listCategoryName.Count + 2].Style.Font.Bold = true;
 
                 workSheet.Cells["A7:A8"].Merge = true;
                 workSheet.Cells["A7:A8"].Value = "TT";
@@ -418,13 +418,13 @@ namespace QuanLyNhuanButDemo.Controllers
                 workSheet.Cells["A9"].Value = "A";
                 workSheet.Cells["B9"].Value = "B";
                 workSheet.Cells["A7:B8"].Style.Font.Bold = true;
-                workSheet.Cells[7, 3, 7, listCategoryName.Count() + 2].Merge = true;
-                workSheet.Cells[7, 3, 7, listCategoryName.Count() + 2].Value = "Thể loại";
-                workSheet.Cells[7, 3, 7, listCategoryName.Count() + 2].Style.Font.Bold = true;
-                workSheet.Cells[9, 1, 9, listCategoryName.Count() + 2].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                workSheet.Cells[9, 1, 9, listCategoryName.Count() + 2].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(192, 192, 192));
+                workSheet.Cells[7, 3, 7, listCategoryName.Count + 2].Merge = true;
+                workSheet.Cells[7, 3, 7, listCategoryName.Count + 2].Value = "Thể loại";
+                workSheet.Cells[7, 3, 7, listCategoryName.Count + 2].Style.Font.Bold = true;
+                workSheet.Cells[9, 1, 9, listCategoryName.Count + 2].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                workSheet.Cells[9, 1, 9, listCategoryName.Count + 2].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(192, 192, 192));
 
-                for (int i = 0; i < listCategoryName.Count(); i++)
+                for (int i = 0; i < listCategoryName.Count; i++)
                 {
                     workSheet.Cells[8, i + 3].Value = listCategoryName[i];
                     workSheet.Cells[9, i + 3].Value = i + 1;
@@ -442,7 +442,7 @@ namespace QuanLyNhuanButDemo.Controllers
                     int catCounter = 0;
                     foreach (var grDTO in item)
                     {
-                        while (catCounter < listCategoryName.Count())
+                        while (catCounter < listCategoryName.Count)
                         {
                             if (workSheet.Cells[8, catCounter + 3].Value.Equals(grDTO.CategoryName))
                                 workSheet.Cells[counter + 10, catCounter + 3].Value = grDTO.ArticleCount;
@@ -454,13 +454,13 @@ namespace QuanLyNhuanButDemo.Controllers
 
                 workSheet.Cells[counter + 10, 2].Value = "Tổng cộng";
                 workSheet.Cells[counter + 10, 2].Style.Font.Bold = true;
-                for (int i = 0; i < listCategoryName.Count(); i++)
+                for (int i = 0; i < listCategoryName.Count; i++)
                 {
                     workSheet.Cells[counter + 10, i + 3].Formula = "=SUM(" + workSheet.Cells[10, i + 3].Address + ":" + workSheet.Cells[counter + 9, i + 3].Address + ")";
                 }
-                workSheet.Cells[10, 3, counter + 10, listCategoryName.Count() + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+                workSheet.Cells[10, 3, counter + 10, listCategoryName.Count + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
 
-                var modelTable = workSheet.Cells[7, 1, counter + 10, listCategoryName.Count() + 2];
+                var modelTable = workSheet.Cells[7, 1, counter + 10, listCategoryName.Count + 2];
                 modelTable.Style.Border.Top.Style = ExcelBorderStyle.Medium;
                 modelTable.Style.Border.Left.Style = ExcelBorderStyle.Medium;
                 modelTable.Style.Border.Right.Style = ExcelBorderStyle.Medium;
@@ -482,6 +482,198 @@ namespace QuanLyNhuanButDemo.Controllers
             }
             stream.Position = 0;
             string excelName = $"Bảng tổng hợp tin bài " + unitTypeName + " tháng " + monthSearch + ".xlsx";
+
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
+        public async Task<IActionResult> ExportDetail([FromForm] string reporterSearch2, string monthSearch2, long StockDeduction)
+        {
+            await Task.Yield();
+            ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
+            UserDAO userDAO = new UserDAO(_userManager, _signInManager, _context);
+            CategoryDAO catDAO = new CategoryDAO(_userManager, _signInManager, _context);
+            MarkValueDAO markDAO = new MarkValueDAO(_userManager, _signInManager, _context);
+
+            string reporterName = (await _userManager.FindByNameAsync(reporterSearch2)).Name;
+            ulong markVal = markDAO.GetMarkValue();
+            string departmentName = await userDAO.GetDepartmentNameByUserNameAsync(reporterSearch2);
+            float stockRate = await userDAO.GetStockRateByUserNameAsync(reporterSearch2);
+
+            List<string> truyenHinhCatList = catDAO.GetCategoryNamesByUnitType(UnitTypes.TRUYEN_HINH);
+            List<string> phatThanhCatList = catDAO.GetCategoryNamesByUnitType(UnitTypes.PHAT_THANH);
+
+            DateTime timeSearch = DateTime.ParseExact("01/" + monthSearch2, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            int dayInMonth = DateTime.DaysInMonth(timeSearch.Year, timeSearch.Month);
+
+            DateTime curTime = DateTime.Now;
+
+            var truyenHinhMarkList = articleDAO.GetDetailReportList(reporterSearch2, UnitTypes.TRUYEN_HINH, timeSearch);
+            var phatThanhMarkList = articleDAO.GetDetailReportList(reporterSearch2, UnitTypes.PHAT_THANH, timeSearch);
+
+            var stream = new MemoryStream();
+            using (var package = new ExcelPackage(stream))
+            {
+                var workSheet = package.Workbook.Worksheets.Add("Bảng thanh toán nhuận bút");
+
+                workSheet.DefaultColWidth = 5;
+                workSheet.Cells.Style.Font.Name = "Times New Roman";
+                workSheet.Cells.Style.Font.Size = 11;
+                workSheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                workSheet.Cells.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                workSheet.Column(1).Width = 3.89;
+                workSheet.Column(2).Width = 40;
+
+                workSheet.Cells["B1"].Value = "Đài Phát thanh - Truyền hình Kon Tum";
+                workSheet.Cells["B2"].Value = "Đơn vị: " + departmentName;
+                workSheet.Cells["B1:B2"].Style.Font.Bold = true;
+                workSheet.Cells["B1:B2"].Style.Font.Size = 12;
+                workSheet.Cells[4, 1, 4, dayInMonth + 3].Merge = true;
+                workSheet.Cells[4, 1, 4, dayInMonth + 3].Value = "BẢNG THANH TOÁN NHUẬN BÚT THÁNG " + monthSearch2.ToUpper();
+                workSheet.Cells[4, 1, 4, dayInMonth + 3].Style.Font.Size = 14;
+                workSheet.Cells[4, 1, 4, dayInMonth + 3].Style.Font.Bold = true;
+                workSheet.Cells[5, 1, 5, dayInMonth + 3].Merge = true;
+                workSheet.Cells[5, 1, 5, dayInMonth + 3].Value = "Tác giả: " + reporterName;
+                workSheet.Cells[5, 1, 5, dayInMonth + 3].Style.Font.Size = 13;
+
+                workSheet.Cells["B7"].Value = "Thể loại phát sóng";
+                workSheet.Cells[7, 1, 8, dayInMonth + 3].Style.Font.Size = 12;
+                workSheet.Cells["A8"].Value = "TT";
+                workSheet.Cells[8, 1, 8, dayInMonth + 2].Style.Font.Bold = true;
+                workSheet.Cells["B8"].Value = "I. Phát thanh";
+                workSheet.Cells["B8"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                workSheet.Cells[7, 3, 7, dayInMonth + 2].Merge = true;
+                workSheet.Cells[7, 3, 7, dayInMonth + 2].Value = "Điểm nhuận bút/ngày";
+                for (int i = 0; i < dayInMonth; i++)
+                {
+                    workSheet.Cells[8, i + 3].Value = i + 1;
+                }
+                for (int i = 0; i < phatThanhCatList.Count; i++)
+                {
+                    workSheet.Cells[i + 9, 1].Value = i + 1;
+                    workSheet.Cells[i + 9, 2].Value = phatThanhCatList[i];
+                    workSheet.Cells[i + 9, 2].Style.WrapText = true;
+                    workSheet.Cells[i + 9, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                    foreach (var dr in phatThanhMarkList)
+                    {
+                        if (dr.CategoryName.Equals(phatThanhCatList[i]))
+                        {
+                            for (int j = 0; j < dayInMonth; j++)
+                            {
+                                if (dr.MarkDictionary.ContainsKey(j + 1))
+                                {
+                                    workSheet.Cells[i + 9, j + 3].Value = dr.MarkDictionary[j + 1];
+                                }
+                            }
+                        }
+                    }
+                }
+                workSheet.Cells[9 + phatThanhCatList.Count, 1].Value = "TT";
+                workSheet.Cells[9 + phatThanhCatList.Count, 2].Value = "II. Truyền hình";
+                workSheet.Cells[9 + phatThanhCatList.Count, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                workSheet.Cells[9 + phatThanhCatList.Count, 1, 9 + phatThanhCatList.Count, dayInMonth + 2].Style.Font.Size = 12;
+                workSheet.Cells[9 + phatThanhCatList.Count, 1, 9 + phatThanhCatList.Count, dayInMonth + 2].Style.Font.Bold = true;
+                for (int i = 0; i < dayInMonth; i++)
+                {
+                    workSheet.Cells[9 + truyenHinhCatList.Count, i + 3].Value = i + 1;
+                }
+                for (int i = 0; i < truyenHinhCatList.Count; i++)
+                {
+                    workSheet.Cells[10 + i + phatThanhCatList.Count, 1].Value = i + 1;
+                    workSheet.Cells[10 + i + phatThanhCatList.Count, 2].Value = truyenHinhCatList[i];
+                    workSheet.Cells[10 + i + phatThanhCatList.Count, 2].Style.WrapText = true;
+                    workSheet.Cells[10 + i + phatThanhCatList.Count, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                    foreach (var dr in truyenHinhMarkList)
+                    {
+                        if (dr.CategoryName.Equals(truyenHinhCatList[i]))
+                        {
+                            for (int j = 0; j < dayInMonth; j++)
+                            {
+                                if (dr.MarkDictionary.ContainsKey(j + 1))
+                                {
+                                    workSheet.Cells[10 + i + phatThanhCatList.Count, j + 3].Value = dr.MarkDictionary[j + 1];
+                                }
+                            }
+                        }
+                    }
+                }
+                workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "Tổng điểm nhuận bút";
+                workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, 2, 10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Style.Font.Bold = true;
+
+                for (int i = 0; i < dayInMonth; i++)
+                {
+                    workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, i + 3].Formula = "=SUM("
+                        + workSheet.Cells[9, i + 3].Address
+                        + ":"
+                        + workSheet.Cells[8 + phatThanhCatList.Count, i + 3].Address
+                        + ", "
+                        + workSheet.Cells[10 + phatThanhCatList.Count, i + 3].Address
+                        + ":"
+                        + workSheet.Cells[9 + phatThanhCatList.Count + truyenHinhCatList.Count, i + 3].Address
+                        + ")";
+                }
+                workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Formula = "=SUM("
+                    + workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, 3].Address
+                    + ":"
+                    + workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 2].Address
+                    + ")";
+                workSheet.Cells[7, dayInMonth + 3].Value = "Tổng";
+                workSheet.Column(dayInMonth + 3).Width = 7;
+                workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "1. Tổng nhuận bút thực hiện trong tháng:";
+                workSheet.Cells[13 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "2. Định mức khoán phải thực hiện:";
+                workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "3. Giảm trừ khoán:";
+                workSheet.Cells[15 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "4. Nhuân bút thực nhận (4=1-2-3):";
+                workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 2, 16 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 12 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
+                workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 12 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Formula = "="
+                    + workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Address
+                    + "*"
+                    + markVal;
+                workSheet.Cells[13 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 13 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
+                workSheet.Cells[13 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 13 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Formula = "="
+                    + workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Address
+                    + "*"
+                    + (markVal * stockRate / 100);
+                workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
+                workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Value = StockDeduction;
+                workSheet.Cells[15 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 15 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
+                workSheet.Cells[15 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 15 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Formula = "="
+                    + workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 12 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Address
+                    + "-"
+                    + workSheet.Cells[13 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 13 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Address
+                    + "-"
+                    + workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Address;
+                workSheet.Cells[16 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "Bằng chữ:";
+                workSheet.Cells[18 + phatThanhCatList.Count + truyenHinhCatList.Count, 2, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Style.Font.Size = 12;
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 2, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Style.Font.Bold = true;
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "Ký nhận";
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 8, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, 10].Merge = true;
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 8, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, 10].Value = "Người lập biểu";
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 14, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, 18].Merge = true;
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 14, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, 18].Value = "Xác nhận của phòng";
+                workSheet.Cells[18 + phatThanhCatList.Count + truyenHinhCatList.Count, 23, 18 + phatThanhCatList.Count + truyenHinhCatList.Count, 30].Merge = true;
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 23, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, 30].Merge = true;
+                workSheet.Cells[18 + phatThanhCatList.Count + truyenHinhCatList.Count, 23, 18 + phatThanhCatList.Count + truyenHinhCatList.Count, 30]
+                    .Value = "Kon Tum, ngày " + curTime.Day + " tháng " + curTime.Month + " năm " + curTime.Year;
+                workSheet.Cells[18 + phatThanhCatList.Count + truyenHinhCatList.Count, 23, 18 + phatThanhCatList.Count + truyenHinhCatList.Count, 30].Style.Font.Italic = true;
+                workSheet.Cells[19 + phatThanhCatList.Count + truyenHinhCatList.Count, 23, 19 + phatThanhCatList.Count + truyenHinhCatList.Count, 30].Value = "Giám đốc";
+
+                var modelTable = workSheet.Cells[7, 1, 10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3];
+                modelTable.Style.Border.Top.Style = ExcelBorderStyle.Medium;
+                modelTable.Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                modelTable.Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                modelTable.Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+
+                var modelTable2 = workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 15 + phatThanhCatList.Count + truyenHinhCatList.Count, 7];
+                modelTable2.Style.Border.Top.Style = ExcelBorderStyle.Medium;
+                modelTable2.Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                modelTable2.Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                modelTable2.Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                package.Save();
+            }
+            stream.Position = 0;
+            string excelName = $"Bảng thanh toán nhuận bút tháng " + monthSearch2 + ".xlsx";
 
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
         }

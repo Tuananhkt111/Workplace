@@ -296,7 +296,6 @@ $(document).ready(function () {
             setInputUpdt(x.data("editorMark"));
         });
         $('#ArticleIdUpdt').val($(this).data("id"));
-        console.log($('#ArticleIdUpdt').val());
         $('#ContentUpdt').val($(this).data("content"));
         $('#ExecutorUpdt').val($(this).data("executor"));
         $('#Executor2Updt').val($(this).data("executor2"));

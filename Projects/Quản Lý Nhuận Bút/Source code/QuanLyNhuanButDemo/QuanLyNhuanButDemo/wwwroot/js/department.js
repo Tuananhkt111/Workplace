@@ -95,9 +95,7 @@ $(document).ready(function () {
     $('#dataTable tbody').on('click', '.delDepartment', function () {
         let id = $(this).data("id");
         $("#confirmDeleteModal").modal("show");
-        $('#delDepartmentBtn').on('click', function () {
-            deleteDepartment(id);
-        });
+        $('#delId').val(id);
     });
     function createDepartment() {
         let obj = {
@@ -147,13 +145,13 @@ $(document).ready(function () {
             }
         });
     }
-    function deleteDepartment(id) {
+    function deleteDepartment() {
         $.ajax({
             type: "POST",
             url: "/Department/DeleteDepartment",
             dataType: "json",
             contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(id),
+            data: JSON.stringify($('#delId').val()),
             success: function (result) {
                 if (result === "") {
                     $("#confirmDeleteModal").modal("hide");
@@ -166,6 +164,9 @@ $(document).ready(function () {
             }
         });
     }
+    $('#delDepartmentBtn').on('click', function () {
+        deleteDepartment();
+    });
     $('#form-department-add').validate({
         rules: {
             DepartmentAdd: {

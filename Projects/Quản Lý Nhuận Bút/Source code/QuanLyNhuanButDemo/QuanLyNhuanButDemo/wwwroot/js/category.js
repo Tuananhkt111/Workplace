@@ -165,9 +165,7 @@ $(document).ready(function () {
     $('#dataTable tbody').on('click', '.delCategory', function () {
         let id = $(this).data("id");
         $("#confirmDeleteModal").modal("show");
-        $('#delCategoryBtn').on('click', function () {
-            deleteCategory(id);
-        });
+        $('#delId').val(id);
     });
     function createCategory() {
         let obj = {
@@ -219,13 +217,13 @@ $(document).ready(function () {
             }
         });
     }
-    function deleteCategory(id) {
+    function deleteCategory() {
         $.ajax({
             type: "POST",
             url: "/Category/DeleteCategory",
             dataType: "json",
             contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(id),
+            data: JSON.stringify($('#delId').val()),
             success: function (result) {
                 if (result === "") {
                     $("#confirmDeleteModal").modal("hide");
@@ -238,6 +236,9 @@ $(document).ready(function () {
             }
         });
     }
+    $('#delCategoryBtn').on("click", function () {
+        deleteCategory();
+    });
     $('#form-category-add').validate({
         rules: {
             CategoryAdd: {

@@ -20,17 +20,17 @@
     <meta name="author" content="Tuan Anh">
     <title>@ViewData["Title"] - Quản Lý Nhuận Bút</title>
     <!-- Custom fonts for this template-->
-    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <link href="~/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="~/css/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="~/css/select.dataTables.min.css" rel="stylesheet" />
     <!-- Custom styles for this template-->
     <link href="~/css/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/bootstrap-select.min.css" rel="stylesheet" />
     <link href="~/css/jquery.datetimepicker.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
 
 <body id="page-top" onload="@if (TempData["msg"] != null) { <text> showMessages();</text>}">
@@ -193,10 +193,10 @@
         </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="~/vendor/jquery/jquery.min.js"></script>
-    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/lib/jquery-easing/jquery.easing.min.js"></script>
     @RenderSection("Scripts", required: false)
     <!-- Custom scripts for all pages-->
     <script src="~/js/sb-admin.min.js"></script>

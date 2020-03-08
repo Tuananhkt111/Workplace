@@ -354,9 +354,7 @@ $(document).ready(function () {
     $('#dataTable tbody').on('click', '.delArticle', function () {
         let id = $(this).data("id");
         $("#confirmDeleteModal").modal("show");
-        $('#delArticleBtn').on('click', function () {
-            deleteArticle(id);
-        });
+        $('#delId').val(id);
     });
     function updateArticle() {
         let selectedOption = $('#CategoryUpdt').children("option:selected");
@@ -390,13 +388,13 @@ $(document).ready(function () {
             }
         });
     }
-    function deleteArticle(id) {
+    function deleteArticle() {
         $.ajax({
             type: "POST",
             url: "/Article/deleteArticle",
             dataType: "json",
             contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(id),
+            data: JSON.stringify($('#delId').val()),
             success: function (result) {
                 if (result === "") {
                     $("#confirmDeleteModal").modal("hide");
@@ -408,6 +406,9 @@ $(document).ready(function () {
             }
         });
     }
+    $('#delArticleBtn').on('click', function () {
+        deleteArticle();
+    });
     var validator_update = $('#form-acc-updt').validate({
         rules: {
             ContentUpdt: {

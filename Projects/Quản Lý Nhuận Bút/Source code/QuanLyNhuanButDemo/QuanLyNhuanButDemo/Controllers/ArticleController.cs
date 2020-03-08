@@ -488,7 +488,7 @@ namespace QuanLyNhuanButDemo.Controllers
 
         [HttpPost]
         [Authorize(Roles = Roles.ACCOUNTANT_ROLE)]
-        public async Task<IActionResult> ExportDetail([FromForm] string reporterSearch2, string monthSearch2, long StockDeduction)
+        public async Task<IActionResult> ExportDetail([FromForm] string reporterSearch2, string monthSearch2, string StockDeduction)
         {
             await Task.Yield();
             ArticleDAO articleDAO = new ArticleDAO(_userManager, _signInManager, _context);
@@ -496,6 +496,8 @@ namespace QuanLyNhuanButDemo.Controllers
             CategoryDAO catDAO = new CategoryDAO(_userManager, _signInManager, _context);
             MarkValueDAO markDAO = new MarkValueDAO(_userManager, _signInManager, _context);
 
+            decimal stockDeductionDecimal = decimal.Parse(StockDeduction, NumberStyles.Any);
+            decimal stockDeductionValue = decimal.ToInt64(stockDeductionDecimal);
             string reporterName = (await _userManager.FindByNameAsync(reporterSearch2)).Name;
             ulong markVal = markDAO.GetMarkValue();
             string departmentName = await userDAO.GetDepartmentNameByUserNameAsync(reporterSearch2);
@@ -576,7 +578,7 @@ namespace QuanLyNhuanButDemo.Controllers
                 workSheet.Cells[9 + phatThanhCatList.Count, 1, 9 + phatThanhCatList.Count, dayInMonth + 2].Style.Font.Bold = true;
                 for (int i = 0; i < dayInMonth; i++)
                 {
-                    workSheet.Cells[9 + truyenHinhCatList.Count, i + 3].Value = i + 1;
+                    workSheet.Cells[9 + phatThanhCatList.Count, i + 3].Value = i + 1;
                 }
                 for (int i = 0; i < truyenHinhCatList.Count; i++)
                 {
@@ -636,7 +638,7 @@ namespace QuanLyNhuanButDemo.Controllers
                     + "*"
                     + (markVal * stockRate / 100);
                 workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
-                workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Value = StockDeduction;
+                workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Value = stockDeductionValue;
                 workSheet.Cells[15 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 15 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
                 workSheet.Cells[15 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 15 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Formula = "="
                     + workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 12 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Address

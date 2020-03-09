@@ -1,5 +1,3 @@
-using System;
-
 namespace QuanLyNhuanButDemo.Models
 {
     public class ErrorViewModel

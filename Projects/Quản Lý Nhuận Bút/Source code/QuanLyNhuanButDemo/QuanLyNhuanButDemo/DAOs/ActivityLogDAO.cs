@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.Data;
+using QuanLyNhuanButDemo.DTOs;
 using QuanLyNhuanButDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using QuanLyNhuanButDemo.DTOs;
-using Microsoft.EntityFrameworkCore;
 
 namespace QuanLyNhuanButDemo.DAOs
 {

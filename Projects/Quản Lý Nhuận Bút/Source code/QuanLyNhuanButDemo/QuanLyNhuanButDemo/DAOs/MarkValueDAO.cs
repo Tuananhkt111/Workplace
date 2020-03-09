@@ -2,10 +2,6 @@
 using QuanLyNhuanButDemo.Areas.Identity.Data;
 using QuanLyNhuanButDemo.Data;
 using QuanLyNhuanButDemo.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuanLyNhuanButDemo.DAOs
 {

@@ -38,7 +38,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="PasswordOld"><strong>Mật khẩu cũ</strong></label>
-                        <input type="password" class="form-control" placeholder="" name="PasswordOld" id="PasswordOld" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                        <input type="password" class="form-control" name="PasswordOld" id="PasswordOld" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="PasswordNew"><strong>Mật khẩu mới</strong></label>
-                        <input type="password" class="form-control" placeholder="" name="PasswordNew" id="PasswordNew" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                        <input type="password" class="form-control" name="PasswordNew" id="PasswordNew" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="RepPassNew"><strong>Nhập lại mật khẩu</strong></label>
-                        <input type="password" class="form-control" placeholder="" name="RepPassNew" id="RepPassNew" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
+                        <input type="password" class="form-control" name="RepPassNew" id="RepPassNew" pattern="(?=.*[A-Z])(?=.*[a-z])[A-Za-z0-9]{8,16}">
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
             <div class="form-group">
                 <label for="dateExecuted"><strong>Ngày thực hiện</strong></label>
                 <div class="flex-column">
-                    <input type="text" class="form-control ml-2" placeholder="" name="dateExecuted" id="dateExecuted" value="@DateTime.Now.ToString("dd/MM/yyyy")">
+                    <input type="text" class="form-control ml-2" name="dateExecuted" id="dateExecuted" value="@DateTime.Now.ToString("dd/MM/yyyy")">
                 </div>
                 <button type="button" id="toggle1" class="btn btn-secondary">
                     <i class="far fa-calendar-alt"></i>

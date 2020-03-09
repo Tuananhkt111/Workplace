@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label for="timeSearch"><strong>Tin bài tháng:</strong></label>
                 <div class="flex-column">
-                    <input type="text" class="form-control ml-2" placeholder="" readonly name="timeSearch" id="timeSearch" value="@DateTime.Now.ToString("MM/yyyy")">
+                    <input type="text" class="form-control ml-2" readonly name="timeSearch" id="timeSearch" value="@DateTime.Now.ToString("MM/yyyy")">
                 </div>
                 <button type="button" id="toggle1" class="btn btn-secondary">
                     <i class="far fa-calendar-alt"></i>
@@ -97,7 +97,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="ContentUpdt"><strong>Nội dung</strong></label>
-                            <input type="text" class="form-control" placeholder="" name="ContentUpdt" id="ContentUpdt" pattern=".{1,400}">
+                            <input type="text" class="form-control" name="ContentUpdt" id="ContentUpdt" pattern=".{1,400}">
                         </div>
                     </div>
                 </div>
@@ -164,13 +164,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="TimeBroadcastUpdt"><strong>Ngày phát sóng</strong></label>
-                            <input type="text" class="form-control" placeholder="" name="TimeBroadcastUpdt" id="TimeBroadcastUpdt" value="">
+                            <input type="text" class="form-control" name="TimeBroadcastUpdt" id="TimeBroadcastUpdt" value="">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="MarkUpdt" class="d-flex justify-content-between"><strong>Điểm</strong></label>
-                            <input type="number" class="form-control" placeholder="" name="MarkUpdt" id="MarkUpdt" min="1" step="any" max="10" value="1">
+                            <input type="number" class="form-control" name="MarkUpdt" id="MarkUpdt" min="1" step="any" max="10" value="1">
                         </div>
                     </div>
                 </div>

@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="row" id="departmentInput">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <label for="DepartmentRg"><strong>Đơn vị</strong><small style="color:blue">* Bạn cần chọn đơn vị nếu bạn là phóng viên</small></label>
             <select class="form-control selectpicker" id="DepartmentRg" name="DepartmentRg" data-show-subtext="true" data-live-search="true">
                 @if (Model.Departments.Count() == 0)
@@ -47,6 +47,10 @@
                     }
             </select>
             <p class="error" id="DepartmentAdd-exist"></p>
+        </div>
+        <div class="col-md-6">
+            <label for="NickNameRg"><strong>Bút danh</strong></label>
+            <input type="text" class="form-control" name="NickNameRg" id="NickNameRg" pattern=".{1,40}">
         </div>
     </div>
     <!--  row   -->
@@ -88,6 +92,8 @@
                 <thead>
                     <tr>
                         <th>Tên đăng nhập</th>
+                        <th></th>
+                        <th></th>
                         <th>Tên</th>
                         <th>Chức vụ</th>
                         <th></th>
@@ -100,6 +106,8 @@
                 <tfoot>
                     <tr>
                         <th>Tên đăng nhập</th>
+                        <th></th>
+                        <th></th>
                         <th>Tên</th>
                         <th>Chức vụ</th>
                         <th></th>
@@ -163,7 +171,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" id="departmentInput2">
+                <div class="row departmentInput2">
+                    <div class="col-md-12">
+                        <label for="NickNameUpdt"><strong>Bút danh</strong></label>
+                        <input type="text" class="form-control" name="NickNameUpdt" id="NickNameUpdt" pattern=".{1,40}">
+                    </div>
+                </div>
+                <div class="row departmentInput2">
                     <div class="col-md-12">
                         <label for="DepartmentUpdt"><strong>Đơn vị</strong><small style="color:blue">* Bạn cần chọn đơn vị nếu bạn là phóng viên</small></label>
                         <select class="form-control selectpicker" id="DepartmentUpdt" name="DepartmentUpdt" data-show-subtext="true" data-live-search="true">

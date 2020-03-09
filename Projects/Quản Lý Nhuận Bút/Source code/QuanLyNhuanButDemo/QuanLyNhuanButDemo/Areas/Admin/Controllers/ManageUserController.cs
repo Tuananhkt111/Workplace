@@ -54,7 +54,7 @@ namespace QuanLyNhuanButDemo.Areas.Admin.Controllers
             UserDAO dao = new UserDAO(_userManager, _signInManager, _context);
             userRg.TimeModified = DateTime.Now;
             string msg = "";
-            QuanLyNhuanButDemoUser user = new QuanLyNhuanButDemoUser { UserName = userRg.Username, Email = userRg.Username, Status = userRg.Status, Name = userRg.Name, TimeModified = userRg.TimeModified, DepartmentId = userRg.DepartmentId };
+            QuanLyNhuanButDemoUser user = new QuanLyNhuanButDemoUser { UserName = userRg.Username, Email = userRg.Username, Status = userRg.Status, Name = userRg.Name, NickName = userRg.NickName, TimeModified = userRg.TimeModified, DepartmentId = userRg.DepartmentId };
             IdentityResult createResult = await dao.CreateUser(user, userRg.Password);
             if (createResult.Succeeded)
             {

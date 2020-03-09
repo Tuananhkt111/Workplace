@@ -30,8 +30,8 @@ $(document).ready(function () {
                 $(element).valid();
             });
         }
-        return parseFloat(value) > parseFloat($min.val());
-    }, "Điểm cao nhất lớn hơn điểm thấp nhất");
+        return parseFloat(value) >= parseFloat($min.val());
+    }, "Điểm cao nhất lớn hơn hoặc bằng điểm thấp nhất");
     getMarkValue();
     $('#MarkVal').maskNumber({
         integer: true
@@ -259,13 +259,15 @@ $(document).ready(function () {
             },
             MinMarkAdd: {
                 required: "Điểm thấp nhất không thể bỏ trống.",
-                min: "Điểm thấp nhất lớn hơn hoặc bằng 1",
-                number: "Vui lòng nhập số"
+                min: "Điểm thấp nhất lớn hơn hoặc bằng 0.5",
+                number: "Vui lòng nhập số",
+                max: "Điểm cao nhất nhỏ hơn hoặc bằng 50"
             },
             MaxMarkAdd: {
                 required: "Điểm cao nhất không thể bỏ trống.",
-                min: "Điểm cao nhất lớn hơn hoặc bằng 1",
-                number: "Vui lòng nhập số"
+                min: "Điểm cao nhất lớn hơn hoặc bằng 0.5",
+                number: "Vui lòng nhập số",
+                max: "Điểm cao nhất nhỏ hơn hoặc bằng 50"
             }
         },
         submitHandler: function () {
@@ -282,7 +284,7 @@ $(document).ready(function () {
             },
             MaxMarkUpdt: {
                 required: true,
-                greaterThan: '#MinMarkAdd'
+                greaterThan: '#MinMarkUpdt'
             },
         },
         messages: {
@@ -292,13 +294,15 @@ $(document).ready(function () {
             },
             MinMarkUpdt: {
                 required: "Điểm thấp nhất không thể bỏ trống.",
-                min: "Điểm thấp nhất lớn hơn hoặc bằng 1",
-                number: "Vui lòng nhập số"
+                min: "Điểm thấp nhất lớn hơn hoặc bằng 0.5",
+                number: "Vui lòng nhập số",
+                max: "Điểm cao nhất nhỏ hơn hoặc bằng 50"
             },
             MaxMarkUpdt: {
                 required: "Điểm cao nhất không thể bỏ trống.",
-                min: "Điểm cao nhất lớn hơn hoặc bằng 1",
-                number: "Vui lòng nhập số"
+                min: "Điểm cao nhất lớn hơn hoặc bằng 0.5",
+                number: "Vui lòng nhập số",
+                max: "Điểm cao nhất nhỏ hơn hoặc bằng 50"
             }
         },
         submitHandler: function () {

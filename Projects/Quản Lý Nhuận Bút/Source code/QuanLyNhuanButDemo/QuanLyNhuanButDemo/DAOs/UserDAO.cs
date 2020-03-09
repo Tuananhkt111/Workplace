@@ -37,7 +37,7 @@ namespace QuanLyNhuanButDemo.DAOs
             {
                 var roleList = await _userManager.GetRolesAsync(item);
                 if (roleList != null && !roleList.Contains(Roles.ADMIN_ROLE))
-                    result.Add(new UserInfoDTO { Name = item.Name, Role = roleList.SingleOrDefault(), Status = item.Status, TimeModified = item.TimeModified, UserName = item.UserName, DepartmentId = item.DepartmentId, DepartmentName = roleList.SingleOrDefault().Equals(Roles.REPORTER_ROLE) ? (item.Department.DepartmentType.GetDescription() + " " + item.Department.DepartmentName) : "_" });
+                    result.Add(new UserInfoDTO { Name = item.Name, NickName = item.NickName, Role = roleList.SingleOrDefault(), Status = item.Status, TimeModified = item.TimeModified, UserName = item.UserName, DepartmentId = item.DepartmentId, DepartmentName = roleList.SingleOrDefault().Equals(Roles.REPORTER_ROLE) ? (item.Department.DepartmentType.GetDescription() + " " + item.Department.DepartmentName) : "_" });
             }
             return result;
         }
@@ -45,6 +45,7 @@ namespace QuanLyNhuanButDemo.DAOs
         {
             QuanLyNhuanButDemoUser user = await _userManager.FindByNameAsync(p.Username);
             user.Name = p.Name;
+            user.NickName = p.Role.Equals(Roles.REPORTER_ROLE) ? p.NickName : "";
             user.Status = p.Status;
             user.TimeModified = p.TimeModified;
             user.DepartmentId = p.Role.Equals(Roles.REPORTER_ROLE) ? p.DepartmentId : null;
@@ -89,6 +90,11 @@ namespace QuanLyNhuanButDemo.DAOs
                 .Select(user => user.Department.DepartmentType.GetDescription() + " " + user.Department.DepartmentName.ToLower())
                 .FirstOrDefaultAsync();
             return departmentName;
+        }
+
+        public async Task<string> GetNickNameByUserNameAsync(String userName)
+        {
+            return (await _userManager.FindByNameAsync(userName))?.NickName;
         }
 
         public async Task<float> GetStockRateByUserNameAsync(String userName)

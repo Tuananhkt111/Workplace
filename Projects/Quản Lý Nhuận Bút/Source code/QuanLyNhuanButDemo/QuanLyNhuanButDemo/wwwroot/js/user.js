@@ -1,5 +1,6 @@
 ﻿function resetForm() {
     $('#UsernameRg').val("");
+    $('#NickNameRg').val("");
     $('#NameRg').val("");
     $('#PasswordRg').val("");
     $('#RepPassRg').val("");
@@ -32,12 +33,12 @@ $(document).ready(function () {
             $('#departmentInput').hide();
         }
     });
-    $('#departmentInput2').hide();
+    $('.departmentInput2').hide();
     $('#RoleUpdt').on('change', function () {
         if ($(this).val() === "Phóng viên") {
-            $('#departmentInput2').show();
+            $('.departmentInput2').show();
         } else {
-            $('#departmentInput2').hide();
+            $('.departmentInput2').hide();
         }
     });
     $.fn.dataTable.moment('DD-MM-YYYY HH:mm:ss');
@@ -49,7 +50,27 @@ $(document).ready(function () {
         },
         'columns': [
             { "data": "userName" },
-            { "data": "name" },
+            {
+                "data": "name",
+                "visible": false
+            },
+            {
+                "data": "nickName",
+                "visible": false
+            },
+            {
+                "data": function (row) {
+                    let para = document.createElement("div");
+                    let nameSpan = document.createElement("p");
+                    let nickNameSpan = document.createElement("p");
+                    nameSpan.innerHTML = row.name;
+                    nickNameSpan.innerHTML = row.nickName;
+                    nickNameSpan.setAttribute("style", "color: blue");
+                    para.appendChild(nameSpan);
+                    para.appendChild(nickNameSpan);
+                    return para.outerHTML;
+                }
+            },
             { "data": "role" },
             {
                 "data": "departmentId",
@@ -92,6 +113,7 @@ $(document).ready(function () {
                     editLink.setAttribute("data-depid", row.departmentId);
                     editLink.setAttribute("data-status", row.status);
                     editLink.setAttribute("data-name", row.name);
+                    editLink.setAttribute("data-nickname", row.nickName);
                     editLink.setAttribute("data-role", row.role);
                     editLink.style = "cursor: pointer";
                     editLink.classList.add("updtAcc");
@@ -103,7 +125,7 @@ $(document).ready(function () {
                 }
             }
         ],
-        "order": [[6, "desc"]],
+        "order": [[8, "desc"]],
         "language": {
             "emptyTable": "Không có tài khoản nào có sẵn",
             "lengthMenu": "Hiển thị _MENU_ tài khoản mỗi trang",
@@ -132,11 +154,12 @@ $(document).ready(function () {
         let row = $(this);
         $('#UsernameUpdt').val(row.data("id"));
         $('#NameUpdt').val(row.data("name"));
+        $('#NickNameUpdt').val(row.data("nickname"));
         $('#RoleUpdt').val(row.data("role"));
         if ($('#RoleUpdt').val() === "Phóng viên") {
-            $('#departmentInput2').show();
+            $('.departmentInput2').show();
         } else {
-            $('#departmentInput2').hide();
+            $('.departmentInput2').hide();
         }
         $('#DepartmentUpdt').val(row.data("depid"));
         $('#DepartmentUpdt').change();
@@ -154,6 +177,7 @@ $(document).ready(function () {
         let obj = {
             Username: $('#UsernameRg').val(),
             Name: $('#NameRg').val(),
+            NickName: $('#NickNameRg').val(),
             Role: $('#RoleRg').val(),
             Password: $('#PasswordRg').val(),
             Status: false,
@@ -182,6 +206,7 @@ $(document).ready(function () {
         let obj = {
             UserName: $('#UsernameUpdt').val(),
             Name: $('#NameUpdt').val(),
+            NickName: $('#NickNameUpdt').val(),
             Role: $('#RoleUpdt').val(),
             Password: "",
             Status: $('#IsDeletedUpdt').val() === "true" ? true : false,
@@ -253,6 +278,9 @@ $(document).ready(function () {
                 required: "Tên không thể bỏ trống.",
                 pattern: "Tên có 1-40 kí tự."
             },
+            NickNameRg: {
+                pattern: "Bút danh có tối đa 40 kí tự."
+            },
             PasswordRg: {
                 required: "Mật khẩu không thể bỏ trống.",
                 pattern: "Mật khẩu có từ 8-16 kí tự, bao gồm ít nhất 1 chữ in hoa và 1 chữ in thường."
@@ -284,6 +312,9 @@ $(document).ready(function () {
             NameUpdt: {
                 required: "Tên không thể bỏ trống.",
                 pattern: "Tên có 1-40 kí tự."
+            },
+            NickNameUpdt: {
+                pattern: "Bút danh có tối đa 40 kí tự."
             }
         },
         submitHandler: function () {

@@ -11,6 +11,7 @@ namespace QuanLyNhuanButDemo.Areas.Identity.Data
     public class QuanLyNhuanButDemoUser : IdentityUser
     {
         public String Name { get; set; }
+        public String NickName { get; set; }
         public DateTime TimeModified { get; set; }
         public bool Status { get; set; }
         public string DepartmentId { get; set; }

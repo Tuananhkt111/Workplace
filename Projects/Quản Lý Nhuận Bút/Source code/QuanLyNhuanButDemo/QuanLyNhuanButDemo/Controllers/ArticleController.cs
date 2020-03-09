@@ -383,7 +383,7 @@ namespace QuanLyNhuanButDemo.Controllers
             DateTime timeSearch = DateTime.ParseExact("01/" + monthSearch, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             DateTime curTime = DateTime.Now;
 
-            var list = await articleDAO.GetGeneralReportList(listUserName, unitTypeSearch, timeSearch);
+            var list = articleDAO.GetGeneralReportList(listUserName, unitTypeSearch, timeSearch);
 
             var stream = new MemoryStream();
             using (var package = new ExcelPackage(stream))
@@ -433,20 +433,30 @@ namespace QuanLyNhuanButDemo.Controllers
 
                 var groupList = list.GroupBy(gr => gr.ReporterName);
                 int counter = 0;
-                foreach (var item in groupList)
+                foreach (var reporter in listUserName)
                 {
-                    workSheet.Cells[counter + 10, 2].Value = item.Key;
+                    string reporterName = (await _userManager.FindByNameAsync(reporter)).Name;
+                    workSheet.Cells[counter + 10, 2].Value = reporterName;
                     workSheet.Cells[counter + 10, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
                     workSheet.Cells[counter + 10, 2].Style.WrapText = true;
                     workSheet.Cells[counter + 10, 1].Value = counter + 1;
-                    int catCounter = 0;
-                    foreach (var grDTO in item)
+                    foreach (var item in groupList)
                     {
-                        while (catCounter < listCategoryName.Count)
+                        if (item.Key.Equals(reporter))
                         {
-                            if (workSheet.Cells[8, catCounter + 3].Value.Equals(grDTO.CategoryName))
-                                workSheet.Cells[counter + 10, catCounter + 3].Value = grDTO.ArticleCount;
-                            catCounter++;
+                            foreach (var grDTO in item)
+                            {
+                                int catCounter = 0;
+                                while (catCounter < listCategoryName.Count)
+                                {
+                                    if (workSheet.Cells[8, catCounter + 3].Value.Equals(grDTO.CategoryName))
+                                    {
+                                        workSheet.Cells[counter + 10, catCounter + 3].Value = grDTO.ArticleCount;
+                                        break;
+                                    }
+                                    catCounter++;
+                                }
+                            }
                         }
                     }
                     counter++;
@@ -501,6 +511,7 @@ namespace QuanLyNhuanButDemo.Controllers
             string reporterName = (await _userManager.FindByNameAsync(reporterSearch2)).Name;
             ulong markVal = markDAO.GetMarkValue();
             string departmentName = await userDAO.GetDepartmentNameByUserNameAsync(reporterSearch2);
+            string nickName = await userDAO.GetNickNameByUserNameAsync(reporterSearch2);
             float stockRate = await userDAO.GetStockRateByUserNameAsync(reporterSearch2);
 
             List<string> truyenHinhCatList = catDAO.GetCategoryNamesByUnitType(UnitTypes.TRUYEN_HINH);
@@ -536,7 +547,10 @@ namespace QuanLyNhuanButDemo.Controllers
                 workSheet.Cells[4, 1, 4, dayInMonth + 3].Style.Font.Size = 14;
                 workSheet.Cells[4, 1, 4, dayInMonth + 3].Style.Font.Bold = true;
                 workSheet.Cells[5, 1, 5, dayInMonth + 3].Merge = true;
-                workSheet.Cells[5, 1, 5, dayInMonth + 3].Value = "Tác giả: " + reporterName;
+                if (nickName.Equals(""))
+                    workSheet.Cells[5, 1, 5, dayInMonth + 3].Value = "Tác giả: " + reporterName;
+                else
+                    workSheet.Cells[5, 1, 5, dayInMonth + 3].Value = "Tác giả: " + reporterName + " - " + "Bút danh: " + nickName;
                 workSheet.Cells[5, 1, 5, dayInMonth + 3].Style.Font.Size = 13;
 
                 workSheet.Cells["B7"].Value = "Thể loại phát sóng";
@@ -627,6 +641,7 @@ namespace QuanLyNhuanButDemo.Controllers
                 workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "3. Giảm trừ khoán:";
                 workSheet.Cells[15 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Value = "4. Nhuân bút thực nhận (4=1-2-3):";
                 workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 2, 16 + phatThanhCatList.Count + truyenHinhCatList.Count, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 16 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Style.Numberformat.Format = "#,##0";
                 workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 12 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
                 workSheet.Cells[12 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 12 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Formula = "="
                     + workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Address

@@ -35,7 +35,12 @@ namespace QuanLyNhuanButDemo.Controllers
                 roleList = await _userManager.GetRolesAsync(user);
                 var role = roleList?.SingleOrDefault() ?? "";
                 var name = user?.Name ?? "";
+                var nickName = user?.NickName ?? "";
+                UserDAO userDAO = new UserDAO(_userManager, _signInManager, _context);
+                string departmentName = await userDAO.GetDepartmentNameByUserNameAsync(User.Identity.Name);
                 ViewData["name"] = name;
+                ViewData["nickName"] = nickName;
+                ViewData["department"] = departmentName;
                 ViewData["role"] = role;
             }
             return View();
@@ -144,6 +149,48 @@ namespace QuanLyNhuanButDemo.Controllers
                     string actType = "Thay đổi tên hiển thị";
                     string shortDes = "Đã đổi tên hiển thị của tài khoản";
                     string longDes = "Đã đổi tên hiển thị của tài khoản từ \"" + name + "\" thành \"" + NameUpdt + "\"";
+                    ActivityLog alDTO = new ActivityLog
+                    {
+                        ActLogId = actLogId,
+                        ActType = actType,
+                        ShortDes = shortDes,
+                        LongDes = longDes,
+                        TimeExecuted = date,
+                        QuanLyNhuanButDemoUserId = user.Id
+                    };
+                    if (!alDAO.Create(alDTO))
+                        msg = "Ghi hoạt động thất bại";
+                }
+            }
+            else
+                msg = "Đổi tên thất bại";
+            TempData["msg"] = msg;
+            return RedirectToAction("Index", "User");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> ChangeNickName([FromForm] string NickNameUpdt)
+        {
+            UserDAO dao = new UserDAO(_userManager, _signInManager, _context);
+            var username = User.Identity.Name ?? "";
+            var user = await _userManager.FindByNameAsync(username);
+            var name = user?.NickName;
+            bool result = await dao.ChangeNickName(username, NickNameUpdt);
+            string msg;
+            if (result)
+            {
+                msg = "Đổi bút danh thành công";
+                if (user == null)
+                    msg = "Ghi hoạt động thất bại";
+                else
+                {
+                    ActivityLogDAO alDAO = new ActivityLogDAO(_userManager, _signInManager, _context);
+                    DateTime date = DateTime.Now;
+                    string actLogId = "AL" + date.Ticks;
+                    string actType = "Thay đổi bút danh";
+                    string shortDes = "Đã đổi bút danh của tài khoản";
+                    string longDes = "Đã đổi bút danh của tài khoản từ \"" + name + "\" thành \"" + NickNameUpdt + "\"";
                     ActivityLog alDTO = new ActivityLog
                     {
                         ActLogId = actLogId,

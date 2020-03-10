@@ -24,10 +24,28 @@
             },
         }
     });
+    let validator_update2 = $('#form-nick-name-updt').validate({
+        rules: {
+            NickNameUpdt: {
+                required: true
+            },
+        },
+        messages: {
+            NickNameUpdt: {
+                required: "Bút danh không thể bỏ trống.",
+                pattern: "Bút danh có 1-40 kí tự."
+            },
+        }
+    });
     $('#modalUpdtAccForm').on('click', '.close', function () {
         let obj = $('#NameUpdt')
         obj.val(obj.data("original-value"));
         validator_update.resetForm();
+    });
+    $('#modalUpdtNickNameForm').on('click', '.close', function () {
+        let obj = $('#NickNameUpdt')
+        obj.val(obj.data("original-value"));
+        validator_update2.resetForm();
     });
     $.fn.dataTable.moment('DD/MM/YYYY HH:mm:ss');
     var t = $('#dataTable').DataTable({

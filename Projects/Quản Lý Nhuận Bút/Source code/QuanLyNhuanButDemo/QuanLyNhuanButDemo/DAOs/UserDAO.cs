@@ -133,6 +133,20 @@ namespace QuanLyNhuanButDemo.DAOs
                 return await _context.SaveChangesAsync() != 0;
             }
         }
+
+        public async Task<bool> ChangeNickName(String username, String name)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null)
+            {
+                return false;
+            }
+            else
+            {
+                user.NickName = name;
+                return await _context.SaveChangesAsync() != 0;
+            }
+        }
         public async Task<List<ReporterDTO>> GetAllReportersAsync()
         {
             List<ReporterDTO> result = new List<ReporterDTO>();

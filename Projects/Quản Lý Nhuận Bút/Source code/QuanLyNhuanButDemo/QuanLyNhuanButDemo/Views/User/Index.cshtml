@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using QuanLyNhuanButDemo.Areas.Identity.Data
+@using QuanLyNhuanButDemo.Library
 @inject SignInManager<QuanLyNhuanButDemoUser> SignInManager
 @inject UserManager<QuanLyNhuanButDemoUser> UserManager
 @{
@@ -23,8 +24,23 @@
                 </a>
             </span>
         </h2>
-        <p class="title text-center">@@@User.Identity.Name</p>
+        @if (User.IsInRole(QuanLyNhuanButConstants.Roles.REPORTER_ROLE))
+        {
+            <p class="title text-center">
+                @@@ViewData["nickName"]
+                <span data-toggle="modal" data-target="#modalUpdtNickNameForm">
+                    <a href="javascript: void (0)" data-toggle="tooltip" data-placement="right" title="Thay đổi bút danh" class="ml-1">
+                        <i class="fas fa-edit" style="font-size:16px; color: gray">
+                        </i>
+                    </a>
+                </span>
+            </p>
+        }
         <p class="text-center">@ViewData["role"]</p>
+        @if (User.IsInRole(QuanLyNhuanButConstants.Roles.REPORTER_ROLE))
+        {
+            <p class="text-center">@ViewData["department"]</p>
+        }
     </div>
     <div class="col-md-9">
         <ol class="breadcrumb">
@@ -123,6 +139,29 @@
                         <div class="form-group">
                             <label for="NameUpdt"><strong>Tên</strong></label>
                             <input type="text" class="form-control" value="@ViewData["name"]" data-original-value="@ViewData["name"]" name="NameUpdt" id="NameUpdt" pattern=".{1,40}">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button type="submit" class="btn btn-success mb-3 m-auto">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalUpdtNickNameForm" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="row ml-auto mr-2 mt-2">
+                <button type="button" id="myBtn" class="close" data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
+            </div>
+            <h3 class="text-center mt-2" style="color: #00cc33">Thay đổi bút danh</h3>
+            <form class="modal-body" id="form-nick-name-updt" asp-area="" asp-controller="User" asp-action="ChangeNickName" method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="NickNameUpdt"><strong>Bút danh</strong></label>
+                            <input type="text" class="form-control" value="@ViewData["nickName"]" data-original-value="@ViewData["nickName"]" name="NickNameUpdt" id="NickNameUpdt" pattern=".{1,40}">
                         </div>
                     </div>
                 </div>

@@ -647,10 +647,7 @@ namespace QuanLyNhuanButDemo.Controllers
                     + "*"
                     + markVal;
                 workSheet.Cells[13 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 13 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
-                workSheet.Cells[13 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 13 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Formula = "="
-                    + workSheet.Cells[10 + phatThanhCatList.Count + truyenHinhCatList.Count, dayInMonth + 3].Address
-                    + "*"
-                    + (markVal * stockRate / 100);
+                workSheet.Cells[13 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 13 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Value = markVal * NUM_MARK_BASE * stockRate / 100;
                 workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
                 workSheet.Cells[14 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 14 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Value = stockDeductionValue;
                 workSheet.Cells[15 + phatThanhCatList.Count + truyenHinhCatList.Count, 4, 15 + phatThanhCatList.Count + truyenHinhCatList.Count, 7].Merge = true;
@@ -689,7 +686,7 @@ namespace QuanLyNhuanButDemo.Controllers
                 package.Save();
             }
             stream.Position = 0;
-            string excelName = $"Bảng thanh toán nhuận bút tháng " + monthSearch2 + ".xlsx";
+            string excelName = $"Bảng thanh toán nhuận bút tháng " + monthSearch2 + " - " + reporterName + ".xlsx";
 
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
         }

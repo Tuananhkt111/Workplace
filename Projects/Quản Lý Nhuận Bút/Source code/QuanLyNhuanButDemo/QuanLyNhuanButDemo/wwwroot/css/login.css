@@ -1,0 +1,45 @@
+﻿html, body {
+    height: 100%;
+}
+
+.container-login {
+    width: 75%;
+    height: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.bg-dark::after {
+    content: "";
+    background: url('../img/bliss.bmp');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-login {
+    width: 100%;
+}
+
+.logo-title {
+    margin-top: 10px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: #2e2e2e 0 4px 5px;
+}
+
+.logo-company-name {
+    color: #07fff4;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: black 2px 4px 5px;
+}

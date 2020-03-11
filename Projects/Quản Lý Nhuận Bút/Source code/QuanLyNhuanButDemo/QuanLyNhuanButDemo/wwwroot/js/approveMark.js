@@ -68,9 +68,9 @@ $(document).ready(function () {
                 "render": function (data) {
                     let dataDiv = document.createElement("div");
                     //dataDiv.classList = "truncate";
-                    dataDiv.setAttribute("data-toggle", "tooltip");
-                    dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", data);
+                    //dataDiv.setAttribute("data-toggle", "tooltip");
+                    //dataDiv.setAttribute("data-placement", "top");
+                    //dataDiv.setAttribute("title", data);
                     dataDiv.innerHTML = data;
                     return dataDiv.outerHTML;
                 }
@@ -93,9 +93,9 @@ $(document).ready(function () {
                     let unit = document.createElement("p");
                     let catName = document.createElement("span");
                     //dataDiv.classList = "truncate";
-                    dataDiv.setAttribute("data-toggle", "tooltip");
-                    dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", row.categoryName);
+                    //dataDiv.setAttribute("data-toggle", "tooltip");
+                    //dataDiv.setAttribute("data-placement", "top");
+                    //dataDiv.setAttribute("title", row.categoryName);
                     catName.innerHTML = row.categoryName;
                     let unitName;
                     if (row.unitType === 0) {
@@ -130,8 +130,8 @@ $(document).ready(function () {
                     username.setAttribute("style", "color: blue");
                     departmentName.setAttribute("style", "color: green");
                     //dataDiv.classList = "truncate";
-                    dataDiv.setAttribute("data-toggle", "tooltip");
-                    dataDiv.setAttribute("data-placement", "top");
+                    //dataDiv.setAttribute("data-toggle", "tooltip");
+                    //dataDiv.setAttribute("data-placement", "top");
                     username.innerHTML = row.executor.executor;
                     name.innerHTML = row.executor.executorName;
                     departmentName.innerHTML = row.executor.departmentName;
@@ -141,7 +141,7 @@ $(document).ready(function () {
                     div1.appendChild(document.createElement("br"));
                     div1.appendChild(departmentName);
                     dataDiv.appendChild(div1);
-                    dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor.executor + ", tên: " + row.executor.executorName + ", đơn vị: " + row.executor.departmentName);
+                    //dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor.executor + ", tên: " + row.executor.executorName + ", đơn vị: " + row.executor.departmentName);
                     if (row.executor.executor !== row.executor2.executor) {
                         let div2 = document.createElement("p");
                         let username2 = document.createElement("span");
@@ -158,7 +158,7 @@ $(document).ready(function () {
                         div2.appendChild(document.createElement("br"));
                         div2.appendChild(departmentName2);
                         dataDiv.appendChild(div2);
-                        dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor.executor + ", tên: " + row.executor.executorName + ", đơn vị: " + row.executor.departmentName + "  /  " + "Tên đăng nhập: " + row.executor2.executor + ", tên: " + row.executor2.executorName + ", đơn vị: " + row.executor2.departmentName);
+                        //dataDiv.setAttribute("title", "Tên đăng nhập: " + row.executor.executor + ", tên: " + row.executor.executorName + ", đơn vị: " + row.executor.departmentName + "  /  " + "Tên đăng nhập: " + row.executor2.executor + ", tên: " + row.executor2.executorName + ", đơn vị: " + row.executor2.departmentName);
                     }
                     return dataDiv.outerHTML;
                 }
@@ -189,9 +189,9 @@ $(document).ready(function () {
                     let name = document.createElement("p");
                     username.setAttribute("style", "color: blue");
                     //dataDiv.classList = "truncate";
-                    dataDiv.setAttribute("data-toggle", "tooltip");
-                    dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", "Tên đăng nhập: " + row.marker + ", tên: " + row.markerName);
+                    //dataDiv.setAttribute("data-toggle", "tooltip");
+                    //dataDiv.setAttribute("data-placement", "top");
+                    //dataDiv.setAttribute("title", "Tên đăng nhập: " + row.marker + ", tên: " + row.markerName);
                     username.innerHTML = row.marker;
                     name.innerHTML = row.markerName;
                     dataDiv.appendChild(username);

@@ -15,5 +15,7 @@
             public const string REPORTER_ROLE = "Phóng viên";
 
         }
+
+        public const int NUM_MARK_BASE = 50;
     }
 }

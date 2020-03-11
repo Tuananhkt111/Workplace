@@ -35,9 +35,9 @@ $(document).ready(function () {
                 "render": function (data) {
                     let dataDiv = document.createElement("div");
                     //dataDiv.classList = "truncate";
-                    dataDiv.setAttribute("data-toggle", "tooltip");
-                    dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", data);
+                    //dataDiv.setAttribute("data-toggle", "tooltip");
+                    //dataDiv.setAttribute("data-placement", "top");
+                    //dataDiv.setAttribute("title", data);
                     dataDiv.innerHTML = data;
                     return dataDiv.outerHTML;
                 }
@@ -56,9 +56,9 @@ $(document).ready(function () {
                     let unit = document.createElement("p");
                     let catName = document.createElement("span");
                     //dataDiv.classList = "truncate";
-                    dataDiv.setAttribute("data-toggle", "tooltip");
-                    dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", row.categoryName);
+                    //dataDiv.setAttribute("data-toggle", "tooltip");
+                    //dataDiv.setAttribute("data-placement", "top");
+                    //dataDiv.setAttribute("title", row.categoryName);
                     catName.innerHTML = row.categoryName;
                     let unitName;
                     if (row.unitType === 0) {
@@ -97,9 +97,9 @@ $(document).ready(function () {
                     let name = document.createElement("p");
                     username.setAttribute("style", "color: blue");
                     //dataDiv.classList = "truncate";
-                    dataDiv.setAttribute("data-toggle", "tooltip");
-                    dataDiv.setAttribute("data-placement", "top");
-                    dataDiv.setAttribute("title", "Tên đăng nhập: " + row.marker + ", tên: " + row.markerName);
+                    //dataDiv.setAttribute("data-toggle", "tooltip");
+                    //dataDiv.setAttribute("data-placement", "top");
+                    //dataDiv.setAttribute("title", "Tên đăng nhập: " + row.marker + ", tên: " + row.markerName);
                     username.innerHTML = row.marker;
                     name.innerHTML = row.markerName;
                     dataDiv.appendChild(username);

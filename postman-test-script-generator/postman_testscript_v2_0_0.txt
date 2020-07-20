@@ -1,0 +1,161 @@
+// =======EXPECTED RESPONSE=======
+var numberOfItems = 'EXPECTED_NUMBER_OF_ITEMS';
+if (numberOfItems === '') {
+    numberOfItems = null;
+}else{
+    numberOfItems = numberOfItems.toString()
+}
+
+var requestId = 'EXPECTED_REQUEST_ID';
+if (requestId === '') {
+    requestId = null;
+}else{
+    requestId = requestId.toString()
+}
+
+var status = 'EXPECTED_STATUS';
+if (status === '') {
+    status = null;
+}else{
+    status = status.toString()
+}
+
+var mallName = 'EXPECTED_MALL_NAME';
+if (mallName === '') {
+    mallName = null;
+}else{
+    mallName = mallName.toString()
+}
+
+var storeName = 'EXPECTED_STORE_NAME';
+if (storeName === '') {
+    storeName = null;
+}else{
+    storeName = storeName.toString()
+}
+
+var seller = 'EXPECTED_SELLER';
+if (seller === '') {
+    seller = null;
+}else{
+    seller = seller.toString()
+}
+
+var receiptId = 'EXPECTED_RECEIPT_ID';
+if (receiptId === '') {
+    receiptId = null;
+}else{
+    receiptId = receiptId.toString()
+}
+
+var receiptTotalAmount = 'EXPECTED_RECEIPT_TOTAL_AMOUNT';
+if (receiptTotalAmount === '') {
+    receiptTotalAmount = null;
+}else{
+    receiptTotalAmount = receiptTotalAmount.toString()
+}
+
+var receiptTransactionDateTime = 'EXPECTED_RECEIPT_TRANSACTION_DATE_TIME';
+if (receiptTransactionDateTime === '') {
+    receiptTransactionDateTime = null;
+}else{
+    receiptTransactionDateTime = receiptTransactionDateTime.toString()
+}
+
+var expectedItems = JSON.parse('EXPECTED_RECEIPT_PRODUCT_ITEMS');
+if (expectedItems === '') {
+    expectedItems = null;
+}
+
+// =======EXPECTED RESPONSE=======
+
+// Validate status code
+pm.test("Status code is 200", function() {
+    pm.response.to.have.status(200);
+});
+
+// Validate response format
+pm.test("Response format is JSON", function() {
+    pm.response.to.be.ok;
+    pm.response.to.be.withBody;
+    pm.response.to.be.json;
+});
+
+var responseJson = pm.response.json();
+
+// Validate response data
+pm.test("Have required fields as expected", function() {
+    pm.expect(responseJson).to.have.all.keys('receiptData', 'requestId', 'status');
+});
+
+pm.test("Validate response value: requestId & status", function() {
+    pm.expect(responseJson['requestId']).to.equal(requestId);
+    pm.expect(responseJson['status']).to.equal(status);
+});
+
+pm.test("Have required fields as expected", function() {
+    pm.expect(responseJson['receiptData']).to.have.all.keys('items', 'numberOfItems', 'mallName', 'storeName', 'receiptId', 'totalAmount', 'transactionDateTime', 'seller');
+});
+
+pm.test("Validate response value: mallName", function() {
+    pm.expect(responseJson['receiptData']['mallName']).to.equal(mallName);
+});
+
+pm.test("Validate response value: storeName", function() {
+    pm.expect(responseJson['receiptData']['storeName']).to.equal(storeName);
+});
+
+pm.test("Validate response value: receiptId", function() {
+    pm.expect(responseJson['receiptData']['receiptId']).to.equal(receiptId);
+});
+
+pm.test("Validate response value: numberOfItems", function() {
+    pm.expect(responseJson['receiptData']['numberOfItems']).to.equal(numberOfItems);
+});
+
+pm.test("Validate response value: totalAmount", function() {
+    pm.expect(responseJson['receiptData']['totalAmount']).to.equal(receiptTotalAmount);
+});
+pm.test("Validate response value: seller", function() {
+    pm.expect(responseJson['receiptData']['seller']).to.equal(seller);
+});
+
+pm.test("Validate response value: transactionDateTime", function() {
+    pm.expect(responseJson['receiptData']['transactionDateTime']).to.equal(receiptTransactionDateTime);
+});
+
+//pm.test("Have required number of items as expected", function() {
+//    pm.expect(responseJson['receiptData']['items']).to.have.lengthOf(numberOfItems);
+//});
+
+// Verify for product items
+pm.test("Validate product items", function() {
+    for (var index in expectedItems) {
+        expectedItem = expectedItems[index];
+        expectedItemName = expectedItem['name'];
+        expectedItemTotal = expectedItem['total'];
+        expectedItemUnitPrice = expectedItem['unitPrice'];
+        expectedItemQuantity = expectedItem['quantity'];
+    
+        item = responseJson['receiptData']['items'][index];
+        itemName = item['name'];
+        itemTotal = item['total'];
+        itemUnitPrice = item['unitPrice'];
+        itemQuantity = item['quantity'];
+    
+        pm.test('Validate item name for: ' + expectedItemName, function() {
+            pm.expect(itemName).to.equal(expectedItemName);
+        });
+        pm.test('Validate total for: ' + expectedItemName, function() {
+            pm.expect(itemTotal).to.equal(expectedItemTotal);
+        });
+
+        pm.test('Validate unit price for: ' + expectedItemName, function() {
+            pm.expect(itemUnitPrice).to.equal(expectedItemUnitPrice);
+        });
+
+        pm.test('Validate items quantity for: ' + expectedItemName, function() {
+            pm.expect(itemQuantity).to.equal(expectedItemQuantity);
+    	});
+    }
+});

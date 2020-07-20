@@ -1,0 +1,1166 @@
+{
+    "receiptData": {
+        "items": [
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            341,
+                            620,
+                            466,
+                            622,
+                            465,
+                            636,
+                            341,
+                            633
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            492,
+                            639,
+                            537,
+                            640,
+                            537,
+                            653,
+                            492,
+                            652
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "YEN MACH ORGANIC 400",
+                "quantity": "1.0",
+                "total": "114900",
+                "unitPrice": "114900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            341,
+                            652,
+                            466,
+                            654,
+                            466,
+                            669,
+                            341,
+                            667
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            493,
+                            671,
+                            534,
+                            673,
+                            534,
+                            686,
+                            493,
+                            685
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "TAY LONG MG SAN 450G",
+                "quantity": "1.0",
+                "total": "39900",
+                "unitPrice": "39900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            339,
+                            686,
+                            456,
+                            688,
+                            456,
+                            703,
+                            339,
+                            700
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            491,
+                            705,
+                            531,
+                            707,
+                            532,
+                            719,
+                            491,
+                            718
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            336,
+                            702,
+                            350,
+                            702,
+                            350,
+                            716,
+                            335,
+                            716
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "BVS ELIS SENSI 14M",
+                "quantity": "2.0",
+                "total": "67800",
+                "unitPrice": "33900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            336,
+                            720,
+                            416,
+                            720,
+                            416,
+                            734,
+                            336,
+                            733
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            491,
+                            740,
+                            528,
+                            741,
+                            528,
+                            755,
+                            491,
+                            752
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "GF-MUONG SUP",
+                "quantity": "1.0",
+                "total": "8900",
+                "unitPrice": "8900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            338,
+                            754,
+                            434,
+                            754,
+                            434,
+                            770,
+                            338,
+                            769
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            489,
+                            774,
+                            528,
+                            775,
+                            528,
+                            789,
+                            490,
+                            788
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "DAU KIDDY OLIVE",
+                "quantity": "1.0",
+                "total": "72900",
+                "unitPrice": "72900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            335,
+                            805,
+                            456,
+                            806,
+                            456,
+                            823,
+                            335,
+                            821
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            491,
+                            826,
+                            531,
+                            827,
+                            531,
+                            840,
+                            491,
+                            839
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "VIEN TAY TOILET 40G",
+                "quantity": "1.0",
+                "total": "37900",
+                "unitPrice": "37900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            333,
+                            840,
+                            446,
+                            842,
+                            446,
+                            858,
+                            333,
+                            855
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            491,
+                            860,
+                            531,
+                            861,
+                            531,
+                            875,
+                            491,
+                            874
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            333,
+                            857,
+                            369,
+                            858,
+                            369,
+                            872,
+                            333,
+                            872
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "HAU SUA 13-17 CON",
+                "quantity": "0.912",
+                "total": "90288",
+                "unitPrice": "99000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            331,
+                            874,
+                            420,
+                            875,
+                            420,
+                            892,
+                            330,
+                            891
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            489,
+                            895,
+                            536,
+                            897,
+                            535,
+                            911,
+                            489,
+                            909
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            329,
+                            892,
+                            371,
+                            893,
+                            371,
+                            907,
+                            330,
+                            907
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "FILLET CA HOI",
+                "quantity": "0.196",
+                "total": "131320",
+                "unitPrice": "670000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            331,
+                            910,
+                            400,
+                            910,
+                            400,
+                            926,
+                            331,
+                            926
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            488,
+                            929,
+                            529,
+                            931,
+                            529,
+                            945,
+                            487,
+                            943
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            331,
+                            926,
+                            367,
+                            927,
+                            367,
+                            942,
+                            331,
+                            942
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "BA ROT HEO",
+                "quantity": "0.452",
+                "total": "99440",
+                "unitPrice": "220000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            329,
+                            945,
+                            432,
+                            947,
+                            432,
+                            963,
+                            329,
+                            961
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            491,
+                            965,
+                            531,
+                            967,
+                            530,
+                            982,
+                            490,
+                            980
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "CANH GA 500G 3F",
+                "quantity": "1.0",
+                "total": "47000",
+                "unitPrice": "47000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            329,
+                            980,
+                            460,
+                            981,
+                            459,
+                            998,
+                            329,
+                            997
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            488,
+                            1002,
+                            525,
+                            1003,
+                            526,
+                            1017,
+                            487,
+                            1016
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            332,
+                            998,
+                            364,
+                            999,
+                            364,
+                            1014,
+                            331,
+                            1013
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "CAI THAO G. NHAT RCVN",
+                "quantity": "0.322",
+                "total": "38318",
+                "unitPrice": "119000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            329,
+                            1016,
+                            431,
+                            1016,
+                            432,
+                            1032,
+                            329,
+                            1033
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            488,
+                            1036,
+                            529,
+                            1037,
+                            528,
+                            1051,
+                            488,
+                            1050
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "CAI BO XOI RCVN",
+                "quantity": "1.0",
+                "total": "35000",
+                "unitPrice": "35000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            328,
+                            1051,
+                            434,
+                            1052,
+                            434,
+                            1068,
+                            328,
+                            1067
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            486,
+                            1071,
+                            525,
+                            1073,
+                            525,
+                            1086,
+                            487,
+                            1084
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "CAI THIA VG 50OG",
+                "quantity": "1.0",
+                "total": "17000",
+                "unitPrice": "17000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            325,
+                            1085,
+                            440,
+                            1086,
+                            440,
+                            1104,
+                            325,
+                            1102
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            486,
+                            1107,
+                            525,
+                            1110,
+                            525,
+                            1123,
+                            486,
+                            1122
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            326,
+                            1105,
+                            362,
+                            1106,
+                            361,
+                            1121,
+                            325,
+                            1121
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "K. TAY VANG DA LAT",
+                "quantity": "0.282",
+                "total": "15510",
+                "unitPrice": "55000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            325,
+                            1122,
+                            367,
+                            1123,
+                            367,
+                            1138,
+                            325,
+                            1137
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            485,
+                            1145,
+                            517,
+                            1146,
+                            517,
+                            1159,
+                            485,
+                            1158
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            327,
+                            1142,
+                            359,
+                            1142,
+                            359,
+                            1156,
+                            327,
+                            1155
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "CA ROT",
+                "quantity": "0.18",
+                "total": "5400",
+                "unitPrice": "30000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            326,
+                            1177,
+                            378,
+                            1178,
+                            377,
+                            1194,
+                            325,
+                            1193
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            485,
+                            1200,
+                            522,
+                            1202,
+                            521,
+                            1216,
+                            485,
+                            1214
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            325,
+                            1197,
+                            368,
+                            1197,
+                            368,
+                            1212,
+                            325,
+                            1212
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "KHOAI MO",
+                "quantity": "0.434",
+                "total": "11718",
+                "unitPrice": "27000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            324,
+                            1233,
+                            432,
+                            1234,
+                            432,
+                            1251,
+                            324,
+                            1249
+                        ],
+                        "field": "name",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            481,
+                            1254,
+                            529,
+                            1255,
+                            529,
+                            1271,
+                            481,
+                            1269
+                        ],
+                        "field": "total",
+                        "imageIndex": 0
+                    },
+                    {
+                        "boundingBox": [
+                            319,
+                            1255,
+                            338,
+                            1253,
+                            338,
+                            1266,
+                            320,
+                            1269
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 0
+                    }
+                ],
+                "name": "NG OMO TUI 2.3KG",
+                "quantity": "2.0",
+                "total": "234000",
+                "unitPrice": "117000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            363,
+                            0,
+                            442,
+                            0,
+                            442,
+                            12,
+                            363,
+                            12
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            489,
+                            14,
+                            530,
+                            16,
+                            529,
+                            29,
+                            489,
+                            27
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "THIA VG 5006",
+                "quantity": "1.0",
+                "total": "17000",
+                "unitPrice": "17000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            334,
+                            29,
+                            447,
+                            29,
+                            447,
+                            44,
+                            334,
+                            43
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            491,
+                            46,
+                            531,
+                            47,
+                            531,
+                            61,
+                            491,
+                            59
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            336,
+                            44,
+                            374,
+                            45,
+                            374,
+                            60,
+                            336,
+                            58
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 1
+                    }
+                ],
+                "name": "K. TAY VANG DA LAT",
+                "quantity": "0.282",
+                "total": "15510",
+                "unitPrice": "55000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            338,
+                            61,
+                            379,
+                            61,
+                            379,
+                            76,
+                            338,
+                            76
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            492,
+                            82,
+                            523,
+                            83,
+                            523,
+                            96,
+                            492,
+                            95
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            336,
+                            77,
+                            366,
+                            78,
+                            366,
+                            93,
+                            336,
+                            92
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 1
+                    }
+                ],
+                "name": "CA ROT",
+                "quantity": "0.18",
+                "total": "5400",
+                "unitPrice": "30000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            338,
+                            112,
+                            392,
+                            113,
+                            392,
+                            128,
+                            338,
+                            127
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            487,
+                            133,
+                            529,
+                            134,
+                            529,
+                            148,
+                            487,
+                            147
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            342,
+                            129,
+                            373,
+                            131,
+                            373,
+                            145,
+                            342,
+                            144
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 1
+                    }
+                ],
+                "name": "KHOAI MO",
+                "quantity": "1.434",
+                "total": "11718",
+                "unitPrice": "27000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            337,
+                            160,
+                            444,
+                            164,
+                            443,
+                            179,
+                            337,
+                            176
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            487,
+                            182,
+                            534,
+                            184,
+                            534,
+                            198,
+                            486,
+                            197
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            336,
+                            177,
+                            354,
+                            177,
+                            354,
+                            191,
+                            336,
+                            190
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 1
+                    }
+                ],
+                "name": "NG OMO TUI 2.3KG",
+                "quantity": "2.0",
+                "total": "234000",
+                "unitPrice": "117000"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            334,
+                            209,
+                            461,
+                            213,
+                            460,
+                            228,
+                            334,
+                            224
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            491,
+                            233,
+                            531,
+                            234,
+                            530,
+                            246,
+                            491,
+                            245
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "DAU GAO LUT SIMPLYIL",
+                "quantity": "1.0",
+                "total": "60900",
+                "unitPrice": "60900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            335,
+                            240,
+                            436,
+                            243,
+                            436,
+                            259,
+                            334,
+                            255
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            489,
+                            262,
+                            531,
+                            264,
+                            530,
+                            277,
+                            489,
+                            274
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": null,
+                        "field": "quantity",
+                        "imageIndex": null
+                    }
+                ],
+                "name": "KNORR THIT 400G",
+                "quantity": "1.0",
+                "total": "32900",
+                "unitPrice": "32900"
+            },
+            {
+                "coordinates": [
+                    {
+                        "boundingBox": [
+                            336,
+                            271,
+                            391,
+                            273,
+                            391,
+                            287,
+                            335,
+                            285
+                        ],
+                        "field": "name",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            487,
+                            291,
+                            530,
+                            294,
+                            529,
+                            308,
+                            487,
+                            305
+                        ],
+                        "field": "total",
+                        "imageIndex": 1
+                    },
+                    {
+                        "boundingBox": [
+                            335,
+                            286,
+                            376,
+                            287,
+                            376,
+                            301,
+                            334,
+                            299
+                        ],
+                        "field": "quantity",
+                        "imageIndex": 1
+                    }
+                ],
+                "name": "CU DEN DL",
+                "quantity": "0.792",
+                "total": "15840",
+                "unitPrice": "20000"
+            }
+        ],
+        "mallName": "AEON",
+        "numberOfItems": "22",
+        "receiptId": "0090132",
+        "seller": "Vo Thi Thanh Thao",
+        "storeName": "Trung tam mua sam AEON - Binh Tan",
+        "totalAmount": "1176934",
+        "transactionDateTime": "19/04/2020 20:19"
+    },
+    "requestId": "12aa6229561bac45f50a.json",
+    "status": "SUCCESS"
+}

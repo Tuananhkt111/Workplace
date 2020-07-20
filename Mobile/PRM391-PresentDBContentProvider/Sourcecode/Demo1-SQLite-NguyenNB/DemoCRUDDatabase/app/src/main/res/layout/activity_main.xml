@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="CRUD DEMO WITH SQLITE"
+        android:textStyle="bold"
+        android:gravity="center"/>
+    <Button
+        android:onClick="clickToOpenAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add a user"
+        />
+    <Button
+        android:onClick="clickToView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View User"
+        />
+
+
+</LinearLayout>

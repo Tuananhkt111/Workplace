@@ -1,0 +1,161 @@
+// =======EXPECTED RESPONSE=======
+var numberOfItems = '68';
+if (numberOfItems === '') {
+    numberOfItems = null;
+}else{
+    numberOfItems = numberOfItems.toString()
+}
+
+var requestId = '7a3e80afb49d4ec3178c.json';
+if (requestId === '') {
+    requestId = null;
+}else{
+    requestId = requestId.toString()
+}
+
+var status = 'SUCCESS';
+if (status === '') {
+    status = null;
+}else{
+    status = status.toString()
+}
+
+var mallName = 'AEON';
+if (mallName === '') {
+    mallName = null;
+}else{
+    mallName = mallName.toString()
+}
+
+var storeName = 'Trung tam mua sam AEON - Binh Tan';
+if (storeName === '') {
+    storeName = null;
+}else{
+    storeName = storeName.toString()
+}
+
+var seller = 'Vo Thi Hong Thao';
+if (seller === '') {
+    seller = null;
+}else{
+    seller = seller.toString()
+}
+
+var receiptId = '0560026';
+if (receiptId === '') {
+    receiptId = null;
+}else{
+    receiptId = receiptId.toString()
+}
+
+var receiptTotalAmount = '3565290';
+if (receiptTotalAmount === '') {
+    receiptTotalAmount = null;
+}else{
+    receiptTotalAmount = receiptTotalAmount.toString()
+}
+
+var receiptTransactionDateTime = '19/04/2020 20:10';
+if (receiptTransactionDateTime === '') {
+    receiptTransactionDateTime = null;
+}else{
+    receiptTransactionDateTime = receiptTransactionDateTime.toString()
+}
+
+var expectedItems = JSON.parse('[{"coordinates": [{"boundingBox": [373, 305, 476, 314, 475, 325, 372, 316], "field": "name", "imageIndex": 0}, {"boundingBox": [497, 329, 531, 332, 529, 343, 497, 339], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "SUACAVNMNHADAM10OGX4", "quantity": "3.0", "total": "86700", "unitPrice": "28900"}, {"coordinates": [{"boundingBox": [372, 332, 473, 340, 472, 352, 371, 344], "field": "name", "imageIndex": 0}, {"boundingBox": [492, 355, 530, 358, 530, 369, 492, 366], "field": "total", "imageIndex": 0}, {"boundingBox": [371, 347, 389, 347, 388, 359, 370, 359], "field": "quantity", "imageIndex": 0}], "name": "TRA M. ONG HLAI 60OML", "quantity": "3.0", "total": "74700", "unitPrice": "24900"}, {"coordinates": [{"boundingBox": [371, 359, 466, 365, 465, 378, 370, 372], "field": "name", "imageIndex": 0}, {"boundingBox": [492, 382, 531, 385, 530, 395, 492, 393], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NUOC TRA TAO 585ML", "quantity": "2.0", "total": "43800", "unitPrice": "21900"}, {"coordinates": [{"boundingBox": [370, 385, 461, 393, 460, 407, 369, 399], "field": "name", "imageIndex": 0}, {"boundingBox": [492, 409, 537, 412, 536, 424, 491, 420], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "KEO SAM CUNG 30OG", "quantity": "4.0", "total": "415600", "unitPrice": "103900"}, {"coordinates": [{"boundingBox": [368, 414, 464, 420, 463, 433, 368, 427], "field": "name", "imageIndex": 0}, {"boundingBox": [491, 437, 527, 439, 526, 451, 491, 448], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "TRA OLONG KD 585ML", "quantity": "1.0", "total": "23900", "unitPrice": "23900"}, {"coordinates": [{"boundingBox": [366, 442, 466, 449, 465, 462, 365, 454], "field": "name", "imageIndex": 0}, {"boundingBox": [491, 463, 526, 465, 525, 478, 491, 474], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "MIEN P HUONG L. THAT", "quantity": "6.0", "total": "53400", "unitPrice": "8900"}, {"coordinates": [{"boundingBox": [365, 469, 461, 475, 460, 487, 364, 481], "field": "name", "imageIndex": 0}, {"boundingBox": [493, 489, 526, 492, 525, 504, 492, 499], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "MIEN P. HUONG N. MANG", "quantity": "5.0", "total": "44500", "unitPrice": "8900"}, {"coordinates": [{"boundingBox": [362, 493, 464, 500, 463, 513, 362, 506], "field": "name", "imageIndex": 0}, {"boundingBox": [488, 514, 525, 517, 524, 529, 488, 525], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "BANH HELLO VNI 50G", "quantity": "2.0", "total": "37000", "unitPrice": "18500"}, {"coordinates": [{"boundingBox": [362, 519, 461, 525, 461, 538, 361, 532], "field": "name", "imageIndex": 0}, {"boundingBox": [487, 540, 527, 543, 527, 555, 487, 552], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "GUM XYLITOL SM 58G", "quantity": "1.0", "total": "27900", "unitPrice": "27900"}, {"coordinates": [{"boundingBox": [361, 544, 463, 552, 462, 566, 361, 559], "field": "name", "imageIndex": 0}, {"boundingBox": [491, 567, 528, 568, 528, 580, 491, 579], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NUOC VONG PORORO VI", "quantity": "1.0", "total": "20500", "unitPrice": "20500"}, {"coordinates": [{"boundingBox": [360, 571, 446, 576, 445, 590, 359, 584], "field": "name", "imageIndex": 0}, {"boundingBox": [489, 592, 529, 593, 528, 606, 489, 605], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NUOC PORORD SUA", "quantity": "1.0", "total": "20500", "unitPrice": "20500"}, {"coordinates": [{"boundingBox": [359, 597, 446, 601, 445, 616, 358, 611], "field": "name", "imageIndex": 0}, {"boundingBox": [492, 618, 527, 619, 527, 632, 491, 631], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NUOC PORORO TAO", "quantity": "1.0", "total": "20500", "unitPrice": "20500"}, {"coordinates": [{"boundingBox": [356, 624, 446, 627, 446, 643, 355, 638], "field": "name", "imageIndex": 0}, {"boundingBox": [489, 644, 527, 647, 526, 658, 489, 655], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NUOC PORORO DAU", "quantity": "1.0", "total": "20500", "unitPrice": "20500"}, {"coordinates": [{"boundingBox": [354, 651, 439, 654, 438, 668, 354, 664], "field": "name", "imageIndex": 0}, {"boundingBox": [491, 672, 530, 674, 530, 685, 491, 683], "field": "total", "imageIndex": 0}, {"boundingBox": [353, 665, 386, 668, 385, 680, 352, 678], "field": "quantity", "imageIndex": 0}], "name": "DUA HAU KO HAT", "quantity": "3.562", "total": "89050", "unitPrice": "25000"}, {"coordinates": [{"boundingBox": [351, 680, 447, 685, 446, 698, 350, 693], "field": "name", "imageIndex": 0}, {"boundingBox": [490, 701, 521, 703, 521, 716, 490, 713], "field": "total", "imageIndex": 0}, {"boundingBox": [351, 697, 366, 697, 366, 709, 351, 709], "field": "quantity", "imageIndex": 0}], "name": "OT XIEM XANH 50G", "quantity": "2.0", "total": "1200", "unitPrice": "6000"}, {"coordinates": [{"boundingBox": [349, 711, 465, 714, 464, 729, 349, 725], "field": "name", "imageIndex": 0}, {"boundingBox": [488, 732, 526, 733, 526, 746, 488, 744], "field": "total", "imageIndex": 0}, {"boundingBox": [351, 727, 366, 726, 365, 739, 351, 741], "field": "quantity", "imageIndex": 0}], "name": "GIA VI WASABI NERI43", "quantity": "2.0", "total": "55800", "unitPrice": "27900"}, {"coordinates": [{"boundingBox": [350, 742, 462, 745, 462, 760, 350, 756], "field": "name", "imageIndex": 0}, {"boundingBox": [487, 762, 532, 764, 531, 777, 487, 775], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "VOT MUOI SUPER LITHI", "quantity": "1.0", "total": "119000", "unitPrice": "119000"}, {"coordinates": [{"boundingBox": [347, 788, 439, 790, 438, 805, 347, 803], "field": "name", "imageIndex": 0}, {"boundingBox": [487, 809, 521, 810, 521, 822, 487, 821], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "KIM CHI C.T 1KG", "quantity": "1.0", "total": "80500", "unitPrice": "80500"}, {"coordinates": [{"boundingBox": [345, 819, 438, 822, 437, 837, 345, 833], "field": "name", "imageIndex": 0}, {"boundingBox": [485, 839, 523, 841, 521, 854, 484, 851], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "MAM CA PHAD 390", "quantity": "1.0", "total": "32500", "unitPrice": "32500"}, {"coordinates": [{"boundingBox": [345, 851, 447, 852, 446, 866, 345, 865], "field": "name", "imageIndex": 0}, {"boundingBox": [483, 871, 519, 873, 519, 885, 483, 884], "field": "total", "imageIndex": 0}, {"boundingBox": [346, 866, 362, 865, 362, 878, 345, 880], "field": "quantity", "imageIndex": 0}], "name": "BITRANG IPEK 120M", "quantity": "2.0", "total": "69800", "unitPrice": "34900"}, {"coordinates": [{"boundingBox": [345, 880, 450, 884, 449, 898, 345, 894], "field": "name", "imageIndex": 0}, {"boundingBox": [484, 901, 525, 903, 524, 915, 484, 913], "field": "total", "imageIndex": 0}, {"boundingBox": [346, 898, 361, 896, 360, 908, 346, 909], "field": "quantity", "imageIndex": 0}], "name": "TRAI VAI AROY 565G", "quantity": "2.0", "total": "163800", "unitPrice": "81900"}, {"coordinates": [{"boundingBox": [344, 912, 458, 915, 458, 928, 343, 925], "field": "name", "imageIndex": 0}, {"boundingBox": [481, 932, 526, 933, 525, 946, 481, 944], "field": "total", "imageIndex": 0}, {"boundingBox": [344, 928, 358, 927, 358, 940, 344, 941], "field": "quantity", "imageIndex": 0}], "name": "DAO TUOI RHODES 825G", "quantity": "2.0", "total": "130000", "unitPrice": "65000"}, {"coordinates": [{"boundingBox": [341, 957, 442, 960, 441, 975, 341, 972], "field": "name", "imageIndex": 0}, {"boundingBox": [482, 977, 517, 979, 517, 991, 481, 990], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NUOC TUONG SASHIMI", "quantity": "1.0", "total": "49900", "unitPrice": "49900"}, {"coordinates": [{"boundingBox": [339, 988, 448, 992, 447, 1006, 339, 1003], "field": "name", "imageIndex": 0}, {"boundingBox": [481, 1008, 516, 1009, 515, 1021, 481, 1020], "field": "total", "imageIndex": 0}, {"boundingBox": [339, 1003, 369, 1004, 369, 1016, 339, 1015], "field": "quantity", "imageIndex": 0}], "name": "MIT GIONG THAI XE -", "quantity": "1.05", "total": "72450", "unitPrice": "69000"}, {"coordinates": [{"boundingBox": [339, 1017, 448, 1020, 447, 1034, 339, 1030], "field": "name", "imageIndex": 0}, {"boundingBox": [477, 1036, 513, 1038, 512, 1051, 477, 1048], "field": "total", "imageIndex": 0}, {"boundingBox": [337, 1032, 367, 1032, 367, 1045, 337, 1044], "field": "quantity", "imageIndex": 0}], "name": "MIT GIONG THAI XE -", "quantity": "0.97", "total": "66930", "unitPrice": "69000"}, {"coordinates": [{"boundingBox": [337, 1046, 380, 1047, 379, 1061, 336, 1059], "field": "name", "imageIndex": 0}, {"boundingBox": [476, 1067, 512, 1069, 511, 1081, 476, 1079], "field": "total", "imageIndex": 0}, {"boundingBox": [337, 1062, 371, 1062, 371, 1076, 337, 1075], "field": "quantity", "imageIndex": 0}], "name": "EDAMAME", "quantity": "0.104", "total": "15600", "unitPrice": "150000"}, {"coordinates": [{"boundingBox": [337, 1076, 378, 1077, 378, 1091, 336, 1090], "field": "name", "imageIndex": 0}, {"boundingBox": [475, 1098, 512, 1101, 511, 1113, 475, 1110], "field": "total", "imageIndex": 0}, {"boundingBox": [336, 1092, 366, 1094, 366, 1108, 335, 1106], "field": "quantity", "imageIndex": 0}], "name": "EDAMAME", "quantity": "0.098", "total": "14700", "unitPrice": "150000"}, {"coordinates": [{"boundingBox": [335, 1109, 426, 1113, 425, 1127, 334, 1123], "field": "name", "imageIndex": 0}, {"boundingBox": null, "field": "total", "imageIndex": null}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "TRUNG CA CHUONG", "quantity": null, "total": null, "unitPrice": null}, {"coordinates": [{"boundingBox": [333, 1141, 424, 1145, 424, 1159, 332, 1155], "field": "name", "imageIndex": 0}, {"boundingBox": [473, 1163, 509, 1165, 509, 1178, 472, 1176], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "GUNG CAT LAT-DO", "quantity": "1.0", "total": "40000", "unitPrice": "40000"}, {"coordinates": [{"boundingBox": [332, 1174, 408, 1177, 408, 1191, 331, 1189], "field": "name", "imageIndex": 0}, {"boundingBox": [472, 1196, 513, 1199, 513, 1213, 471, 1210], "field": "total", "imageIndex": 0}, {"boundingBox": [330, 1196, 345, 1195, 344, 1209, 330, 1210], "field": "quantity", "imageIndex": 0}], "name": "SASHIMI MIX", "quantity": "2.0", "total": "158000", "unitPrice": "79000"}, {"coordinates": [{"boundingBox": [330, 1209, 420, 1211, 420, 1225, 330, 1222], "field": "name", "imageIndex": 0}, {"boundingBox": [469, 1229, 505, 1231, 506, 1244, 469, 1243], "field": "total", "imageIndex": 0}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NS SUSHI PHAN E", "quantity": "1.0", "total": "69000", "unitPrice": "69000"}, {"coordinates": [{"boundingBox": [329, 1243, 417, 1243, 417, 1257, 329, 1257], "field": "name", "imageIndex": 0}, {"boundingBox": [468, 1263, 513, 1263, 513, 1278, 468, 1278], "field": "total", "imageIndex": 0}, {"boundingBox": [328, 1261, 342, 1260, 341, 1271, 327, 1271], "field": "quantity", "imageIndex": 0}], "name": "SASHIMI MIX S", "quantity": "2.0", "total": "518000", "unitPrice": "259000"}, {"coordinates": [{"boundingBox": [359, 8, 476, 12, 475, 28, 358, 23], "field": "name", "imageIndex": 1}, {"boundingBox": [496, 31, 540, 32, 540, 45, 495, 43], "field": "total", "imageIndex": 1}, {"boundingBox": [358, 25, 378, 25, 378, 37, 358, 38], "field": "quantity", "imageIndex": 1}], "name": "DAD TUOI RHODES 825G", "quantity": "2.0", "total": "130000", "unitPrice": "65000"}, {"coordinates": [{"boundingBox": [361, 57, 464, 61, 463, 76, 361, 71], "field": "name", "imageIndex": 1}, {"boundingBox": [501, 79, 535, 80, 534, 92, 501, 90], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NUOC TUONG SASHIMI", "quantity": "0.399", "total": "19900", "unitPrice": "49900"}, {"coordinates": [{"boundingBox": [358, 89, 467, 92, 467, 108, 358, 104], "field": "name", "imageIndex": 1}, {"boundingBox": [497, 112, 535, 113, 535, 127, 497, 125], "field": "total", "imageIndex": 1}, {"boundingBox": [359, 105, 390, 106, 389, 121, 358, 120], "field": "quantity", "imageIndex": 1}], "name": "MIT GIONG THAT XE -", "quantity": "1.05", "total": "72450", "unitPrice": "69000"}, {"coordinates": [{"boundingBox": [359, 122, 465, 125, 464, 141, 359, 137], "field": "name", "imageIndex": 1}, {"boundingBox": [495, 143, 531, 145, 531, 157, 494, 156], "field": "total", "imageIndex": 1}, {"boundingBox": [358, 139, 385, 140, 385, 152, 358, 152], "field": "quantity", "imageIndex": 1}], "name": "MIT GIONG THAT XE -", "quantity": "0.97", "total": "86930", "unitPrice": "69000"}, {"coordinates": [{"boundingBox": [358, 155, 401, 155, 401, 169, 358, 168], "field": "name", "imageIndex": 1}, {"boundingBox": [493, 176, 531, 178, 531, 191, 493, 189], "field": "total", "imageIndex": 1}, {"boundingBox": [358, 171, 393, 172, 394, 186, 359, 185], "field": "quantity", "imageIndex": 1}], "name": "EDAMAME", "quantity": "0.104", "total": "15600", "unitPrice": "150000"}, {"coordinates": [{"boundingBox": [358, 187, 401, 187, 401, 200, 358, 200], "field": "name", "imageIndex": 1}, {"boundingBox": [496, 207, 531, 209, 531, 221, 496, 219], "field": "total", "imageIndex": 1}, {"boundingBox": [361, 202, 390, 204, 391, 217, 362, 215], "field": "quantity", "imageIndex": 1}], "name": "EDAMAME", "quantity": "0.098", "total": "14700", "unitPrice": "150000"}, {"coordinates": [{"boundingBox": [361, 218, 448, 221, 448, 235, 361, 231], "field": "name", "imageIndex": 1}, {"boundingBox": [493, 237, 527, 239, 526, 250, 493, 248], "field": "total", "imageIndex": 1}, {"boundingBox": [359, 232, 388, 233, 388, 246, 358, 245], "field": "quantity", "imageIndex": 1}], "name": "TRUNG CA CHUONG", "quantity": "0.05", "total": "92500", "unitPrice": "1850000"}, {"coordinates": [{"boundingBox": [359, 248, 456, 251, 455, 265, 358, 261], "field": "name", "imageIndex": 1}, {"boundingBox": [492, 267, 532, 268, 531, 283, 492, 282], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "GUNG CAT LAT-DO", "quantity": "1.0", "total": "40000", "unitPrice": "40000"}, {"coordinates": [{"boundingBox": [360, 277, 444, 279, 444, 293, 359, 291], "field": "name", "imageIndex": 1}, {"boundingBox": [496, 298, 533, 299, 532, 311, 496, 309], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "SASHIMI MIX C", "quantity": "2.0", "total": "158000", "unitPrice": "79000"}, {"coordinates": [{"boundingBox": [358, 306, 445, 310, 445, 325, 358, 320], "field": "name", "imageIndex": 1}, {"boundingBox": [491, 327, 531, 327, 531, 341, 491, 340], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "NS SUSHI PHAN E", "quantity": "1.0", "total": "69000", "unitPrice": "69000"}, {"coordinates": [{"boundingBox": [358, 337, 444, 339, 444, 352, 358, 349], "field": "name", "imageIndex": 1}, {"boundingBox": [493, 357, 534, 358, 534, 371, 492, 370], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "SASHIMI MIX S", "quantity": "2.0", "total": "518000", "unitPrice": "259000"}, {"coordinates": [{"boundingBox": [357, 367, 396, 370, 395, 382, 356, 379], "field": "name", "imageIndex": 1}, {"boundingBox": [486, 387, 534, 388, 534, 400, 486, 399], "field": "total", "imageIndex": 1}, {"boundingBox": [356, 379, 386, 381, 385, 394, 355, 393], "field": "quantity", "imageIndex": 1}], "name": "SO DIEP", "quantity": "0.14", "total": "172060", "unitPrice": "1229000"}, {"coordinates": [{"boundingBox": [356, 396, 413, 399, 413, 411, 355, 409], "field": "name", "imageIndex": 1}, {"boundingBox": [491, 417, 523, 418, 523, 429, 491, 428], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "THI LA 80G", "quantity": "1.0", "total": "8000", "unitPrice": "8000"}, {"coordinates": [{"boundingBox": [357, 426, 460, 430, 459, 445, 356, 440], "field": "name", "imageIndex": 1}, {"boundingBox": [490, 447, 530, 447, 529, 460, 490, 458], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "CA CHUA COCKTAIL DL", "quantity": "1.0", "total": "14000", "unitPrice": "14000"}, {"coordinates": [{"boundingBox": [355, 472, 468, 474, 468, 487, 355, 484], "field": "name", "imageIndex": 1}, {"boundingBox": [491, 491, 528, 493, 528, 505, 491, 503], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "SUACHUA. UGVANI 10OGX4", "quantity": "1.0", "total": "30900", "unitPrice": "30900"}, {"coordinates": [{"boundingBox": [355, 501, 459, 504, 458, 517, 354, 514], "field": "name", "imageIndex": 1}, {"boundingBox": [491, 521, 529, 522, 528, 534, 491, 532], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "SUACHUA. UGVQ100GX4", "quantity": "1.0", "total": "30900", "unitPrice": "30900"}, {"coordinates": [{"boundingBox": [353, 532, 461, 534, 461, 548, 353, 546], "field": "name", "imageIndex": 1}, {"boundingBox": [491, 551, 530, 552, 530, 564, 491, 562], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "STO VIET QUAT 500ML", "quantity": "1.0", "total": "73900", "unitPrice": "73900"}, {"coordinates": [{"boundingBox": [353, 562, 467, 564, 467, 578, 353, 576], "field": "name", "imageIndex": 1}, {"boundingBox": [490, 580, 537, 582, 536, 595, 490, 592], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "ANLENE GOLD VANI HG4", "quantity": "2.0", "total": "367800", "unitPrice": "183900"}, {"coordinates": [{"boundingBox": [352, 590, 467, 593, 466, 607, 352, 604], "field": "name", "imageIndex": 1}, {"boundingBox": [493, 606, 528, 610, 528, 622, 494, 618], "field": "total", "imageIndex": 1}, {"boundingBox": [353, 606, 370, 605, 369, 619, 352, 620], "field": "quantity", "imageIndex": 1}], "name": "CAPHE RANGDS TT 200G", "quantity": "2.0", "total": "31800", "unitPrice": "45900"}, {"coordinates": [{"boundingBox": [351, 617, 460, 619, 460, 635, 350, 634], "field": "name", "imageIndex": 1}, {"boundingBox": [488, 635, 529, 636, 529, 648, 488, 648], "field": "total", "imageIndex": 1}, {"boundingBox": null, "field": "quantity", "imageIndex": null}], "name": "LIPTON PEACH 14GX16", "quantity": "1.0", "total": "36900", "unitPrice": "36900"}]');
+if (expectedItems === '') {
+    expectedItems = null;
+}
+
+// =======EXPECTED RESPONSE=======
+
+// Validate status code
+pm.test("Status code is 200", function() {
+    pm.response.to.have.status(200);
+});
+
+// Validate response format
+pm.test("Response format is JSON", function() {
+    pm.response.to.be.ok;
+    pm.response.to.be.withBody;
+    pm.response.to.be.json;
+});
+
+var responseJson = pm.response.json();
+
+// Validate response data
+pm.test("Have required fields as expected", function() {
+    pm.expect(responseJson).to.have.all.keys('receiptData', 'requestId', 'status');
+});
+
+pm.test("Validate response value: requestId & status", function() {
+    pm.expect(responseJson['requestId']).to.equal(requestId);
+    pm.expect(responseJson['status']).to.equal(status);
+});
+
+pm.test("Have required fields as expected", function() {
+    pm.expect(responseJson['receiptData']).to.have.all.keys('items', 'numberOfItems', 'mallName', 'storeName', 'receiptId', 'totalAmount', 'transactionDateTime', 'seller');
+});
+
+pm.test("Validate response value: mallName", function() {
+    pm.expect(responseJson['receiptData']['mallName']).to.equal(mallName);
+});
+
+pm.test("Validate response value: storeName", function() {
+    pm.expect(responseJson['receiptData']['storeName']).to.equal(storeName);
+});
+
+pm.test("Validate response value: receiptId", function() {
+    pm.expect(responseJson['receiptData']['receiptId']).to.equal(receiptId);
+});
+
+pm.test("Validate response value: numberOfItems", function() {
+    pm.expect(responseJson['receiptData']['numberOfItems']).to.equal(numberOfItems);
+});
+
+pm.test("Validate response value: totalAmount", function() {
+    pm.expect(responseJson['receiptData']['totalAmount']).to.equal(receiptTotalAmount);
+});
+pm.test("Validate response value: seller", function() {
+    pm.expect(responseJson['receiptData']['seller']).to.equal(seller);
+});
+
+pm.test("Validate response value: transactionDateTime", function() {
+    pm.expect(responseJson['receiptData']['transactionDateTime']).to.equal(receiptTransactionDateTime);
+});
+
+//pm.test("Have required number of items as expected", function() {
+//    pm.expect(responseJson['receiptData']['items']).to.have.lengthOf(numberOfItems);
+//});
+
+// Verify for product items
+pm.test("Validate product items", function() {
+    for (var index in expectedItems) {
+        expectedItem = expectedItems[index];
+        expectedItemName = expectedItem['name'];
+        expectedItemTotal = expectedItem['total'];
+        expectedItemUnitPrice = expectedItem['unitPrice'];
+        expectedItemQuantity = expectedItem['quantity'];
+    
+        item = responseJson['receiptData']['items'][index];
+        itemName = item['name'];
+        itemTotal = item['total'];
+        itemUnitPrice = item['unitPrice'];
+        itemQuantity = item['quantity'];
+    
+        pm.test('Validate item name for: ' + expectedItemName, function() {
+            pm.expect(itemName).to.equal(expectedItemName);
+        });
+        pm.test('Validate total for: ' + expectedItemName, function() {
+            pm.expect(itemTotal).to.equal(expectedItemTotal);
+        });
+
+        pm.test('Validate unit price for: ' + expectedItemName, function() {
+            pm.expect(itemUnitPrice).to.equal(expectedItemUnitPrice);
+        });
+
+        pm.test('Validate items quantity for: ' + expectedItemName, function() {
+            pm.expect(itemQuantity).to.equal(expectedItemQuantity);
+    	});
+    }
+});

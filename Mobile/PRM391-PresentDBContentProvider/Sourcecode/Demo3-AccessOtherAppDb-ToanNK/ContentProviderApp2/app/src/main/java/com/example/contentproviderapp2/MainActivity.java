@@ -17,7 +17,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public EditText editName,editEmail,editIdRemove,editIdUpdate,editNameUpdate;
+    public EditText editName,editEmail,editIdRemove,editIdUpdate,editNameUpdate, editEmailUpdate;
     public TextView txtListStudent;
     public Uri CONTENT_URI_1 = Uri.parse("content://com.example.contentprovider/STUDENT_LIST");
 
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         editIdRemove = findViewById(R.id.editIdRemove);
         editIdUpdate = findViewById(R.id.editIdUpdate);
         editNameUpdate = findViewById(R.id.editNameUpdate);
+        editEmailUpdate = findViewById(R.id.editEmailUpdate);
 
         txtListStudent = findViewById(R.id.txtListStudent);
         contentResolver = getContentResolver();
@@ -80,10 +81,12 @@ public class MainActivity extends AppCompatActivity {
     public void clickToUpdateName(View view) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_NAME,editNameUpdate.getText().toString());
+        contentValues.put(COLUMN_EMAIL,editEmailUpdate.getText().toString());
 
         contentResolver.update(CONTENT_URI_1,contentValues,COLUMN_ID + " = ?",new String[]{editIdUpdate.getText().toString()});
         txtListStudent.setText(getAllStudent());
         editIdUpdate.setText("");
         editNameUpdate.setText("");
+        editEmailUpdate.setText("");
     }
 }

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,7 +12,7 @@ import com.example.contentprovider.Dataset.Student;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public EditText editName,editEmail,editIdRemove,editIdUpdate,editNameUpdate;
+    public EditText editName,editEmail,editIdRemove,editIdUpdate,editNameUpdate, editEmailUpdate;
     public TextView txtListStudent;
     private DBAdapter dbAdapter;
 
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         editIdRemove = findViewById(R.id.editIdRemove);
         editIdUpdate = findViewById(R.id.editIdUpdate);
         editNameUpdate = findViewById(R.id.editNameUpdate);
+        editEmailUpdate = findViewById(R.id.editEmailUpdate);
 
         txtListStudent = findViewById(R.id.txtListStudent);
     }
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if(list != null && list.size() > 0){
             StringBuilder stringBuilder=new StringBuilder("");
             for(Student toDo:list){
-                stringBuilder.append(toDo.getName()+", "+toDo.getEmail()+"\n");
+                stringBuilder.append(toDo.getId()+", "+toDo.getName()+", "+toDo.getEmail()+"\n");
             }
             return stringBuilder.toString();
         }else {
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickToUpdate(View view) {
-        dbAdapter.update(Integer.parseInt(editIdUpdate.getText().toString()), editNameUpdate.getText().toString());
+        dbAdapter.update(Integer.parseInt(editIdUpdate.getText().toString()), editNameUpdate.getText().toString(), editEmailUpdate.getText().toString());
         txtListStudent.setText(getListStudent());
         editIdRemove.setText("");
         editIdUpdate.setText("");

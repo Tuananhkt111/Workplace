@@ -25,7 +25,7 @@ public class DBAdapter {
     public static String CREATE_TABLE_STUDENT=
             "CREATE TABLE " +
             TABLE_STUDENT+
-            "(" + COLUMN_ID + " INTEGER, " + COLUMN_NAME + " TEXT , " + COLUMN_EMAIL+ " TEXT )";
+            "(" + COLUMN_ID + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME + " TEXT NOT NULL, " + COLUMN_EMAIL+ " TEXT NOT NULL)";
 
     private Context context;
     private SQLiteDatabase sqLliteDatabase;
@@ -70,18 +70,19 @@ public class DBAdapter {
 
     // Delete
     public boolean delete(int id){
-        return sqLliteDatabase.delete(TABLE_STUDENT, COLUMN_ID+" = "+id,null)>0;
+        return sqLliteDatabase.delete(TABLE_STUDENT, COLUMN_ID + " = "+ id,null) > 0;
     }
     //Will be used by the provider
     public int delete(String whereClause, String [] whereValues){
-        return sqLliteDatabase.delete(TABLE_STUDENT,whereClause,whereValues);
+        return sqLliteDatabase.delete(TABLE_STUDENT, whereClause , whereValues);
     }
 
 
     // Update
-    public boolean update(int id, String name){
+    public boolean update(int id, String name, String email){
         ContentValues contentValues=new ContentValues();
         contentValues.put(COLUMN_NAME,name);
+        contentValues.put(COLUMN_EMAIL,email);
 
         return sqLliteDatabase.update(TABLE_STUDENT,contentValues, COLUMN_ID+" = "+id,null) > 0;
     }

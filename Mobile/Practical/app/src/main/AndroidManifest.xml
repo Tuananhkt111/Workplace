@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <provider
-            android:name=".BookProvider"
+            android:name=".CarProvider"
             android:authorities="com.example.practical"
             android:enabled="true"
             android:exported="true"></provider>

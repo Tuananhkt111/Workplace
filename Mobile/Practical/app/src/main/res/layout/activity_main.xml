@@ -10,7 +10,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="App 1"
+        android:text="Car App 1"
+        android:textColor="@color/colorAccent"
         android:textStyle="bold"
         android:textSize="20dp"
         android:gravity="center"/>
@@ -20,17 +21,17 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:gravity="center"
-        android:hint="Book Title"
-        android:id="@+id/editTitle"
+        android:hint="Car model"
+        android:id="@+id/editModel"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="number"
         android:gravity="center"
-        android:hint="Book ISBN"
-        android:id="@+id/editIsbn"
+        android:hint="Car price"
+        android:id="@+id/editPrice"
         />
 
     <Button
@@ -49,7 +50,7 @@
         android:lines="15"
         android:textSize="20dp"
         android:gravity="center"
-        android:id="@+id/txtListBook"/>
+        android:id="@+id/txtListCar"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -62,7 +63,7 @@
             android:inputType="number"
             android:gravity="center"
             android:layout_toLeftOf="@+id/btnRemove"
-            android:hint="Book ID"
+            android:hint="Car ID Remove"
             android:id="@+id/editIdRemove"
             />
         <Button
@@ -77,11 +78,11 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="ID Update"
+            android:hint="Car ID Update"
             android:layout_below="@id/editIdRemove"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/btnInvisiable"
-            android:inputType="text"
+            android:inputType="number"
             android:gravity="center"
             android:id="@+id/editIdUpdate"/>
 
@@ -105,19 +106,19 @@
             android:layout_alignParentLeft="true"
             android:inputType="text"
             android:gravity="center"
-            android:hint="Book Title"
-            android:id="@+id/editTitleUpdate"
+            android:hint="Car Model"
+            android:id="@+id/editModelUpdate"
             />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/btnUpdate"
-            android:layout_below="@id/editTitleUpdate"
+            android:layout_below="@id/editModelUpdate"
             android:layout_alignParentLeft="true"
-            android:inputType="text"
+            android:inputType="number"
             android:gravity="center"
-            android:hint="Book ISBN"
-            android:id="@+id/editIsbnUpdate"
+            android:hint="Car price"
+            android:id="@+id/editPriceUpdate"
             />
 
         <Button

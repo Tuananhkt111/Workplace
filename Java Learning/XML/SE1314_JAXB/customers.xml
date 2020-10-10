@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers xmlns="http://xml.netbeans.org/schema/customers">
+    <customer>
+        <customerid>123456</customerid>
+        <name>ThanhPC</name>
+        <address>123ABC</address>
+        <city>HCM</city>
+        <phone>123456789</phone>
+    </customer>
+</customers>

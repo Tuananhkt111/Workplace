@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book id="B001">
+    <booktitle>Coma</booktitle>
+    <author>Robin Cook</author>
+    <price>99.5</price>
+  </book>
+  <book id="B888">
+    <booktitle>The Firm</booktitle>
+    <author>
+      <firstname>Tho Firm</firstname>
+      <lastname>Moore</lastname>
+    </author>
+    <price>35.5</price>
+  </book>
+  <book id="B999">
+    <booktitle>The Firm</booktitle>
+    <author>Robin Hood</author>
+    <price>54.5</price>
+  </book>
+  <book id="B003">
+    <booktitle>CopyCat</booktitle>
+    <author>Rockman</author>
+    <price>93.5</price>
+  </book>
+  <book id="B222">
+    <booktitle>Coba</booktitle>
+    <author>
+      <firstname>The Idiot</firstname>
+      <lastname>Mood</lastname>
+    </author>
+    <price>25.5</price>
+  </book>
+</library>

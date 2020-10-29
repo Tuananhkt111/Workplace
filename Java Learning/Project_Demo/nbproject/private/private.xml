@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/dto/CategoryDTO.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/crawler/LowesEachPageCrawler.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/crawler/BurpeeCrawler.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/thread/BurpeeThread.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/dto/Vegetable.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/crawler/LowesCrawler.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/web/WEB-INF/test.xml</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/crawler/LowesCategoriesCrawler.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/thread/LowesThread.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/crawler/BurpeeEachPageCrawler.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/dao/BaseDAO.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/web/WEB-INF/vegetable.xsd</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/crawler/BurpeeCategoriesCrawler.java</file>
+            <file>file:/D:/GitHub/Workplace/Java%20Learning/XML/Project_Demo/src/java/anhht/jaxb/SJCGenerateJavaObject.java</file>
+        </group>
+    </open-files>
+</project-private>

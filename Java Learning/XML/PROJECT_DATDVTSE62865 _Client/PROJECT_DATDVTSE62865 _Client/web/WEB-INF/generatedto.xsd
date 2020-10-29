@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<xsd:schema version="1.0"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://xml.netbean.org/schema/category"
+           xmlns="http://xml.netbean.org/schema/category"
+           elementFormDefault="qualified">
+    <xsd:element name="category" type="CategoryDTO"/>
+    <xsd:complexType name="WebsiteCategoryDTO">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/> 
+            <xsd:element name="name" type="xsd:string"/> 
+            <xsd:element name="url" type="xsd:string"/> 
+            <xsd:element name="website" type="xsd:string"/> 
+            <xsd:element name="category" type="CategoryDTO"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CategoryDTO">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/> 
+            <xsd:element name="name" type="xsd:string"/> 
+            <xsd:element name="levelAuth" type="xsd:int"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ColorDTO">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/> 
+            <xsd:element name="name" type="xsd:string"/> 
+            <xsd:element name="r" type="xsd:int"/> 
+            <xsd:element name="g" type="xsd:int"/> 
+            <xsd:element name="b" type="xsd:int"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="BrandDTO">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/> 
+            <xsd:element name="name" type="xsd:string"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ProductDTO">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/> 
+            <xsd:element name="name" type="xsd:string"/> 
+            <xsd:element name="url" type="xsd:string"/> 
+            <xsd:element name="brand" type="BrandDTO"/> 
+            <xsd:element name="websiteCategory" type="WebsiteCategoryDTO"/> 
+            <xsd:element name="price" type="xsd:int"/> 
+            <xsd:element name="width" type="xsd:float"/> 
+            <xsd:element name="height" type="xsd:float"/> 
+            <xsd:element name="depth" type="xsd:float"/> 
+            <xsd:element name="material" type="xsd:string"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ImageDTO">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/> 
+            <xsd:element name="url" type="xsd:string"/> 
+            <xsd:element name="product" type="ProductDTO"/> 
+            <xsd:element name="color" type="ColorDTO"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>

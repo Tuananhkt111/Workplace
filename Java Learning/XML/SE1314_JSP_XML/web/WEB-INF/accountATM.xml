@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers xmlns:account="abc.vn">
+    <account:allowed username="dungth" balance="230">
+        <fullname>Tran Hoang Dung</fullname>
+        <address>HCM</address>
+        <pin>123</pin>
+        <class>D</class>
+        <transactions>
+            <transaction>
+                <id>2391311</id>
+                <date>2013/09/23</date>
+                <amount>50</amount>
+                <type>1</type>
+            </transaction>
+            <transaction>
+                <id>2391312</id>
+                <date>2013/09/23</date>
+                <amount>50</amount>
+                <type>1</type>
+            </transaction>
+            <transaction>
+                <id>2391301</id>
+                <date>2013/09/23</date>
+                <amount>50</amount>
+                <type>0</type>
+            </transaction>
+        </transactions>
+    </account:allowed>
+    <account:expired username="dungth" balance="230">
+        <fullname>Pham Ca Jun</fullname>
+        <address>HCM</address>
+        <pin>123</pin>
+        <class>C</class>
+        <transactions>
+            <transaction>
+                <id>2391311</id>
+                <date>2013/09/23</date>
+                <amount>50</amount>
+                <type>1</type>
+            </transaction>
+            <transaction>
+                <id>2391312</id>
+                <date>2013/09/23</date>
+                <amount>50</amount>
+                <type>1</type>
+            </transaction>
+            <transaction>
+                <id>2391313</id>
+                <date>2013/09/23</date>
+                <amount>50</amount>
+                <type>1</type>
+            </transaction>
+        </transactions>
+    </account:expired>
+</customers>

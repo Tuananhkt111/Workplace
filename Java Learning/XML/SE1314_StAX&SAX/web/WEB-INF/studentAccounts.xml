@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student id="SE01" class="SE1314">
+        <lastname>Dang</lastname>
+        <middlename>Quoc</middlename>
+        <firstname>Thai</firstname>
+        <sex>1</sex>
+        <password>123456</password>
+        <address>TpHCM</address>
+        <status>dropout</status>
+    </student>
+    <student id="SE02" class="SE1313">
+        <lastname>Thai</lastname>
+        <middlename>Dang</middlename>
+        <firstname>Quoc</firstname>
+        <sex>1</sex>
+        <password>123456</password>
+        <address>TpHCM</address>
+        <status>break</status>
+    </student>
+    <student id="SE03" class="SE1312">
+        <lastname>Dang</lastname>
+        <middlename>Quoc</middlename>
+        <firstname>Chien</firstname>
+        <sex>1</sex>
+        <password>123456</password>
+        <address>TpHCM</address>
+        <status>studying</status>
+    </student>
+    <student id="SE04" class="SE1311">
+        <lastname>Dang</lastname>
+        <middlename>Quoc</middlename>
+        <firstname>Tuan</firstname>
+        <sex>1</sex>
+        <password>123456</password>
+        <address>TpHCM</address>
+        <status>break</status>
+    </student>
+</students>
